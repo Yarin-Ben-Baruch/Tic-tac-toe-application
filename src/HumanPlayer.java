@@ -33,6 +33,7 @@ public class HumanPlayer implements iPlayer{
     @Override
     public void playTurn(Board board, eMark mark , int row, int col)
     {
+
         Scanner scanner = new Scanner(System.in);
         Boolean answer = board.putMark(mark,row,col);
 
@@ -40,11 +41,23 @@ public class HumanPlayer implements iPlayer{
             if (!answer) {
                 System.out.println("Wrong coordinates , please try again");
             }
+
             int newRow = scanner.nextInt();
             int newCol = newRow % 10;
             newRow = newRow / 10;
             answer = board.putMark(mark, newRow, newCol);
         }
+    }
+
+    @Override
+    public int getCoordinates(){
+
+        int inputRowAndCol;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Hello "+ getDefuletSigan()+" please enter coordinates : ");
+        inputRowAndCol = scanner.nextInt();
+
+        return inputRowAndCol;
     }
 
 }

@@ -36,7 +36,7 @@ public class WhateverPlayer implements iPlayer {
         board.putMark(defuletSigan,row,col);
     }
 
-    public int randLocation(){
+    public int getCoordinates(){
 
         int index = (int)(Math.random() * Board.emptyLocations.size());
 

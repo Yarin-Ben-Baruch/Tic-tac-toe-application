@@ -5,4 +5,6 @@ public interface iPlayer {
     void setName(String name);
     void playTurn(Board board, eMark defuletSigan, int row, int col);
     String getName();
+    int getCoordinates();
+
 }

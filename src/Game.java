@@ -26,30 +26,21 @@ public class Game {
 
     public eGameStatus run()
     {
-        Scanner scanner = new Scanner(System.in);
         Board board = new Board();
         eGameStatus winner = eGameStatus.IN_PROGRESS;
         iPlayer[] myPlayers = new iPlayer[2];
         int turnToPlay = 0;
-        int row;
-        int col;
+        int inputRowAndCol, row, col;
 
         myPlayers[0] = playerX;
         myPlayers[1] = playerO;
 
         while (winner == eGameStatus.IN_PROGRESS) {
 
-            if(myPlayers[turnToPlay % 2] instanceof WhateverPlayer cuurentPlayer)
-            {
-                //System.out.print("What ever player :");
-                row = cuurentPlayer.randLocation();
-            }
-            else {
-                System.out.print("Player " + myPlayers[turnToPlay % 2].getName() + " type coordinates : ");
-                row = scanner.nextInt();
-            }
-            col = row % 10;
-            row = row / 10;
+            inputRowAndCol = myPlayers[turnToPlay % 2].getCoordinates();
+
+            col = inputRowAndCol % 10;
+            row = inputRowAndCol / 10;
 
             myPlayers[turnToPlay % 2].playTurn(board,myPlayers[turnToPlay % 2].getDefuletSigan() , row, col);
             renderer.renderBoard(board);

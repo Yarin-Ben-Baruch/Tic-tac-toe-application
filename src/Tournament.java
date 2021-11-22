@@ -65,7 +65,9 @@ public class Tournament {
 
         int[] result;
 
-        Tournament tournament = new Tournament(playerWhat2,playerWhat,10,rendererNone);
+        //Tournament tournament = new Tournament(playerWhat2,playerWhat,10,rendererNone);
+        Tournament tournament = new Tournament(playerX,playerO,1,renderer);
+
         result = tournament.playTournament();
 
         System.out.println("Player X win : " + result[0]);
