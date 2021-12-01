@@ -3,10 +3,10 @@ import java.util.Scanner;
 
 public class Tournament {
 
-    private iPlayer player1;
-    private iPlayer player2;
-    private int numberRounds;
-    private iRenderer renderer;
+    private final iPlayer player1;
+    private final iPlayer player2;
+    private final int numberRounds;
+    private final iRenderer renderer;
 
     public Tournament(iPlayer player1, iPlayer player2, int numberRounds, iRenderer renderer) {
         this.player1 = player1;
@@ -54,94 +54,46 @@ public class Tournament {
 
     public static void main(String[] args) {
 
-
-//        iRenderer renderer = new RendererFactory().buildRenderer("Console");
-//        iRenderer rendererNone = new RendererFactory().buildRenderer("None");
-//
-//        iPlayer playerX = new PlayerFactory("X",eMark.X).buildPlayer("Human");
-//        iPlayer playerO = new PlayerFactory("O",eMark.O).buildPlayer("Human");
-//
-//        iPlayer playerWhat = new PlayerFactory("O",eMark.O).buildPlayer("Whatever");
-//        iPlayer playerWhat2 = new PlayerFactory("O",eMark.X).buildPlayer("Whatever");
-//
-//
-//       //Tournament tournament = new Tournament(playerWhat2,playerWhat,100, rendererNone);
-//        Tournament tournament = new Tournament(playerX, playerO,1, renderer);
-//
-//        result = tournament.playTournament();
-//
-//        System.out.println("Player X win : " + result[0]);
-//        System.out.println("Player O win : " + result[1]);
-//        System.out.println("Total draw : " + result[2]);
-
+        userMenu();
     }
 
-    public void userMenu() {
+    public static void userMenu() {
         System.out.println("Welcome to TIC TAC TOE game!!!\n lets start play...");
-        String playerType1 = null, playerType2 = null, selection = null, rendererType = null, numberOfRoundsStr = null;
+        String playerType1, playerType2, selection, rendererType, numberOfRoundsStr = null;
         int numberOfRounds;
-        int[] result = new int[3];
-        boolean flag = false;
-        System.out.println("Chose option for player 1 by index: \n1.human  \n2.computer / \n3.expert computer");
+        int[] result;
+        System.out.println("Chose option for player 1 by index: \n1.human  \n2.computer \n3.expert computer");
         Scanner scanner = new Scanner(System.in);
+        selection = scanner.nextLine();
 
-        while (!flag)
+        while (!selectionCheck(selection))
         {
+            System.out.println("Wrong selection please try again");
             selection = scanner.nextLine();
-            flag = selectionCheck(selection);
-            if(flag) {
-                playerType1 = playerTypeSelection(selection);
-            }
-            else {
-                System.out.println("Wrong selection please try again");
-            }
         }
+        playerType1 = playerTypeSelection(selection);
 
-        for (int i = 0; i < 1; i++) {
-            selection = scanner.nextLine();
-            if (!selectionCheck(selection))
-            {
-                System.out.println("Wrong selection please try again");
-                i--;
-                continue;
-            }
-            playerType1 = playerTypeSelection(selection);
-        }
-
-
-        System.out.println("Chose option for player 2 by index: \n1.human  \n2.computer / \n3.expert computer");
-        flag = false;
-
-        while(!flag)
+        System.out.println("Chose option for player 2 by index: \n1.human  \n2.computer \n3.expert computer");
+        selection = scanner.nextLine();
+        while (!selectionCheck(selection))
         {
+            System.out.println("Wrong selection please try again");
             selection = scanner.nextLine();
-            flag = selectionCheck(selection);
-            if(flag) {
-                playerType2 = playerTypeSelection(selection);
-            }
-            else {
-                System.out.println("Wrong selection please try again");
-            }
         }
+        playerType2 = playerTypeSelection(selection);
 
-        System.out.println("Chose option for renderer type by index: \n1.none(without board)  \n2.console / \n3.GUI");
-        flag = false;
-
-        while(!flag)
+        System.out.println("Chose option for renderer type by index: \n1.none(without board) \n2.console \n3.GUI");
+        selection = scanner.nextLine();
+        while(!selectionCheck(selection))
         {
+            System.out.println("Wrong selection please try again");
             selection = scanner.nextLine();
-            flag = selectionCheck(selection);
-            if(flag) {
-                rendererType = rendererTypeSelection(selection);
-            }
-            else {
-                System.out.println("Wrong selection please try again");
-            }
         }
+        rendererType = rendererTypeSelection(selection);
 
         System.out.println("Chose the number of games you want to play:");
 
-        flag = false;
+        boolean flag = false;
         while(!flag)
         {
             numberOfRoundsStr = scanner.nextLine();
@@ -165,11 +117,11 @@ public class Tournament {
 
     }
 
-    public boolean selectionCheck(String str) {
-        return str.equals("0") || str.equals("1") || str.equals("2");
+    public static boolean selectionCheck(String str) {
+        return str.equals("1") || str.equals("2") || str.equals("3");
     }
 
-    public boolean isDigitsString(String str) {
+    public static boolean isDigitsString(String str) {
 
         for (char currentChar : str.toCharArray() ) {
             if (!Character.isDigit(currentChar)) {
@@ -179,8 +131,8 @@ public class Tournament {
         return true;
     }
 
-    public String playerTypeSelection (String str) {
-        String playerType = null;
+    public static String playerTypeSelection (String str) {
+        String playerType;
         if (str.equals("1")) {
             playerType = "Human";
         }else if (str.equals("2")) {
@@ -191,9 +143,9 @@ public class Tournament {
         return playerType;
     }
 
-    public String rendererTypeSelection (String str) {
+    public static String rendererTypeSelection (String str) {
 
-        String playerType = null;
+        String playerType;
         if (str.equals("1")) {
             playerType = "None";
         }else if (str.equals("2")) {
@@ -203,8 +155,4 @@ public class Tournament {
         }
         return playerType;
     }
-
-
-
-
 }
