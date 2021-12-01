@@ -14,7 +14,7 @@ public class WhateverPlayer extends Player {
     }
 
     @Override
-    public int getCoordinates(){
+    public int getCoordinates(Board board){
 
         int index = (int)(Math.random() * Board.emptyLocations.size());
 

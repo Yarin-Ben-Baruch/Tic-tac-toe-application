@@ -26,7 +26,7 @@ public class HumanPlayer extends Player{
     }
 
     @Override
-    public int getCoordinates(){
+    public int getCoordinates(Board board){
 
         int inputRowAndCol;
         Scanner scanner = new Scanner(System.in);

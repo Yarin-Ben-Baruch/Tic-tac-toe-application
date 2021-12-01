@@ -40,7 +40,7 @@ public class Game {
 
         while (winner == eGameStatus.IN_PROGRESS) {
 
-            inputRowAndCol = myPlayers[turnToPlay % 2].getCoordinates();
+            inputRowAndCol = myPlayers[turnToPlay % 2].getCoordinates(board);
 
             col = inputRowAndCol % 10;
             row = inputRowAndCol / 10;

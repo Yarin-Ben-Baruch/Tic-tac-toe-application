@@ -7,7 +7,7 @@ public class Board {
     public static final int WIN_STREAK = 3;
     private int emptyPlace;
     // משתנה מסוג enum שממלא את הלוח בהתאם לסימן
-    private eMark[][] board;
+    public static eMark[][] board;
     // מערך ששומר את המקומות הריקים בלוח
     public static ArrayList<Integer> emptyLocations;
 

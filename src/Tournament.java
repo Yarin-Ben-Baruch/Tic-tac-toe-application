@@ -138,7 +138,7 @@ public class Tournament {
         }else if (str.equals("2")) {
             playerType = "Whatever";
         }else {
-            playerType = "Expert";
+            playerType = "CleverPlayer";
         }
         return playerType;
     }

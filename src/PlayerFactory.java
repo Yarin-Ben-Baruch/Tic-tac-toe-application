@@ -15,9 +15,12 @@ public class PlayerFactory {
                 return new HumanPlayer(name, defuletSigan);
             case "Whatever":
                 return new WhateverPlayer(name, defuletSigan);
+            case "CleverPlayer":
+                return new CleverPlayer(name, defuletSigan);
             default:
                 return null;
         }
+
     }
 
     public void setName(String name) {
