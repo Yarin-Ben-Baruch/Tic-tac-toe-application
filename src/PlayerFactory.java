@@ -1,22 +1,22 @@
 public class PlayerFactory {
 
     private String name;
-    private eMark defuletSigan;
+    private eMark defaultSign;
 
-    public PlayerFactory(String i_name, eMark i_defuletSigan) {
+    public PlayerFactory(String i_name, eMark i_defaultSign) {
         setName(i_name);
-        setDefuletSigan(i_defuletSigan);
+        setDefaultSign(i_defaultSign);
     }
 
     public Player buildPlayer(String i_Type) {
 
         switch(i_Type) {
             case "Human":
-                return new HumanPlayer(name, defuletSigan);
+                return new HumanPlayer(name, defaultSign);
             case "Whatever":
-                return new WhateverPlayer(name, defuletSigan);
+                return new WhateverPlayer(name, defaultSign);
             case "CleverPlayer":
-                return new CleverPlayer(name, defuletSigan);
+                return new CleverPlayer(name, defaultSign);
             default:
                 return null;
         }
@@ -27,8 +27,8 @@ public class PlayerFactory {
         this.name = name;
     }
 
-    public void setDefuletSigan(eMark defuletSigan) {
-        this.defuletSigan = defuletSigan;
+    public void setDefaultSign(eMark defaultSign) {
+        this.defaultSign = defaultSign;
     }
 
 }

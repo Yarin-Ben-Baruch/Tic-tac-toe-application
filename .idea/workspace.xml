@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a529818-17f8-46bc-b482-510013902aab" name="Changes" comment="update all">
+    <list default="true" id="8a529818-17f8-46bc-b482-510013902aab" name="Changes" comment="update clever">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CleverPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CleverPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HumanPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PlayerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlayerFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tournament.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tournament.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WhateverPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WhateverPlayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +81,7 @@
       <workItem from="1637739658586" duration="3278000" />
       <workItem from="1638100035353" duration="363000" />
       <workItem from="1638349830540" duration="4258000" />
+      <workItem from="1638387107843" duration="2282000" />
     </task>
     <task id="LOCAL-00001" summary="Remvoe instanceof">
       <created>1637596356558</created>
@@ -114,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638373709270</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update clever">
+      <created>1638381327370</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1638381327370</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,6 +140,21 @@
     <MESSAGE value="adding menu for user" />
     <MESSAGE value="update names" />
     <MESSAGE value="update all" />
-    <option name="LAST_COMMIT_MESSAGE" value="update all" />
+    <MESSAGE value="update clever" />
+    <option name="LAST_COMMIT_MESSAGE" value="update clever" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/CleverPlayer.java</url>
+          <line>33</line>
+          <properties class="CleverPlayer" method="getCoordinates">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

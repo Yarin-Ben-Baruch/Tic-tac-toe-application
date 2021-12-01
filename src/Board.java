@@ -7,7 +7,12 @@ public class Board {
     public static final int WIN_STREAK = 3;
     private int emptyPlace;
     // משתנה מסוג enum שממלא את הלוח בהתאם לסימן
-    public static eMark[][] board;
+    public eMark[][] board;
+
+    public eMark[][] getBoard() {
+        return board;
+    }
+
     // מערך ששומר את המקומות הריקים בלוח
     public static ArrayList<Integer> emptyLocations;
 
@@ -52,7 +57,7 @@ public class Board {
         int numberToRemove;
         if(row > 0 && row <= SIZE && col > 0 && col <= SIZE )
         {
-            if(board[row-1][col-1] == eMark.BLANK) {
+            if(board[row - 1][col - 1] == eMark.BLANK) {
                 board[row - 1][col - 1] = mark;
                 result = true;
                 emptyPlace--;
@@ -109,7 +114,6 @@ public class Board {
 
         return result;
     }
-
 
     /*
     פונקצית עזר לGameStatus
