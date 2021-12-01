@@ -3,22 +3,22 @@ import java.util.Scanner;
 public class WhateverPlayer implements iPlayer {
 
     private String name;
-    private eMark defuletSigan;
+    private eMark defaultSign;
 
     //                      name                X || O
-    public WhateverPlayer(String name, eMark defuletSigan) {
+    public WhateverPlayer(String name, eMark defaultSign) {
         setName(name);
-        setDefuletSigan(defuletSigan);
+        setDefaultSign(defaultSign);
     }
 
     @Override
-    public void setDefuletSigan(eMark defuletSigan) {
-        this.defuletSigan = defuletSigan;
+    public void setDefaultSign(eMark defaultSign) {
+        this.defaultSign = defaultSign;
     }
 
     @Override
-    public eMark getDefuletSigan() {
-        return defuletSigan;
+    public eMark getDefaultSign() {
+        return defaultSign;
     }
 
     @Override
@@ -33,9 +33,9 @@ public class WhateverPlayer implements iPlayer {
 
 
     @Override
-    public void playTurn(Board board, eMark defuletSigan, int row, int col) {
+    public void playTurn(Board board, eMark defaultSign, int row, int col) {
 
-        board.putMark(defuletSigan,row,col);
+        board.putMark(defaultSign,row,col);
     }
 
     @Override

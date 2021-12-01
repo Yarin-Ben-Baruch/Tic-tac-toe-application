@@ -45,10 +45,10 @@ public class Game {
             col = inputRowAndCol % 10;
             row = inputRowAndCol / 10;
 
-            myPlayers[turnToPlay % 2].playTurn(board,myPlayers[turnToPlay % 2].getDefuletSigan(), row, col);
+            myPlayers[turnToPlay % 2].playTurn(board,myPlayers[turnToPlay % 2].getDefaultSign(), row, col);
 
             renderer.renderBoard(board);
-            winner = board.GameStatus(row, col, myPlayers[turnToPlay % 2].getDefuletSigan());
+            winner = board.GameStatus(row, col, myPlayers[turnToPlay % 2].getDefaultSign());
             turnToPlay++;
         }
 

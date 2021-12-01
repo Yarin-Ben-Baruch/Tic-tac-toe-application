@@ -3,21 +3,21 @@ import java.util.Scanner;
 public class HumanPlayer implements iPlayer{
 
     private String name;
-    private eMark defuletSigan;
+    private eMark defaultSign;
 
     public HumanPlayer(String i_name, eMark i_defuletSigan) {
         setName(i_name);
-        setDefuletSigan(i_defuletSigan);
+        setDefaultSign(i_defuletSigan);
     }
 
     @Override
-    public eMark getDefuletSigan() {
-        return defuletSigan;
+    public eMark getDefaultSign() {
+        return defaultSign;
     }
 
     @Override
-    public void setDefuletSigan(eMark defuletSigan) {
-        this.defuletSigan = defuletSigan;
+    public void setDefaultSign(eMark defuletSigan) {
+        this.defaultSign = defuletSigan;
     }
 
     @Override
@@ -54,7 +54,7 @@ public class HumanPlayer implements iPlayer{
 
         int inputRowAndCol;
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Hello " + getDefuletSigan() + " please enter coordinates : ");
+        System.out.print("Hello " + getDefaultSign() + " please enter coordinates : ");
         inputRowAndCol = scanner.nextInt();
 
         return inputRowAndCol;

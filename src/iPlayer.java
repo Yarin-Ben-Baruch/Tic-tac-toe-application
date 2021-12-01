@@ -1,11 +1,11 @@
 
 public interface iPlayer {
 
-    void setDefuletSigan(eMark defuletSigan);
-    eMark getDefuletSigan();
+    void setDefaultSign(eMark defaultSign);
+    eMark getDefaultSign();
     void setName(String name);
     String getName();
-    void playTurn(Board board, eMark defuletSigan, int row, int col);
+    void playTurn(Board board, eMark defaultSign, int row, int col);
     int getCoordinates();
 
 }
