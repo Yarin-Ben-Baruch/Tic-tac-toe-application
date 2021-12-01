@@ -15,10 +15,11 @@ public class Tournament {
         this.renderer = renderer;
     }
 
-
     public int[] playTournament() {
+
         int[] results = new int[3];
         Arrays.fill(results,0);
+
         iPlayer[] players = new iPlayer[2];
         int randomPlayerOne,randomPlayerTwo;
         players[0] = player1;
@@ -30,7 +31,7 @@ public class Tournament {
             randomPlayerOne = i % 2;
             randomPlayerTwo = (randomPlayerOne + 1) % 2;
 
-            Game game = new Game(players[randomPlayerOne],players[randomPlayerTwo],renderer);
+            Game game = new Game(players[randomPlayerOne],players[randomPlayerTwo], renderer);
             eGameStatus winner = game.run();
 
             if(winner == eGameStatus.DRAW){
@@ -46,13 +47,14 @@ public class Tournament {
             {
                 results[1]++;
             }
-
         }
 
         return results;
 }
 
     public static void main(String[] args) {
+
+        int[] result;
 
         iRenderer renderer = new RendererFactory().buildRenderer("Console");
         iRenderer rendererNone = new RendererFactory().buildRenderer("None");
@@ -63,16 +65,16 @@ public class Tournament {
         iPlayer playerWhat = new PlayerFactory("O",eMark.O).buildPlayer("Whatever");
         iPlayer playerWhat2 = new PlayerFactory("O",eMark.X).buildPlayer("Whatever");
 
-        int[] result;
 
-        //Tournament tournament = new Tournament(playerWhat2,playerWhat,10,rendererNone);
-        Tournament tournament = new Tournament(playerX,playerO,1,renderer);
+        Tournament tournament = new Tournament(playerWhat2,playerWhat,100, rendererNone);
+        //Tournament tournament = new Tournament(playerX, playerO,1, renderer);
 
         result = tournament.playTournament();
 
         System.out.println("Player X win : " + result[0]);
         System.out.println("Player O win : " + result[1]);
         System.out.println("Total draw : " + result[2]);
+
     }
 
 }

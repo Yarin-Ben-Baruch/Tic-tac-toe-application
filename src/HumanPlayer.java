@@ -54,7 +54,7 @@ public class HumanPlayer implements iPlayer{
 
         int inputRowAndCol;
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Hello "+ getDefuletSigan()+" please enter coordinates : ");
+        System.out.print("Hello " + getDefuletSigan() + " please enter coordinates : ");
         inputRowAndCol = scanner.nextInt();
 
         return inputRowAndCol;

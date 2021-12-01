@@ -32,11 +32,12 @@ class ConsoleRenderer implements  iRenderer {
 	);
 
 	private char[][] buffer = new char[BUFFER_ROWS][BUFFER_COLS];
-	
-	/**
-	* Initializes the renderer.
-	*/
 
+	/*
+	מטודה שבודקת את תקינות גודל הלוח
+	הלוח מתאפשר בגדלים של 2 עד 9
+	במידה והגדול הנבחר לא תקין זורקת אסקפשין בהתאם
+	 */
 	public ConsoleRenderer() {
 		if(Board.SIZE > 9 || Board.SIZE < 2) {
 			String errorMsg = "Board size must be in the range [2, 9]";
@@ -72,13 +73,12 @@ class ConsoleRenderer implements  iRenderer {
 			buffer[row][NUM_COLS_BEFORE_BOARD/2] = '0';
 		}
 	}
-	
-	/**
-	* Prints the supplied board to the console.
-	* @param board the board to print.
-	*/
 
-
+	/*
+	2 מטודות המבצעות את ההדפסה
+	אחת אחראית על הדפסת הסימנים
+	והשניה אחראית על הדפסת תצורת הלוח בתצוגה יפה
+	 */
 	public void renderBoard(Board board) {
 		for(int i = 0 ; i < Board.SIZE ; i++) {
 			for(int j = 0 ; j < Board.SIZE ; j++) {
@@ -105,5 +105,6 @@ class ConsoleRenderer implements  iRenderer {
 	}
 
 }
+
 
 

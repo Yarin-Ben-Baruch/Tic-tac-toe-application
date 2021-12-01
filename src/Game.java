@@ -6,6 +6,9 @@ public class Game {
     private iPlayer playerO;
     private iRenderer renderer;
 
+    /*
+   מאתחל את סוגי השחקנים וסוג הלוח
+     */
     public Game(iPlayer i_PlayerX, iPlayer i_PlayerO, iRenderer i_Renderer) {
         setPlayerO(i_PlayerO);
         setPlayerX(i_PlayerX);
@@ -42,7 +45,8 @@ public class Game {
             col = inputRowAndCol % 10;
             row = inputRowAndCol / 10;
 
-            myPlayers[turnToPlay % 2].playTurn(board,myPlayers[turnToPlay % 2].getDefuletSigan() , row, col);
+            myPlayers[turnToPlay % 2].playTurn(board,myPlayers[turnToPlay % 2].getDefuletSigan(), row, col);
+
             renderer.renderBoard(board);
             winner = board.GameStatus(row, col, myPlayers[turnToPlay % 2].getDefuletSigan());
             turnToPlay++;

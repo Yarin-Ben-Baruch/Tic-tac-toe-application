@@ -32,7 +32,6 @@
 //    @Override
 //    public void playTurn(Board board, eMark defuletSigan, int rowAndCol) {
 //
-//
 //        board.putMark(defuletSigan,row,col);
 //    }
 //

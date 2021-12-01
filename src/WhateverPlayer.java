@@ -5,6 +5,7 @@ public class WhateverPlayer implements iPlayer {
     private String name;
     private eMark defuletSigan;
 
+    //                      name                X || O
     public WhateverPlayer(String name, eMark defuletSigan) {
         setName(name);
         setDefuletSigan(defuletSigan);
@@ -30,12 +31,14 @@ public class WhateverPlayer implements iPlayer {
         return name;
     }
 
+
     @Override
     public void playTurn(Board board, eMark defuletSigan, int row, int col) {
 
         board.putMark(defuletSigan,row,col);
     }
 
+    @Override
     public int getCoordinates(){
 
         int index = (int)(Math.random() * Board.emptyLocations.size());

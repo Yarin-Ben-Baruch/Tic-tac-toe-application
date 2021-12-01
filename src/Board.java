@@ -1,12 +1,20 @@
 import java.util.ArrayList;
 
 public class Board {
+
+    // משתנים של המחלקה
     public static final int SIZE = 3;
     public static final int WIN_STREAK = 3;
     private int emptyPlace;
+    // משתנה מסוג enum שממלא את הלוח בהתאם לסימן
     private eMark[][] board;
+    // מערך ששומר את המקומות הריקים בלוח
     public static ArrayList<Integer> emptyLocations;
 
+    /*
+    יוצרים לוח בגודל שנבחר(size)
+    מעדכנים את רשימת המקומות הריקים + מאתחלים את הלוח
+     */
     public Board()
     {
         board = new eMark[SIZE][SIZE];
@@ -15,6 +23,10 @@ public class Board {
         emptyPlace = SIZE*SIZE;
     }
 
+    /*
+    מטודה שמאתחלת את כל הלוח למקומות ריקים
+    בנוסף מאתחל מערך השומר את כל המיקומים של המקומות הריקים
+     */
     private void installBoard(){
         int num = 0;
 
@@ -27,9 +39,13 @@ public class Board {
                 emptyLocations.add(num);
             }
         }
-
     }
 
+    /*
+    מטודה שמקבלת מיקום בלוח וסימן.
+    המטודה בודקת את תיקונת הקלט, במידה והוא תקין מחזיר true
+    וממלא בלוח את הסימן + מורידה את המיקום שלו מהמערך השומר את המקומות
+     */
     public boolean putMark(eMark mark, int row, int col) // סימון על הלוח
     {
         Boolean result  = false;
@@ -40,13 +56,20 @@ public class Board {
                 board[row - 1][col - 1] = mark;
                 result = true;
                 emptyPlace--;
-                numberToRemove = row*10 + col;
+                numberToRemove = row * 10 + col;
                 emptyLocations.removeIf(number -> number == numberToRemove);
             }
         }
         return result;
     }
 
+    /*
+    מטודה שבודקת האם יש הכרעה במשחק .
+    אחריי שהשחקן שתורו מבצע מהלך, הפונקציה נקראת ובודק האם המהלך שהשחקן עשה גרם לביצוע סטרייק בגודל שנבחר .
+    נבדק פה כל סוגי האפשרויות לסטרייק .
+    במידה ויש סטרייק מחזירים אמת
+    במידה ואין מחזירים שקר .
+     */
     public eGameStatus GameStatus(int row, int col, eMark mark) // במהלך המשחק / מי ניצח
     {
         eGameStatus result = eGameStatus.IN_PROGRESS;
@@ -87,6 +110,15 @@ public class Board {
         return result;
     }
 
+
+    /*
+    פונקצית עזר לGameStatus
+    היא מקבלת את המיקום של המהלך שהוכנס .
+    בנוסף היא מקבלת כיוון של עמודה ושורה.
+    בעזרת הכיוון היא בודקת כמה מאותו מהלך שהוכנס נמצא ברצף עם הכיוון שהיא קיבלה .
+    נמצאים פה תנאי קצה כמו למשל שלא תבדוק אחריי גודל הלוח
+    המטודה מחזירה בסופה את גודל הרצף שהיא הלכה לכיוון שלו
+     */
     private int checkingDirection(int row, int col, eMark mark,int moveCol, int moveRow)
     {
         int count = 0;
@@ -105,6 +137,7 @@ public class Board {
         return count;
     }
 
+    // מטודה שמחזירה סימן של מיקום בלוח
     public eMark getMark(int row, int col)
     {
         return board[row][col];
