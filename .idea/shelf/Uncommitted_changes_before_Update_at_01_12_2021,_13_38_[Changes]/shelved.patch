@@ -1,0 +1,420 @@
+Index: src/HumanPlayer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.util.Scanner;\n\npublic class HumanPlayer implements iPlayer{\n\n    private String name;\n    private eMark defuletSigan;\n\n    public HumanPlayer(String i_name, eMark i_defuletSigan) {\n        setName(i_name);\n        setDefuletSigan(i_defuletSigan);\n    }\n\n    @Override\n    public eMark getDefuletSigan() {\n        return defuletSigan;\n    }\n\n    @Override\n    public void setDefuletSigan(eMark defuletSigan) {\n        this.defuletSigan = defuletSigan;\n    }\n\n    @Override\n    public String getName() {\n        return name;\n    }\n\n    @Override\n    public void setName(String name) {\n        this.name = name;\n    }\n\n    @Override\n    public void playTurn(Board board, eMark mark , int row, int col)\n    {\n\n        Scanner scanner = new Scanner(System.in);\n        Boolean answer = board.putMark(mark,row,col);\n\n        while (!answer) {\n            if (!answer) {\n                System.out.println(\"Wrong coordinates , please try again\");\n            }\n\n            int newRow = scanner.nextInt();\n            int newCol = newRow % 10;\n            newRow = newRow / 10;\n            answer = board.putMark(mark, newRow, newCol);\n        }\n    }\n\n    @Override\n    public int getCoordinates(){\n\n        int inputRowAndCol;\n        Scanner scanner = new Scanner(System.in);\n        System.out.print(\"Hello \" + getDefuletSigan() + \" please enter coordinates : \");\n        inputRowAndCol = scanner.nextInt();\n\n        return inputRowAndCol;\n    }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/HumanPlayer.java b/src/HumanPlayer.java
+--- a/src/HumanPlayer.java	(revision f263672ac5fc9e680660942c94c7b8fc02a1350a)
++++ b/src/HumanPlayer.java	(date 1638357510406)
+@@ -3,21 +3,22 @@
+ public class HumanPlayer implements iPlayer{
+ 
+     private String name;
+-    private eMark defuletSigan;
++    private eMark defaultSign;
+ 
+-    public HumanPlayer(String i_name, eMark i_defuletSigan) {
++    //                      name            X || O
++    public HumanPlayer(String i_name, eMark i_DefaultSign) {
+         setName(i_name);
+-        setDefuletSigan(i_defuletSigan);
++        setDefaultSign(i_DefaultSign);
+     }
+ 
+     @Override
+-    public eMark getDefuletSigan() {
+-        return defuletSigan;
++    public eMark getDefaultSign() {
++        return defaultSign;
+     }
+ 
+     @Override
+-    public void setDefuletSigan(eMark defuletSigan) {
+-        this.defuletSigan = defuletSigan;
++    public void setDefaultSign(eMark defaultSign) {
++        this.defaultSign = defaultSign;
+     }
+ 
+     @Override
+@@ -30,6 +31,11 @@
+         this.name = name;
+     }
+ 
++    /*
++    מקבל קלט מהמשתמש שזה בעצם הלוח שעליו הוא משחק איזה סימן הוא ובאיזה מיקום לעדכן
++    המטודה בודקת שהקלט שהוא הכניס תקין,כלומר פנוי, או שהמיקום הזה בכלל קיים
++    במידה וכן מעדכן את הלוח, במידה ולא נותן למשתמש הזדמנות חוזרת עד שיכניס קלט תקין
++     */
+     @Override
+     public void playTurn(Board board, eMark mark , int row, int col)
+     {
+@@ -49,12 +55,15 @@
+         }
+     }
+ 
++    /*
++    מקבל קלט ראשוני מהמשתמש, של המיקום שהוא מעוניין לבצע בו מהלך .
++     */
+     @Override
+     public int getCoordinates(){
+ 
+         int inputRowAndCol;
+         Scanner scanner = new Scanner(System.in);
+-        System.out.print("Hello " + getDefuletSigan() + " please enter coordinates : ");
++        System.out.print("Hello " + getDefaultSign() + " please enter coordinates : ");
+         inputRowAndCol = scanner.nextInt();
+ 
+         return inputRowAndCol;
+Index: src/Game.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.util.Scanner;\n\npublic class Game {\n\n    private iPlayer playerX;\n    private iPlayer playerO;\n    private iRenderer renderer;\n\n    /*\n   מאתחל את סוגי השחקנים וסוג הלוח\n     */\n    public Game(iPlayer i_PlayerX, iPlayer i_PlayerO, iRenderer i_Renderer) {\n        setPlayerO(i_PlayerO);\n        setPlayerX(i_PlayerX);\n        setRenderer(i_Renderer);\n    }\n\n    public void setPlayerX(iPlayer playerX) {\n        this.playerX = playerX;\n    }\n\n    public void setPlayerO(iPlayer playerO) {\n        this.playerO = playerO;\n    }\n\n    public void setRenderer(iRenderer renderer) {\n        this.renderer = renderer;\n    }\n\n    public eGameStatus run()\n    {\n        Board board = new Board();\n        eGameStatus winner = eGameStatus.IN_PROGRESS;\n        iPlayer[] myPlayers = new iPlayer[2];\n        int turnToPlay = 0;\n        int inputRowAndCol, row, col;\n\n        myPlayers[0] = playerX;\n        myPlayers[1] = playerO;\n\n        while (winner == eGameStatus.IN_PROGRESS) {\n\n            inputRowAndCol = myPlayers[turnToPlay % 2].getCoordinates();\n\n            col = inputRowAndCol % 10;\n            row = inputRowAndCol / 10;\n\n            myPlayers[turnToPlay % 2].playTurn(board,myPlayers[turnToPlay % 2].getDefuletSigan(), row, col);\n\n            renderer.renderBoard(board);\n            winner = board.GameStatus(row, col, myPlayers[turnToPlay % 2].getDefuletSigan());\n            turnToPlay++;\n        }\n\n        return winner;\n    }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Game.java b/src/Game.java
+--- a/src/Game.java	(revision f263672ac5fc9e680660942c94c7b8fc02a1350a)
++++ b/src/Game.java	(date 1638356210665)
+@@ -27,6 +27,13 @@
+         this.renderer = renderer;
+     }
+ 
++    /*
++    מטודה המחזירה enum של סטטוס המשחק.
++    זוהי בעצם המטודה שמפעילה את המשחק .
++    היא יוצרת את מאחורי הקלעים של המשחק הנוכחי - board
++    המטודה מחזיקה לולאה שבודקת האם קיים שינוי במשחק, כלומר המשחק כבר לא בתהליך
++    במידה וכן היא מחזירה את הסטטוס הסופי של המשחק שקיים ב enum
++     */
+     public eGameStatus run()
+     {
+         Board board = new Board();
+@@ -45,10 +52,10 @@
+             col = inputRowAndCol % 10;
+             row = inputRowAndCol / 10;
+ 
+-            myPlayers[turnToPlay % 2].playTurn(board,myPlayers[turnToPlay % 2].getDefuletSigan(), row, col);
++            myPlayers[turnToPlay % 2].playTurn(board,myPlayers[turnToPlay % 2].getDefaultSign(), row, col);
+ 
+             renderer.renderBoard(board);
+-            winner = board.GameStatus(row, col, myPlayers[turnToPlay % 2].getDefuletSigan());
++            winner = board.GameStatus(row, col, myPlayers[turnToPlay % 2].getDefaultSign());
+             turnToPlay++;
+         }
+ 
+Index: src/CleverPlayer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>//\n//public class CleverPlayer implements iPlayer {\n//\n//    private String name;\n//    private eMark defuletSigan;\n//\n//    public CleverPlayer(String name, eMark defuletSigan) {\n//        setName(name);\n//        setDefuletSigan(defuletSigan);\n//    }\n//\n//    @Override\n//    public void setDefuletSigan(eMark defuletSigan) {\n//        this.defuletSigan = defuletSigan;\n//    }\n//\n//    @Override\n//    public eMark getDefuletSigan() {\n//        return defuletSigan;\n//    }\n//\n//    @Override\n//    public void setName(String name) {\n//        this.name = name;\n//    }\n//\n//    @Override\n//    public String getName() {\n//        return name;\n//    }\n//\n//    @Override\n//    public void playTurn(Board board, eMark defuletSigan, int rowAndCol) {\n//\n//        board.putMark(defuletSigan,row,col);\n//    }\n//\n//    public int getCoordinates(){\n//\n//        int index = (int)(Math.random() * Board.emptyLocations.size());\n//\n//        return Board.emptyLocations.get(index);\n//    }\n//\n//}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/CleverPlayer.java b/src/CleverPlayer.java
+--- a/src/CleverPlayer.java	(revision f263672ac5fc9e680660942c94c7b8fc02a1350a)
++++ b/src/CleverPlayer.java	(date 1638357241802)
+@@ -1,45 +1,4 @@
+ //
+ //public class CleverPlayer implements iPlayer {
+ //
+-//    private String name;
+-//    private eMark defuletSigan;
+-//
+-//    public CleverPlayer(String name, eMark defuletSigan) {
+-//        setName(name);
+-//        setDefuletSigan(defuletSigan);
+-//    }
+-//
+-//    @Override
+-//    public void setDefuletSigan(eMark defuletSigan) {
+-//        this.defuletSigan = defuletSigan;
+-//    }
+-//
+-//    @Override
+-//    public eMark getDefuletSigan() {
+-//        return defuletSigan;
+-//    }
+-//
+-//    @Override
+-//    public void setName(String name) {
+-//        this.name = name;
+-//    }
+-//
+-//    @Override
+-//    public String getName() {
+-//        return name;
+-//    }
+-//
+-//    @Override
+-//    public void playTurn(Board board, eMark defuletSigan, int rowAndCol) {
+-//
+-//        board.putMark(defuletSigan,row,col);
+-//    }
+-//
+-//    public int getCoordinates(){
+-//
+-//        int index = (int)(Math.random() * Board.emptyLocations.size());
+-//
+-//        return Board.emptyLocations.get(index);
+-//    }
+-//
+ //}
+Index: src/VoidRenderer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\npublic class VoidRenderer implements iRenderer{\n\n    public void renderBoard(Board board) {\n\n    }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/VoidRenderer.java b/src/VoidRenderer.java
+--- a/src/VoidRenderer.java	(revision f263672ac5fc9e680660942c94c7b8fc02a1350a)
++++ b/src/VoidRenderer.java	(date 1638355949276)
+@@ -1,3 +1,10 @@
++
++/*
++מחלקה הממשת את סוג הלוח הבילתי נראה
++בעצם במצב שבו נרצה לבצע משחק של מחשב כנגד מחשב, לא נרצה בהכרח להדפיס את הלוח כל פעם ונרצה להדפיס את הסטטיסטיקה בסוף.
++renderBoard לכן המחלקה ממשת את
++עם מימוש דיפולטיבי
++ */
+ 
+ public class VoidRenderer implements iRenderer{
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"8a529818-17f8-46bc-b482-510013902aab\" name=\"Changes\" comment=\"Remvoe instanceof\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Board.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Board.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/CleverPlayer.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/CleverPlayer.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/ConsoleRenderer.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/ConsoleRenderer.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Game.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Game.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/HumanPlayer.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/HumanPlayer.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Tournament.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Tournament.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/WhateverPlayer.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/WhateverPlayer.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/eGameStatus.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/eGameStatus.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/eMark.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/eMark.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/iPlayer.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/iPlayer.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Interface\" />\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"ProjectId\" id=\"21BSd2rsks6NZf0afJnra1xYCkz\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"RecentsManager\">\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/src\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"Tournament\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"Tournament\" />\n      <module name=\"TicTacToe\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Application.Tournament\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"8a529818-17f8-46bc-b482-510013902aab\" name=\"Changes\" comment=\"\" />\n      <created>1637413121153</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1637413121153</updated>\n      <workItem from=\"1637413123665\" duration=\"98000\" />\n      <workItem from=\"1637471665171\" duration=\"9387000\" />\n      <workItem from=\"1637494349520\" duration=\"5743000\" />\n      <workItem from=\"1637571430853\" duration=\"392000\" />\n      <workItem from=\"1637582758788\" duration=\"195000\" />\n      <workItem from=\"1637594985379\" duration=\"1385000\" />\n      <workItem from=\"1637601892349\" duration=\"206000\" />\n      <workItem from=\"1637662714235\" duration=\"350000\" />\n      <workItem from=\"1637739658586\" duration=\"3278000\" />\n      <workItem from=\"1638100035353\" duration=\"363000\" />\n      <workItem from=\"1638349830540\" duration=\"4258000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Remvoe instanceof\">\n      <created>1637596356558</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1637596356559</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"2\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"Remvoe instanceof\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Remvoe instanceof\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision f263672ac5fc9e680660942c94c7b8fc02a1350a)
++++ b/.idea/workspace.xml	(date 1638358719730)
+@@ -3,16 +3,15 @@
+   <component name="ChangeListManager">
+     <list default="true" id="8a529818-17f8-46bc-b482-510013902aab" name="Changes" comment="Remvoe instanceof">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/CleverPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CleverPlayer.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/ConsoleRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConsoleRenderer.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HumanPlayer.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Tournament.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tournament.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/PlayerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlayerFactory.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/RendererFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RendererFactory.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/VoidRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VoidRenderer.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/WhateverPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WhateverPlayer.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/eGameStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eGameStatus.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/eMark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eMark.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/iPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/iPlayer.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/iRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/iRenderer.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -79,7 +78,7 @@
+       <workItem from="1637662714235" duration="350000" />
+       <workItem from="1637739658586" duration="3278000" />
+       <workItem from="1638100035353" duration="363000" />
+-      <workItem from="1638349830540" duration="4258000" />
++      <workItem from="1638349830540" duration="7251000" />
+     </task>
+     <task id="LOCAL-00001" summary="Remvoe instanceof">
+       <created>1637596356558</created>
+@@ -88,7 +87,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1637596356559</updated>
+     </task>
+-    <option name="localTasksCounter" value="2" />
++    <task id="LOCAL-00002" summary="Remvoe instanceof">
++      <created>1638354875119</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1638354875119</updated>
++    </task>
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+Index: src/WhateverPlayer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.util.Scanner;\n\npublic class WhateverPlayer implements iPlayer {\n\n    private String name;\n    private eMark defuletSigan;\n\n    //                      name                X || O\n    public WhateverPlayer(String name, eMark defuletSigan) {\n        setName(name);\n        setDefuletSigan(defuletSigan);\n    }\n\n    @Override\n    public void setDefuletSigan(eMark defuletSigan) {\n        this.defuletSigan = defuletSigan;\n    }\n\n    @Override\n    public eMark getDefuletSigan() {\n        return defuletSigan;\n    }\n\n    @Override\n    public void setName(String name) {\n        this.name = name;\n    }\n\n    @Override\n    public String getName() {\n        return name;\n    }\n\n\n    @Override\n    public void playTurn(Board board, eMark defuletSigan, int row, int col) {\n\n        board.putMark(defuletSigan,row,col);\n    }\n\n    @Override\n    public int getCoordinates(){\n\n        int index = (int)(Math.random() * Board.emptyLocations.size());\n\n        return Board.emptyLocations.get(index);\n    }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/WhateverPlayer.java b/src/WhateverPlayer.java
+--- a/src/WhateverPlayer.java	(revision f263672ac5fc9e680660942c94c7b8fc02a1350a)
++++ b/src/WhateverPlayer.java	(date 1638356460170)
+@@ -3,22 +3,22 @@
+ public class WhateverPlayer implements iPlayer {
+ 
+     private String name;
+-    private eMark defuletSigan;
++    private eMark defaultSign;
+ 
+     //                      name                X || O
+-    public WhateverPlayer(String name, eMark defuletSigan) {
++    public WhateverPlayer(String name, eMark defaultSign) {
+         setName(name);
+-        setDefuletSigan(defuletSigan);
++        setDefaultSign(defaultSign);
+     }
+ 
+     @Override
+-    public void setDefuletSigan(eMark defuletSigan) {
+-        this.defuletSigan = defuletSigan;
++    public void setDefaultSign(eMark defaultSign) {
++        this.defaultSign = defaultSign;
+     }
+ 
+     @Override
+-    public eMark getDefuletSigan() {
+-        return defuletSigan;
++    public eMark getDefaultSign() {
++        return defaultSign;
+     }
+ 
+     @Override
+@@ -31,13 +31,20 @@
+         return name;
+     }
+ 
+-
++    /*
++    מטודה שמקבל את סוג הלוח, הסימן והמיקום
++    ומעדכן מחלקה לוח את השינוי שהתבצע לפי הבחירה
++     */
+     @Override
+-    public void playTurn(Board board, eMark defuletSigan, int row, int col) {
++    public void playTurn(Board board, eMark defaultSign, int row, int col) {
+ 
+-        board.putMark(defuletSigan,row,col);
++        board.putMark(defaultSign,row,col);
+     }
+ 
++    /*
++    מטודה במגרילה בהסתברות שווה את המיקום שעליו השחקן מסוג מחשב יבחר את המיקום
++    שבו הוא הולך לשחק
++     */
+     @Override
+     public int getCoordinates(){
+ 
+Index: src/RendererFactory.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\npublic class RendererFactory {\n\n    public iRenderer buildRenderer(String i_Type) {\n\n        switch(i_Type) {\n            case \"Console\":\n                return new ConsoleRenderer();\n            case \"None\":\n                return new VoidRenderer();\n            default:\n                return null;\n        }\n    }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/RendererFactory.java b/src/RendererFactory.java
+--- a/src/RendererFactory.java	(revision f263672ac5fc9e680660942c94c7b8fc02a1350a)
++++ b/src/RendererFactory.java	(date 1638355902633)
+@@ -1,3 +1,8 @@
++
++/*
++מחלקה הממשת את הדייזן פטרנס של Factory על סוג הלוח
++המחלקה מקבלת את סוג הלוח שעליו רוצים לשחק ומחזירה בהתאם אוביקט של המחלקה
++ */
+ 
+ public class RendererFactory {
+ 
+Index: src/PlayerFactory.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\npublic class PlayerFactory {\n\n    private String name;\n    private eMark defuletSigan;\n\n    public PlayerFactory(String i_name, eMark i_defuletSigan) {\n        setName(i_name);\n        setDefuletSigan(i_defuletSigan);\n    }\n\n    public iPlayer buildPlayer(String i_Type) {\n\n        switch(i_Type) {\n            case \"Human\":\n                return new HumanPlayer(name, defuletSigan);\n            case \"Whatever\":\n                return new WhateverPlayer(name, defuletSigan);\n            default:\n                return null;\n        }\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n\n    public void setDefuletSigan(eMark defuletSigan) {\n        this.defuletSigan = defuletSigan;\n    }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/PlayerFactory.java b/src/PlayerFactory.java
+--- a/src/PlayerFactory.java	(revision f263672ac5fc9e680660942c94c7b8fc02a1350a)
++++ b/src/PlayerFactory.java	(date 1638355738794)
+@@ -1,21 +1,25 @@
+ 
++/*
++מחלקה הממשת את הדייזן פטרנס של Factory על סוג המשתמש
++מחזיקה כאן אפשרויות של כל סוגי המשתמשים הקיימים, ובהתאם לכך מחזירה יצירה של האוביקט שנבחר במטודה buildPlayer
++ */
+ public class PlayerFactory {
+ 
+     private String name;
+-    private eMark defuletSigan;
++    private eMark defaultSign;
+ 
+-    public PlayerFactory(String i_name, eMark i_defuletSigan) {
+-        setName(i_name);
+-        setDefuletSigan(i_defuletSigan);
++    public PlayerFactory(String i_Name, eMark i_DefaultSign) {
++        setName(i_Name);
++        setDefaultSign(i_DefaultSign);
+     }
+ 
+     public iPlayer buildPlayer(String i_Type) {
+ 
+         switch(i_Type) {
+             case "Human":
+-                return new HumanPlayer(name, defuletSigan);
++                return new HumanPlayer(name, defaultSign);
+             case "Whatever":
+-                return new WhateverPlayer(name, defuletSigan);
++                return new WhateverPlayer(name, defaultSign);
+             default:
+                 return null;
+         }
+@@ -25,8 +29,8 @@
+         this.name = name;
+     }
+ 
+-    public void setDefuletSigan(eMark defuletSigan) {
+-        this.defuletSigan = defuletSigan;
++    public void setDefaultSign(eMark defaultSign) {
++        this.defaultSign = defaultSign;
+     }
+ 
+ }
+Index: src/iRenderer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public interface iRenderer {\n\n    void renderBoard(Board board);\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/iRenderer.java b/src/iRenderer.java
+--- a/src/iRenderer.java	(revision f263672ac5fc9e680660942c94c7b8fc02a1350a)
++++ b/src/iRenderer.java	(date 1638357510422)
+@@ -1,3 +1,9 @@
++
++/*
++ממשק הממש את סוג הלוח על מנת לשמור על גמישות בקוד בהתאם ללוח שהתקבל
++ולא לבצע שימוש בלוח ספציפי
++ */
++
+ public interface iRenderer {
+ 
+     void renderBoard(Board board);
+Index: src/iPlayer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\npublic interface iPlayer {\n\n    void setDefuletSigan(eMark defuletSigan);\n    eMark getDefuletSigan();\n    void setName(String name);\n    String getName();\n    void playTurn(Board board, eMark defuletSigan, int row, int col);\n    int getCoordinates();\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/iPlayer.java b/src/iPlayer.java
+--- a/src/iPlayer.java	(revision f263672ac5fc9e680660942c94c7b8fc02a1350a)
++++ b/src/iPlayer.java	(date 1638356210691)
+@@ -1,11 +1,11 @@
+ 
+ public interface iPlayer {
+ 
+-    void setDefuletSigan(eMark defuletSigan);
+-    eMark getDefuletSigan();
++    void setDefaultSign(eMark defaultSign);
++    eMark getDefaultSign();
+     void setName(String name);
+     String getName();
+-    void playTurn(Board board, eMark defuletSigan, int row, int col);
++    void playTurn(Board board, eMark defaultSign, int row, int col);
+     int getCoordinates();
+ 
+ }
