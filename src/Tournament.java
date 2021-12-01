@@ -54,33 +54,33 @@ public class Tournament {
 
     public static void main(String[] args) {
 
-        int[] result;
 
-        iRenderer renderer = new RendererFactory().buildRenderer("Console");
-        iRenderer rendererNone = new RendererFactory().buildRenderer("None");
-
-        iPlayer playerX = new PlayerFactory("X",eMark.X).buildPlayer("Human");
-        iPlayer playerO = new PlayerFactory("O",eMark.O).buildPlayer("Human");
-
-        iPlayer playerWhat = new PlayerFactory("O",eMark.O).buildPlayer("Whatever");
-        iPlayer playerWhat2 = new PlayerFactory("O",eMark.X).buildPlayer("Whatever");
-
-
-//        Tournament tournament = new Tournament(playerWhat2,playerWhat,100, rendererNone);
-        Tournament tournament = new Tournament(playerX, playerO,1, renderer);
-
-        result = tournament.playTournament();
-
-        System.out.println("Player X win : " + result[0]);
-        System.out.println("Player O win : " + result[1]);
-        System.out.println("Total draw : " + result[2]);
+//        iRenderer renderer = new RendererFactory().buildRenderer("Console");
+//        iRenderer rendererNone = new RendererFactory().buildRenderer("None");
+//
+//        iPlayer playerX = new PlayerFactory("X",eMark.X).buildPlayer("Human");
+//        iPlayer playerO = new PlayerFactory("O",eMark.O).buildPlayer("Human");
+//
+//        iPlayer playerWhat = new PlayerFactory("O",eMark.O).buildPlayer("Whatever");
+//        iPlayer playerWhat2 = new PlayerFactory("O",eMark.X).buildPlayer("Whatever");
+//
+//
+//       //Tournament tournament = new Tournament(playerWhat2,playerWhat,100, rendererNone);
+//        Tournament tournament = new Tournament(playerX, playerO,1, renderer);
+//
+//        result = tournament.playTournament();
+//
+//        System.out.println("Player X win : " + result[0]);
+//        System.out.println("Player O win : " + result[1]);
+//        System.out.println("Total draw : " + result[2]);
 
     }
 
-    public void UserMenu() {
+    public void userMenu() {
         System.out.println("Welcome to TIC TAC TOE game!!!\n lets start play...");
-        String playerType1, playerType2, selection, rendererType, numberOfRoundsStr;
+        String playerType1 = null, playerType2 = null, selection = null, rendererType = null, numberOfRoundsStr = null;
         int numberOfRounds;
+        int[] result = new int[3];
         boolean flag = false;
         System.out.println("Chose option for player 1 by index: \n1.human  \n2.computer / \n3.expert computer");
         Scanner scanner = new Scanner(System.in);
@@ -124,17 +124,6 @@ public class Tournament {
             }
         }
 
-        for (int i = 0; i < 1; i++) {
-            selection = scanner.nextLine();
-            if (!selectionCheck(selection))
-            {
-                System.out.println("Wrong selection please try again");
-                i--;
-                continue;
-            }
-            playerType2 = playerTypeSelection(selection);
-        }
-
         System.out.println("Chose option for renderer type by index: \n1.none(without board)  \n2.console / \n3.GUI");
         flag = false;
 
@@ -150,45 +139,34 @@ public class Tournament {
             }
         }
 
-        for (int i = 0; i < 1; i++) {
-            selection = scanner.nextLine();
-            if (!selectionCheck(selection))
-            {
-                System.out.println("Wrong selection please try again");
-                i--;
-                continue;
-            }
-            rendererType = rendererTypeSelection(selection);
-        }
-
         System.out.println("Chose the number of games you want to play:");
 
         flag = false;
         while(!flag)
         {
             numberOfRoundsStr = scanner.nextLine();
-            flag = selectionCheck(numberOfRoundsStr);
+            flag = isDigitsString(numberOfRoundsStr);
             if(!flag) {
                 System.out.println("Wrong selection please try again");
             }
         }
-
-        for (int i = 0; i < 1; i++) {
-            numberOfRoundsStr = scanner.nextLine();
-            if (!isDigitsString(numberOfRoundsStr)) {
-                System.out.println("Wrong selection please try again");
-                i--;
-                continue;
-            }
-            numberOfRounds = Integer.parseInt(numberOfRoundsStr);
-        }
+        numberOfRounds = Integer.parseInt(numberOfRoundsStr);
 
 
+        iRenderer renderer = new RendererFactory().buildRenderer(rendererType);
+        iPlayer playerX = new PlayerFactory("X",eMark.X).buildPlayer(playerType1);
+        iPlayer playerO = new PlayerFactory("O",eMark.O).buildPlayer(playerType2);
+        Tournament tournament = new Tournament(playerX,playerO,numberOfRounds, renderer);
+        result = tournament.playTournament();
+
+        System.out.println("Player X win : " + result[0]);
+        System.out.println("Player O win : " + result[1]);
+        System.out.println("Total draw : " + result[2]);
 
     }
 
     public boolean selectionCheck(String str) {
-        return str.equals("1") || str.equals("1") || str.equals("1");
+        return str.equals("0") || str.equals("1") || str.equals("2");
     }
 
     public boolean isDigitsString(String str) {
@@ -225,6 +203,8 @@ public class Tournament {
         }
         return playerType;
     }
+
+
 
 
 }
