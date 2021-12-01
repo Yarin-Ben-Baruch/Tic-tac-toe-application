@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -82,8 +81,21 @@ public class Tournament {
         System.out.println("Welcome to TIC TAC TOE game!!!\n lets start play...");
         String playerType1, playerType2, selection, rendererType, numberOfRoundsStr;
         int numberOfRounds;
+        boolean flag = false;
         System.out.println("Chose option for player 1 by index: \n1.human  \n2.computer / \n3.expert computer");
         Scanner scanner = new Scanner(System.in);
+
+        while (!flag)
+        {
+            selection = scanner.nextLine();
+            flag = selectionCheck(selection);
+            if(flag) {
+                playerType1 = playerTypeSelection(selection);
+            }
+            else {
+                System.out.println("Wrong selection please try again");
+            }
+        }
 
         for (int i = 0; i < 1; i++) {
             selection = scanner.nextLine();
@@ -96,7 +108,22 @@ public class Tournament {
             playerType1 = playerTypeSelection(selection);
         }
 
+
         System.out.println("Chose option for player 2 by index: \n1.human  \n2.computer / \n3.expert computer");
+        flag = false;
+
+        while(!flag)
+        {
+            selection = scanner.nextLine();
+            flag = selectionCheck(selection);
+            if(flag) {
+                playerType2 = playerTypeSelection(selection);
+            }
+            else {
+                System.out.println("Wrong selection please try again");
+            }
+        }
+
         for (int i = 0; i < 1; i++) {
             selection = scanner.nextLine();
             if (!selectionCheck(selection))
@@ -109,6 +136,20 @@ public class Tournament {
         }
 
         System.out.println("Chose option for renderer type by index: \n1.none(without board)  \n2.console / \n3.GUI");
+        flag = false;
+
+        while(!flag)
+        {
+            selection = scanner.nextLine();
+            flag = selectionCheck(selection);
+            if(flag) {
+                rendererType = rendererTypeSelection(selection);
+            }
+            else {
+                System.out.println("Wrong selection please try again");
+            }
+        }
+
         for (int i = 0; i < 1; i++) {
             selection = scanner.nextLine();
             if (!selectionCheck(selection))
@@ -121,6 +162,17 @@ public class Tournament {
         }
 
         System.out.println("Chose the number of games you want to play:");
+
+        flag = false;
+        while(!flag)
+        {
+            numberOfRoundsStr = scanner.nextLine();
+            flag = selectionCheck(numberOfRoundsStr);
+            if(!flag) {
+                System.out.println("Wrong selection please try again");
+            }
+        }
+
         for (int i = 0; i < 1; i++) {
             numberOfRoundsStr = scanner.nextLine();
             if (!isDigitsString(numberOfRoundsStr)) {
@@ -136,7 +188,7 @@ public class Tournament {
     }
 
     public boolean selectionCheck(String str) {
-        return str == "1" || str == "2" || str == "3";
+        return str.equals("1") || str.equals("1") || str.equals("1");
     }
 
     public boolean isDigitsString(String str) {
@@ -151,9 +203,9 @@ public class Tournament {
 
     public String playerTypeSelection (String str) {
         String playerType = null;
-        if (str == "1") {
+        if (str.equals("1")) {
             playerType = "Human";
-        }else if ( str == "2") {
+        }else if (str.equals("2")) {
             playerType = "Whatever";
         }else {
             playerType = "Expert";
@@ -162,10 +214,11 @@ public class Tournament {
     }
 
     public String rendererTypeSelection (String str) {
+
         String playerType = null;
-        if (str == "1") {
+        if (str.equals("1")) {
             playerType = "None";
-        }else if ( str == "2") {
+        }else if (str.equals("2")) {
             playerType = "Console";
         }else {
             playerType = "Gui";
