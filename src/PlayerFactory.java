@@ -1,4 +1,3 @@
-
 public class PlayerFactory {
 
     private String name;
@@ -9,7 +8,7 @@ public class PlayerFactory {
         setDefuletSigan(i_defuletSigan);
     }
 
-    public iPlayer buildPlayer(String i_Type) {
+    public Player buildPlayer(String i_Type) {
 
         switch(i_Type) {
             case "Human":

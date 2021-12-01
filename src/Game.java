@@ -2,24 +2,24 @@ import java.util.Scanner;
 
 public class Game {
 
-    private iPlayer playerX;
-    private iPlayer playerO;
+    private Player playerX;
+    private Player playerO;
     private iRenderer renderer;
 
     /*
    מאתחל את סוגי השחקנים וסוג הלוח
      */
-    public Game(iPlayer i_PlayerX, iPlayer i_PlayerO, iRenderer i_Renderer) {
+    public Game(Player i_PlayerX, Player i_PlayerO, iRenderer i_Renderer) {
         setPlayerO(i_PlayerO);
         setPlayerX(i_PlayerX);
         setRenderer(i_Renderer);
     }
 
-    public void setPlayerX(iPlayer playerX) {
+    public void setPlayerX(Player playerX) {
         this.playerX = playerX;
     }
 
-    public void setPlayerO(iPlayer playerO) {
+    public void setPlayerO(Player playerO) {
         this.playerO = playerO;
     }
 
@@ -31,7 +31,7 @@ public class Game {
     {
         Board board = new Board();
         eGameStatus winner = eGameStatus.IN_PROGRESS;
-        iPlayer[] myPlayers = new iPlayer[2];
+        Player[] myPlayers = new Player[2];
         int turnToPlay = 0;
         int inputRowAndCol, row, col;
 

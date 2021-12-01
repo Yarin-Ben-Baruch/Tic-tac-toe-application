@@ -3,12 +3,12 @@ import java.util.Scanner;
 
 public class Tournament {
 
-    private final iPlayer player1;
-    private final iPlayer player2;
+    private final Player player1;
+    private final Player player2;
     private final int numberRounds;
     private final iRenderer renderer;
 
-    public Tournament(iPlayer player1, iPlayer player2, int numberRounds, iRenderer renderer) {
+    public Tournament(Player player1, Player player2, int numberRounds, iRenderer renderer) {
         this.player1 = player1;
         this.player2 = player2;
         this.numberRounds = numberRounds;
@@ -20,7 +20,7 @@ public class Tournament {
         int[] results = new int[3];
         Arrays.fill(results,0);
 
-        iPlayer[] players = new iPlayer[2];
+        Player[] players = new Player[2];
         int randomPlayerOne,randomPlayerTwo;
         players[0] = player1;
         players[1] = player2;
@@ -106,8 +106,8 @@ public class Tournament {
 
 
         iRenderer renderer = new RendererFactory().buildRenderer(rendererType);
-        iPlayer playerX = new PlayerFactory("X",eMark.X).buildPlayer(playerType1);
-        iPlayer playerO = new PlayerFactory("O",eMark.O).buildPlayer(playerType2);
+        Player playerX = new PlayerFactory("X",eMark.X).buildPlayer(playerType1);
+        Player playerO = new PlayerFactory("O",eMark.O).buildPlayer(playerType2);
         Tournament tournament = new Tournament(playerX,playerO,numberOfRounds, renderer);
         result = tournament.playTournament();
 

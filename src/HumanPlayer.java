@@ -1,33 +1,9 @@
 import java.util.Scanner;
 
-public class HumanPlayer implements iPlayer{
+public class HumanPlayer extends Player{
 
-    private String name;
-    private eMark defaultSign;
-
-    public HumanPlayer(String i_name, eMark i_defuletSigan) {
-        setName(i_name);
-        setDefaultSign(i_defuletSigan);
-    }
-
-    @Override
-    public eMark getDefaultSign() {
-        return defaultSign;
-    }
-
-    @Override
-    public void setDefaultSign(eMark defuletSigan) {
-        this.defaultSign = defuletSigan;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public void setName(String name) {
-        this.name = name;
+    public HumanPlayer(String i_name, eMark i_defaultSign) {
+        super(i_name, i_defaultSign);
     }
 
     @Override
