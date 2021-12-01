@@ -140,6 +140,7 @@ public class Tournament {
     }
 
     public boolean isDigitsString(String str) {
+
         for (char currentChar : str.toCharArray() ) {
             if (!Character.isDigit(currentChar)) {
                 return false;
