@@ -40,6 +40,7 @@ public class Game {
 
         while (winner == eGameStatus.IN_PROGRESS) {
 
+            turnToPlay++;
             inputRowAndCol = myPlayers[turnToPlay % 2].getCoordinates(board);
 
             col = inputRowAndCol % 10;
@@ -49,7 +50,7 @@ public class Game {
 
             renderer.renderBoard(board);
             winner = board.GameStatus(row, col, myPlayers[turnToPlay % 2].getDefaultSign());
-            turnToPlay++;
+
         }
 
         return winner;

@@ -91,7 +91,7 @@ public class CleverPlayer extends WhateverPlayer {
                         board[i][j] = getOppositeSign();
                         int score = minimax(board, depth + 1, true);
                         board[i][j] = eMark.BLANK;
-                        System.out.println(getOppositeSign());
+//                        System.out.println(getOppositeSign());
                         bestScore = Math.min(score, bestScore);
                     }
                 }
