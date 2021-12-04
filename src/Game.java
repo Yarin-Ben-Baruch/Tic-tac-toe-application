@@ -41,15 +41,17 @@ public class Game {
         while (winner == eGameStatus.IN_PROGRESS) {
 
             turnToPlay++;
-            inputRowAndCol = myPlayers[turnToPlay % 2].getCoordinates(board);
+
+            inputRowAndCol = myPlayers[turnToPlay % 2].getCoordinates(board, renderer);
 
             col = inputRowAndCol % 10;
             row = inputRowAndCol / 10;
 
-            myPlayers[turnToPlay % 2].playTurn(board,myPlayers[turnToPlay % 2].getDefaultSign(), row, col);
+            myPlayers[turnToPlay % 2].playTurn(board, myPlayers[turnToPlay % 2].getDefaultSign(), row, col);
 
             renderer.renderBoard(board);
-            winner = board.GameStatus(row, col, myPlayers[turnToPlay % 2].getDefaultSign());
+            //winner = board.GameStatus(row, col, myPlayers[turnToPlay % 2].getDefaultSign());
+            winner = board.GameStatus(row, col);
 
         }
 

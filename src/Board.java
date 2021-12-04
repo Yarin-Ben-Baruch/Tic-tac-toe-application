@@ -75,8 +75,9 @@ public class Board {
     במידה ויש סטרייק מחזירים אמת
     במידה ואין מחזירים שקר .
      */
-    public eGameStatus GameStatus(int row, int col, eMark mark) // במהלך המשחק / מי ניצח
+    public eGameStatus GameStatus(int row, int col) // במהלך המשחק / מי ניצח
     {
+        eMark mark = board[row-1][col-1];
         eGameStatus result = eGameStatus.IN_PROGRESS;
         boolean flag = false;
         int SequenceOfColumn = checkingDirection(row-1, col-1, mark, 1 ,0)

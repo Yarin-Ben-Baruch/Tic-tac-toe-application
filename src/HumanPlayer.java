@@ -7,8 +7,7 @@ public class HumanPlayer extends Player{
     }
 
     @Override
-    public void playTurn(Board board, eMark mark , int row, int col)
-    {
+    public void playTurn(Board board, eMark mark , int row, int col) {
 
         Scanner scanner = new Scanner(System.in);
         Boolean answer = board.putMark(mark,row,col);
@@ -26,12 +25,18 @@ public class HumanPlayer extends Player{
     }
 
     @Override
-    public int getCoordinates(Board board){
-
+    public int getCoordinates(Board board,iRenderer renderer){
         int inputRowAndCol;
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Hello " + getDefaultSign() + " please enter coordinates : ");
-        inputRowAndCol = scanner.nextInt();
+
+        if(renderer instanceof TicTacToeApp)
+        {
+            inputRowAndCol = 5;//
+        }
+        else {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Hello " + getDefaultSign() + " please enter coordinates : ");
+            inputRowAndCol = scanner.nextInt();
+        }
 
         return inputRowAndCol;
     }

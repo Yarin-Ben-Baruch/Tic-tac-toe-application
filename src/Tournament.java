@@ -52,11 +52,6 @@ public class Tournament {
         return results;
 }
 
-    public static void main(String[] args) {
-
-        userMenu();
-    }
-
     public static void userMenu() {
         System.out.println("Welcome to TIC TAC TOE game!!!\n lets start play...");
         String playerType1, playerType2, selection, rendererType, numberOfRoundsStr = null;
@@ -154,5 +149,10 @@ public class Tournament {
             playerType = "Gui";
         }
         return playerType;
+    }
+
+    public static void main(String[] args) {
+
+        userMenu();
     }
 }
