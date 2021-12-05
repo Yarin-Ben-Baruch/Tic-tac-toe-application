@@ -105,8 +105,11 @@ public class TicTacToeApp extends JFrame implements ActionListener, iRenderer {
                 int col = locationInBoard % 10;
                 int row = locationInBoard / 10;
                 vm.getCoordinatesFromGui(row, col, sign);
-
                 turnToPlay++;
+
+                if(!onlyHuman(playerX, playerO)){
+                    turnToPlay++;
+                }
             }
         }
     }
@@ -167,15 +170,28 @@ public class TicTacToeApp extends JFrame implements ActionListener, iRenderer {
 
     }
 
-    public boolean onlyHuman(Player currentPlayer, Player secondPlayer){
+    public boolean onlyHuman(Player currentPlayerX, Player secondPlayerO){
         int flag = 0;
+        eMark sign = eMark.BLANK;
 
-        if (!(currentPlayer instanceof HumanPlayer)){
-
+        if (!(currentPlayerX instanceof HumanPlayer)){
+            locationInBoard = currentPlayerX.getCoordinates(myBoard);
+            flag = 1;
+            sign = currentPlayerX.getDefaultSign();
         }
-        if(!(secondPlayer instanceof HumanPlayer)){
-
+        if(!(secondPlayerO instanceof HumanPlayer)){
+            locationInBoard = secondPlayerO.getCoordinates(myBoard);
+            flag = 1;
+            sign = secondPlayerO.getDefaultSign();
         }
+        if(flag == 1) {
+            int col = locationInBoard % 10;
+            int row = locationInBoard / 10;
+            vm.getCoordinatesFromGui(row, col, sign);
+            return false;
+        }
+
+        return true;
     }
 
 }
