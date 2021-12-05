@@ -3,6 +3,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.Random;
 import java.util.TimerTask;
 
@@ -158,6 +159,14 @@ public class TicTacToeApp extends JFrame implements ActionListener, iRenderer {
 
         }
 
+    public void disableAll(eMark mark) {
+        JOptionPane.showMessageDialog(frame,
+                "The winner is "+ mark,
+                "WINNER",
+                JOptionPane.CLOSED_OPTION);
+        System.exit(0);
+    }
+
     // מציג למעלה את התור של מי שמשחק
     public void showTurn(String message) {
 
@@ -175,12 +184,25 @@ public class TicTacToeApp extends JFrame implements ActionListener, iRenderer {
         eMark sign = eMark.BLANK;
 
         if (!(currentPlayerX instanceof HumanPlayer)){
+            try {
+                Thread.sleep(50);
+            }catch (Exception e)
+            {
+
+            }
             locationInBoard = currentPlayerX.getCoordinates(myBoard);
             flag = 1;
             sign = currentPlayerX.getDefaultSign();
         }
         if(!(secondPlayerO instanceof HumanPlayer)){
+            try {
+                Thread.sleep(50);
+            }catch (Exception e)
+            {
+
+            }
             locationInBoard = secondPlayerO.getCoordinates(myBoard);
+            System.out.println(locationInBoard);
             flag = 1;
             sign = secondPlayerO.getDefaultSign();
         }
@@ -196,32 +218,3 @@ public class TicTacToeApp extends JFrame implements ActionListener, iRenderer {
 
 }
 
-
-//    public void actionPerformed(ActionEvent e) {
-//
-//        for (int i = 0; i < Board.SIZE * Board.SIZE; i++) {
-//
-//            if (e.getSource() == buttons[i]) {
-//
-//                locationInBoard = getLocationInBoard(i);
-//                System.out.println(locationInBoard);
-//
-//                if (player1_turn) {
-//                    if (buttons[i].getText() == "") {
-//                        buttons[i].setForeground( Color.BLACK);
-//                        buttons[i].setText("X");
-//                        player1_turn = false;
-//                        textfield.setText("O turn");
-//                    }
-//                } else {
-//                    if (buttons[i].getText() == "") {
-//                        buttons[i].setForeground(Color.pink);
-//                        buttons[i].setText("O");
-//                        player1_turn = true;
-//                        textfield.setText("X turn");
-//                    }
-//
-//                }
-//            }
-//        }
-//    }

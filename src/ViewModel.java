@@ -35,6 +35,10 @@ public class ViewModel {
                         public void run() {
                             view.showTurn(message);
                             view.showBoard(board);
+                            if (message.equals(mark + " is the winner !!")){
+                                view.disableAll(mark);
+                            }
+
                         }
                     });
                 }
@@ -42,25 +46,7 @@ public class ViewModel {
         );
     }
 
-    public void victory(int row, int col,eMark mark) {
 
-        service.submit(new Runnable() {
-                           @Override
-                           public void run() {
-
-                               model.putMark(mark, row, col);
-                               eMark[][]board = model.getBoard();
-                               SwingUtilities.invokeLater(new Runnable() {
-                                   @Override
-                                   public void run() {
-                                       view.showMessage(mark + " is the winner !!");
-                                       view.showBoard(board);
-                                   }
-                               });
-                           }
-                       }
-        );
-    }
 
 
     public eGameStatus checkWinner(int row, int col)
