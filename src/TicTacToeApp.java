@@ -4,6 +4,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
+import java.util.TimerTask;
 
 public class TicTacToeApp extends JFrame implements ActionListener, iRenderer {
 
@@ -15,6 +16,8 @@ public class TicTacToeApp extends JFrame implements ActionListener, iRenderer {
     JButton[] buttons = new JButton[Board.SIZE * Board.SIZE];
     boolean player1_turn = true;
     public static int locationInBoard;
+
+    private ViewModel vm;
 
     public static void main(String[] args) {
         TicTacToeApp t = new TicTacToeApp();
@@ -62,26 +65,10 @@ public class TicTacToeApp extends JFrame implements ActionListener, iRenderer {
         for (int i = 0; i < Board.SIZE * Board.SIZE; i++) {
 
             if (e.getSource() == buttons[i]) {
-
                 locationInBoard = getLocationInBoard(i);
-                System.out.println(locationInBoard);
-
-                if (player1_turn) {
-                    if (buttons[i].getText() == "") {
-                        buttons[i].setForeground( Color.BLACK);
-                        buttons[i].setText("X");
-                        player1_turn = false;
-                        textfield.setText("O turn");
-                    }
-                } else {
-                    if (buttons[i].getText() == "") {
-                        buttons[i].setForeground(Color.pink);
-                        buttons[i].setText("O");
-                        player1_turn = true;
-                        textfield.setText("X turn");
-                    }
-
-                }
+                int col = locationInBoard % 10;
+                int row = col / 10;
+                vm.getCoordinatesFromGui(row, col);
             }
         }
     }
@@ -106,6 +93,7 @@ public class TicTacToeApp extends JFrame implements ActionListener, iRenderer {
         }
     }
 
+    // עובר על הלוח וממקם את הסימנים
     public void showBoard(eMark[][] board) {
         int row;
         int col;
@@ -113,8 +101,8 @@ public class TicTacToeApp extends JFrame implements ActionListener, iRenderer {
         for (int i = 0; i < Board.SIZE * Board.SIZE; i++) {
 
             locationInBoard = getLocationInBoard(i);
-            col = locationInBoard % 10 -1;
-            row = col / 10 -1;
+            col = locationInBoard % 10 - 1;
+            row = col / 10 - 1;
 
             if (board[row][col] == eMark.X) {
                 buttons[i].setForeground( Color.BLACK);
@@ -130,4 +118,52 @@ public class TicTacToeApp extends JFrame implements ActionListener, iRenderer {
 
         }
 
+    // מציג למעלה את התור של מי שמשחק
+    public void showTurn(String message) {
+        textfield.setText(message);
+
+        // אחרי 5 שניות מוחק את הערה למעלה
+        new java.util.Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+                SwingUtilities.invokeLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        textfield.setText("");
+                    }
+                });
+            }
+        }, 5000);
+    }
+
 }
+
+
+//    public void actionPerformed(ActionEvent e) {
+//
+//        for (int i = 0; i < Board.SIZE * Board.SIZE; i++) {
+//
+//            if (e.getSource() == buttons[i]) {
+//
+//                locationInBoard = getLocationInBoard(i);
+//                System.out.println(locationInBoard);
+//
+//                if (player1_turn) {
+//                    if (buttons[i].getText() == "") {
+//                        buttons[i].setForeground( Color.BLACK);
+//                        buttons[i].setText("X");
+//                        player1_turn = false;
+//                        textfield.setText("O turn");
+//                    }
+//                } else {
+//                    if (buttons[i].getText() == "") {
+//                        buttons[i].setForeground(Color.pink);
+//                        buttons[i].setText("O");
+//                        player1_turn = true;
+//                        textfield.setText("X turn");
+//                    }
+//
+//                }
+//            }
+//        }
+//    }

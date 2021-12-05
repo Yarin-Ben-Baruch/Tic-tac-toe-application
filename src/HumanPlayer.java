@@ -27,10 +27,13 @@ public class HumanPlayer extends Player{
     @Override
     public int getCoordinates(Board board,iRenderer renderer){
         int inputRowAndCol;
+        TicTacToeApp rendererGui;
 
         if(renderer instanceof TicTacToeApp)
         {
-            inputRowAndCol = 5;//
+            rendererGui = (TicTacToeApp)renderer;
+
+            inputRowAndCol = 6;//
         }
         else {
             Scanner scanner = new Scanner(System.in);
