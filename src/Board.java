@@ -7,7 +7,8 @@ public class Board {
     public static final int WIN_STREAK = 3;
     private int emptyPlace;
     // משתנה מסוג enum שממלא את הלוח בהתאם לסימן
-    public eMark[][] board;
+    private eMark[][] board;
+    private eMark lastPlayer; //?
 
     public eMark[][] getBoard() {
         return board;
@@ -65,6 +66,9 @@ public class Board {
                 emptyLocations.removeIf(number -> number == numberToRemove);
             }
         }
+
+        lastPlayer = mark;
+
         return result;
     }
 

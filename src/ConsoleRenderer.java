@@ -2,7 +2,7 @@
 import java.util.Map;
 import java.util.logging.Logger;
 
-class ConsoleRenderer implements  iRenderer {
+class ConsoleRenderer implements iRenderer {
 
 	private static final int ROWS_PER_MARK = 3;
 	private static final int COLS_PER_MARK = 9;

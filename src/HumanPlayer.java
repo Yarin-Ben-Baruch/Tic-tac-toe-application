@@ -27,19 +27,11 @@ public class HumanPlayer extends Player{
     @Override
     public int getCoordinates(Board board,iRenderer renderer){
         int inputRowAndCol;
-        TicTacToeApp rendererGui;
+        
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Hello " + getDefaultSign() + " please enter coordinates : ");
+        inputRowAndCol = scanner.nextInt();
 
-        if(renderer instanceof TicTacToeApp)
-        {
-            rendererGui = (TicTacToeApp)renderer;
-
-            inputRowAndCol = 6;//
-        }
-        else {
-            Scanner scanner = new Scanner(System.in);
-            System.out.print("Hello " + getDefaultSign() + " please enter coordinates : ");
-            inputRowAndCol = scanner.nextInt();
-        }
 
         return inputRowAndCol;
     }

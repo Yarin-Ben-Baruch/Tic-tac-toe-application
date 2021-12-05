@@ -22,8 +22,7 @@ public class CleverPlayer extends WhateverPlayer {
         }
     }
 
-    private eMark getOppositeSign()
-    {
+    private eMark getOppositeSign() {
         if(getDefaultSign() == eMark.X)
             return eMark.O;
         else

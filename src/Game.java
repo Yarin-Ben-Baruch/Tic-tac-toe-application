@@ -1,6 +1,5 @@
-import java.util.Scanner;
 
-public class Game {
+public abstract class Game {
 
     private Player playerX;
     private Player playerO;
@@ -23,39 +22,23 @@ public class Game {
         this.playerO = playerO;
     }
 
+    public Player getPlayerX() {
+        return playerX;
+    }
+
+    public Player getPlayerO() {
+        return playerO;
+    }
+
+    public iRenderer getRenderer() {
+        return renderer;
+    }
+
     public void setRenderer(iRenderer renderer) {
         this.renderer = renderer;
     }
 
-    public eGameStatus run()
-    {
-        Board board = new Board();
-        eGameStatus winner = eGameStatus.IN_PROGRESS;
-        Player[] myPlayers = new Player[2];
-        int turnToPlay = 0;
-        int inputRowAndCol, row, col;
-
-        myPlayers[0] = playerX;
-        myPlayers[1] = playerO;
-
-        while (winner == eGameStatus.IN_PROGRESS) {
-
-            turnToPlay++;
-
-            inputRowAndCol = myPlayers[turnToPlay % 2].getCoordinates(board, renderer);
-
-            col = inputRowAndCol % 10;
-            row = inputRowAndCol / 10;
-
-            myPlayers[turnToPlay % 2].playTurn(board, myPlayers[turnToPlay % 2].getDefaultSign(), row, col);
-
-            renderer.renderBoard(board);
-            //winner = board.GameStatus(row, col, myPlayers[turnToPlay % 2].getDefaultSign());
-            winner = board.GameStatus(row, col);
-
-        }
-
-        return winner;
-    }
-
+    abstract public eGameStatus run();
 }
+
+

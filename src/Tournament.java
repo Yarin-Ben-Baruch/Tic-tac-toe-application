@@ -31,7 +31,11 @@ public class Tournament {
             randomPlayerOne = i % 2;
             randomPlayerTwo = (randomPlayerOne + 1) % 2;
 
-            Game game = new Game(players[randomPlayerOne],players[randomPlayerTwo], renderer);
+//            if(renderer instanceof TicTacToeApp)
+//                Game game = new GameGui(players[randomPlayerOne],players[randomPlayerTwo], renderer);
+//            else
+                Game game = new GameConsole(players[randomPlayerOne],players[randomPlayerTwo], renderer);
+
             eGameStatus winner = game.run();
 
             if(winner == eGameStatus.DRAW){

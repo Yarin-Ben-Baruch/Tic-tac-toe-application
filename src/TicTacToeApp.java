@@ -8,23 +8,40 @@ import java.util.TimerTask;
 
 public class TicTacToeApp extends JFrame implements ActionListener, iRenderer {
 
-    Random random = new Random();
-    JFrame frame = new JFrame();
-    JPanel title_panel = new JPanel();
-    JPanel button_panel = new JPanel();
-    JLabel textfield = new JLabel();
-    JButton[] buttons = new JButton[Board.SIZE * Board.SIZE];
+    private JFrame frame;
+    private JPanel title_panel;
+    private JPanel button_panel;
+    private JLabel textfield;
+    private JButton[] buttons;
+    private ViewModel vm;
+    private Player playerX;
+    private Player playerO;
+    private int turnToPlay;
+
     boolean player1_turn = true;
     public static int locationInBoard;
 
-    private ViewModel vm;
 
-    public static void main(String[] args) {
-        TicTacToeApp t = new TicTacToeApp();
+
+//    public static void main(String[] args) {
+//        TicTacToeApp t = new TicTacToeApp();
+//    }
+
+    TicTacToeApp(Player playerX, Player playerO) {
+        this.playerX = playerX;
+        this.playerO = playerO;
+        turnToPlay = 0;
     }
 
-    TicTacToeApp() {
+    public void init() {
+        frame = new JFrame();
+        title_panel = new JPanel();
+        button_panel = new JPanel();
+        textfield = new JLabel();
+        buttons = new JButton[Board.SIZE * Board.SIZE];
+    }
 
+    public void start() {
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 500);
@@ -59,6 +76,10 @@ public class TicTacToeApp extends JFrame implements ActionListener, iRenderer {
         frame.add(button_panel);
     }
 
+    public void setViewModel(ViewModel vm) {
+        this.vm = vm;
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
 
@@ -66,13 +87,21 @@ public class TicTacToeApp extends JFrame implements ActionListener, iRenderer {
 
             if (e.getSource() == buttons[i]) {
                 locationInBoard = getLocationInBoard(i);
+
                 int col = locationInBoard % 10;
-                int row = col / 10;
-                vm.getCoordinatesFromGui(row, col);
+                int row = locationInBoard / 10;
+                eMark sign;
+                if(turnToPlay % 2 == 0)
+                    sign = playerX.getDefaultSign();
+                else
+                    sign = playerO.getDefaultSign();
+
+                vm.getCoordinatesFromGui(row, col, sign);
+
+                turnToPlay++;
             }
         }
     }
-
 
     //עידכנתי במקום 3 ל board.size
     public int getLocationInBoard(int currentI) {
@@ -101,18 +130,18 @@ public class TicTacToeApp extends JFrame implements ActionListener, iRenderer {
         for (int i = 0; i < Board.SIZE * Board.SIZE; i++) {
 
             locationInBoard = getLocationInBoard(i);
-            col = locationInBoard % 10 - 1;
-            row = col / 10 - 1;
+            col = locationInBoard % 10 -1;
+            row = locationInBoard / 10 -1;
 
             if (board[row][col] == eMark.X) {
                 buttons[i].setForeground( Color.BLACK);
                 buttons[i].setText("X");
-                //textfield.setText("O turn");
+                buttons[i].setEnabled(false);
             }
             else if (board[row][col] == eMark.O){
                 buttons[i].setForeground(Color.pink);
                 buttons[i].setText("O");
-                //textfield.setText("X turn");
+                buttons[i].setEnabled(false);
                 }
             }
 
@@ -120,20 +149,14 @@ public class TicTacToeApp extends JFrame implements ActionListener, iRenderer {
 
     // מציג למעלה את התור של מי שמשחק
     public void showTurn(String message) {
+
+        textfield.setText(message);
+    }
+
+    public void showMessage(String message) {
+
         textfield.setText(message);
 
-        // אחרי 5 שניות מוחק את הערה למעלה
-        new java.util.Timer().schedule(new TimerTask() {
-            @Override
-            public void run() {
-                SwingUtilities.invokeLater(new Runnable() {
-                    @Override
-                    public void run() {
-                        textfield.setText("");
-                    }
-                });
-            }
-        }, 5000);
     }
 
 }
