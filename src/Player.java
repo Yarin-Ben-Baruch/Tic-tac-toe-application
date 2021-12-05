@@ -28,6 +28,6 @@ public abstract class Player {
 
     abstract void playTurn(Board board, eMark defaultSign, int row, int col);
 
-    abstract int getCoordinates(Board board, iRenderer renderer);
+    abstract int getCoordinates(Board board);
 
 }

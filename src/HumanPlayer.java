@@ -25,7 +25,7 @@ public class HumanPlayer extends Player{
     }
 
     @Override
-    public int getCoordinates(Board board,iRenderer renderer){
+    public int getCoordinates(Board board){
         int inputRowAndCol;
         
         Scanner scanner = new Scanner(System.in);

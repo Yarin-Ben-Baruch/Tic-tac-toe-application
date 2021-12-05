@@ -22,7 +22,7 @@ public class GameConsole extends Game{
 
             turnToPlay++;
 
-            inputRowAndCol = myPlayers[turnToPlay % 2].getCoordinates(board, getRenderer());
+            inputRowAndCol = myPlayers[turnToPlay % 2].getCoordinates(board);
 
             col = inputRowAndCol % 10;
             row = inputRowAndCol / 10;

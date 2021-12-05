@@ -17,6 +17,7 @@ public class TicTacToeApp extends JFrame implements ActionListener, iRenderer {
     private Player playerX;
     private Player playerO;
     private int turnToPlay;
+    private Board myBoard;
 
     boolean player1_turn = true;
     public static int locationInBoard;
@@ -27,9 +28,14 @@ public class TicTacToeApp extends JFrame implements ActionListener, iRenderer {
 //        TicTacToeApp t = new TicTacToeApp();
 //    }
 
-    TicTacToeApp(Player playerX, Player playerO) {
+    TicTacToeApp() {
+
+    }
+
+    TicTacToeApp(Player playerX, Player playerO, Board board) {
         this.playerX = playerX;
         this.playerO = playerO;
+        this.myBoard = board;
         turnToPlay = 0;
     }
 
@@ -88,14 +94,16 @@ public class TicTacToeApp extends JFrame implements ActionListener, iRenderer {
             if (e.getSource() == buttons[i]) {
                 locationInBoard = getLocationInBoard(i);
 
+                eMark sign;
+                if(turnToPlay % 2 == 0) {
+                    sign = playerX.getDefaultSign();
+                }
+                else {
+                    sign = playerO.getDefaultSign();
+                }
+
                 int col = locationInBoard % 10;
                 int row = locationInBoard / 10;
-                eMark sign;
-                if(turnToPlay % 2 == 0)
-                    sign = playerX.getDefaultSign();
-                else
-                    sign = playerO.getDefaultSign();
-
                 vm.getCoordinatesFromGui(row, col, sign);
 
                 turnToPlay++;
@@ -157,6 +165,17 @@ public class TicTacToeApp extends JFrame implements ActionListener, iRenderer {
 
         textfield.setText(message);
 
+    }
+
+    public boolean onlyHuman(Player currentPlayer, Player secondPlayer){
+        int flag = 0;
+
+        if (!(currentPlayer instanceof HumanPlayer)){
+
+        }
+        if(!(secondPlayer instanceof HumanPlayer)){
+
+        }
     }
 
 }

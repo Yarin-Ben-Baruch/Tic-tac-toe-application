@@ -30,7 +30,7 @@ public class CleverPlayer extends WhateverPlayer {
     }
 
     @Override
-    public int getCoordinates(Board board, iRenderer renderer){
+    public int getCoordinates(Board board){
 
         int bestScore = Integer.MIN_VALUE;
         int[] move = {0, 0};

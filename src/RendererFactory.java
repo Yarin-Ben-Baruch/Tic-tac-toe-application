@@ -8,6 +8,8 @@ public class RendererFactory {
                 return new ConsoleRenderer();
             case "None":
                 return new VoidRenderer();
+            case "Gui":
+                return new TicTacToeApp();
             default:
                 return null;
         }

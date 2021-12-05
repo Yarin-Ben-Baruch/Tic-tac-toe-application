@@ -12,7 +12,7 @@ public class GameGui extends Game{
 
         Board model = new Board();
         ViewModel vm = new ViewModel();
-        TicTacToeApp view = new TicTacToeApp(getPlayerX(), getPlayerO());
+        TicTacToeApp view = new TicTacToeApp(getPlayerX(), getPlayerO(),model);
 
         SwingUtilities.invokeLater(new Runnable() {
             @Override

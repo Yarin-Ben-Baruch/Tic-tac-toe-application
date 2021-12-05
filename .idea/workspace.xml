@@ -4,19 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a529818-17f8-46bc-b482-510013902aab" name="Changes" comment="Start gui">
-      <change afterPath="$PROJECT_DIR$/src/GameConsole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GameGui.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
+    <list default="true" id="8a529818-17f8-46bc-b482-510013902aab" name="Changes" comment="Update gui">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CleverPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CleverPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ConsoleRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConsoleRenderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameGui.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HumanPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RendererFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RendererFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TicTacToeApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToeApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tournament.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tournament.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WhateverPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WhateverPlayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +122,8 @@
       <workItem from="1638680413869" duration="2745000" />
       <workItem from="1638687588177" duration="788000" />
       <workItem from="1638688420435" duration="10899000" />
-      <workItem from="1638702521644" duration="944000" />
+      <workItem from="1638702521644" duration="1337000" />
+      <workItem from="1638705241013" duration="2577000" />
     </task>
     <task id="LOCAL-00001" summary="Remvoe instanceof">
       <created>1637596356558</created>
@@ -188,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638683159798</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Update gui">
+      <created>1638703715842</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1638703715842</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,6 +220,7 @@
     <MESSAGE value="update clever" />
     <MESSAGE value="update clever!!" />
     <MESSAGE value="Start gui" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start gui" />
+    <MESSAGE value="Update gui" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update gui" />
   </component>
 </project>
