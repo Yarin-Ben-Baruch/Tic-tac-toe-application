@@ -1,6 +1,11 @@
+package Players;
+
+import Boards.Board;
+import Enums.*;
+
 import java.util.Scanner;
 
-public class HumanPlayer extends Player{
+public class HumanPlayer extends Player {
 
     public HumanPlayer(String i_name, eMark i_defaultSign) {
         super(i_name, i_defaultSign);

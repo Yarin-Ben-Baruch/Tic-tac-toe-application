@@ -1,4 +1,4 @@
-import java.util.Scanner;
+package Players;
 
 public class WhateverPlayer extends Player {
 

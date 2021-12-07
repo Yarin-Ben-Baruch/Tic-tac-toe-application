@@ -1,8 +1,9 @@
+package Enums;
 
 /*
 משתנה מסוג enum שמחזיק את האפשרויות שיש ללוח
  */
-enum eMark {
+public enum eMark {
     X,
     O,
     BLANK

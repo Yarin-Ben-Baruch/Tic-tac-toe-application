@@ -1,3 +1,8 @@
+package Boards;
+
+
+import Enums.*;
+
 import java.util.ArrayList;
 
 public class Board {

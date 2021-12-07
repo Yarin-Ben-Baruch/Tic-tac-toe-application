@@ -1,3 +1,8 @@
+package Games;
+
+import Enums.eGameStatus;
+import Players.Player;
+import Renderers.iRenderer;
 
 public abstract class Game {
 

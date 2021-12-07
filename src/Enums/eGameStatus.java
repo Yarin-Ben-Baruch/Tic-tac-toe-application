@@ -1,8 +1,9 @@
+package Enums;
 
 /*
 משתנה enum שמחזיק את ההאפשרויות הקיימות במהלך משחק
  */
-enum eGameStatus{
+public enum eGameStatus{
     DRAW,
     X_WIN,
     O_WIN ,

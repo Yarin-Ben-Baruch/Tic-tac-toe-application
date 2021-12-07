@@ -1,13 +1,17 @@
+package Renderers;
+
+import Boards.Board;
+import Enums.eMark;
+import MVVM.ViewModel;
+import Players.HumanPlayer;
+import Players.Player;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.util.Random;
-import java.util.TimerTask;
 
-public class TicTacToeApp extends JFrame implements ActionListener, iRenderer {
+public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
 
     private JFrame frame;
     private JPanel title_panel;
@@ -26,14 +30,14 @@ public class TicTacToeApp extends JFrame implements ActionListener, iRenderer {
 
 
 //    public static void main(String[] args) {
-//        TicTacToeApp t = new TicTacToeApp();
+//        Renderers.TicTacToeApp t = new Renderers.TicTacToeApp();
 //    }
 
-    TicTacToeApp() {
+    GuiRenderer() {
 
     }
 
-    TicTacToeApp(Player playerX, Player playerO, Board board) {
+    GuiRenderer(Player playerX, Player playerO, Board board) {
         this.playerX = playerX;
         this.playerO = playerO;
         this.myBoard = board;

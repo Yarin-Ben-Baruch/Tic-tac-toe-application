@@ -1,3 +1,4 @@
+package Renderers;
 
 import java.util.Map;
 import java.util.logging.Logger;
@@ -40,7 +41,7 @@ class ConsoleRenderer implements iRenderer {
 	 */
 	public ConsoleRenderer() {
 		if(Board.SIZE > 9 || Board.SIZE < 2) {
-			String errorMsg = "Board size must be in the range [2, 9]";
+			String errorMsg = "Boards.Board size must be in the range [2, 9]";
 			Logger.getGlobal().severe(errorMsg);
 			throw new Error(errorMsg);
 		}
@@ -80,8 +81,8 @@ class ConsoleRenderer implements iRenderer {
 	והשניה אחראית על הדפסת תצורת הלוח בתצוגה יפה
 	 */
 	public void renderBoard(Board board) {
-		for(int i = 0 ; i < Board.SIZE ; i++) {
-			for(int j = 0 ; j < Board.SIZE ; j++) {
+		for(int i = 0; i < Board.SIZE ; i++) {
+			for(int j = 0; j < Board.SIZE ; j++) {
 				drawMarkInBuffer(NUM_ROWS_BEFORE_BOARD + i*(ROWS_PER_MARK+1), 
 								 NUM_COLS_BEFORE_BOARD + j*(COLS_PER_MARK+1), board.getMark(i, j));
 			}

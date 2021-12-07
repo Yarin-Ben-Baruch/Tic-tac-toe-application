@@ -1,3 +1,14 @@
+package MVVM;
+
+import Enums.*;
+import Games.Game;
+import Games.GameGui;
+import Games.Tournament;
+import Players.CleverPlayer;
+import Players.HumanPlayer;
+import Players.WhateverPlayer;
+import Renderers.VoidRenderer;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

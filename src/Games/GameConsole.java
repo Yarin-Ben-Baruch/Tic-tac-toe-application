@@ -1,4 +1,9 @@
-import java.util.Scanner;
+package Games;
+
+import Boards.Board;
+import Enums.eGameStatus;
+import Players.Player;
+import Renderers.iRenderer;
 
 public class GameConsole extends Game{
 

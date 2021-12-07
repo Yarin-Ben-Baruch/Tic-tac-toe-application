@@ -1,3 +1,10 @@
+package Games;
+
+import Enums.eGameStatus;
+import Players.Player;
+import Renderers.GuiRenderer;
+import Renderers.iRenderer;
+
 import javax.swing.*;
 
 public class GameGui extends Game{
@@ -12,7 +19,7 @@ public class GameGui extends Game{
 
         Board model = new Board();
         ViewModel vm = new ViewModel();
-        TicTacToeApp view = new TicTacToeApp(getPlayerX(), getPlayerO(),model);
+        GuiRenderer view = new GuiRenderer(getPlayerX(), getPlayerO(),model);
 
         SwingUtilities.invokeLater(new Runnable() {
             @Override

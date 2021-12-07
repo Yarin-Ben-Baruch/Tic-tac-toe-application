@@ -1,3 +1,4 @@
+package Renderers;
 
 public class RendererFactory {
 
@@ -9,7 +10,7 @@ public class RendererFactory {
             case "None":
                 return new VoidRenderer();
             case "Gui":
-                return new TicTacToeApp();
+                return new GuiRenderer();
             default:
                 return null;
         }

@@ -1,3 +1,12 @@
+package Games;
+
+import Enums.eMark;
+import Enums.eGameStatus;
+import Players.Player;
+import Players.PlayerFactory;
+import Renderers.RendererFactory;
+import Renderers.iRenderer;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -31,10 +40,10 @@ public class Tournament {
             randomPlayerOne = i % 2;
             randomPlayerTwo = (randomPlayerOne + 1) % 2;
 
-//            if(renderer instanceof TicTacToeApp)
-//                Game game = new GameGui(players[randomPlayerOne],players[randomPlayerTwo], renderer);
+//            if(renderer instanceof Renderers.TicTacToeApp)
+//                Games.Game game = new Games.GameGui(players[randomPlayerOne],players[randomPlayerTwo], renderer);
 //            else
-                Game game = new GameConsole(players[randomPlayerOne],players[randomPlayerTwo], renderer);
+            Game game = new GameConsole(players[randomPlayerOne],players[randomPlayerTwo], renderer);
 
             eGameStatus winner = game.run();
 
@@ -105,13 +114,13 @@ public class Tournament {
 
 
         iRenderer renderer = new RendererFactory().buildRenderer(rendererType);
-        Player playerX = new PlayerFactory("X",eMark.X).buildPlayer(playerType1);
+        Player playerX = new PlayerFactory("X", eMark.X).buildPlayer(playerType1);
         Player playerO = new PlayerFactory("O",eMark.O).buildPlayer(playerType2);
         Tournament tournament = new Tournament(playerX,playerO,numberOfRounds, renderer);
         result = tournament.playTournament();
 
-        System.out.println("Player X win : " + result[0]);
-        System.out.println("Player O win : " + result[1]);
+        System.out.println("Players.Player X win : " + result[0]);
+        System.out.println("Players.Player O win : " + result[1]);
         System.out.println("Total draw : " + result[2]);
 
     }
@@ -137,7 +146,7 @@ public class Tournament {
         }else if (str.equals("2")) {
             playerType = "Whatever";
         }else {
-            playerType = "CleverPlayer";
+            playerType = "Players.CleverPlayer";
         }
         return playerType;
     }

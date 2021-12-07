@@ -1,3 +1,9 @@
+package MVVM;
+
+import Boards.Board;
+import Enums.*;
+import Renderers.GuiRenderer;
+
 import javax.swing.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -5,7 +11,7 @@ import java.util.concurrent.Executors;
 public class ViewModel {
 
     private Board model; // ?
-    private TicTacToeApp view;
+    private GuiRenderer view;
     private ExecutorService service;
 
     private int turn;
@@ -14,7 +20,7 @@ public class ViewModel {
         this.service = Executors.newFixedThreadPool(3);
     }
 
-    public void getCoordinatesFromGui(int row, int col,eMark mark) {
+    public void getCoordinatesFromGui(int row, int col, eMark mark) {
 
         service.submit(new Runnable() {
             @Override
@@ -47,8 +53,6 @@ public class ViewModel {
     }
 
 
-
-
     public eGameStatus checkWinner(int row, int col)
     {
         return model.GameStatus(row, col);
@@ -59,7 +63,7 @@ public class ViewModel {
         this.model = model;
     }
 
-    public void setView(TicTacToeApp view) {
+    public void setView(GuiRenderer view) {
         this.view = view;
     }
 

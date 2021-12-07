@@ -1,3 +1,8 @@
+package Players;
+
+import Boards.Board;
+import Enums.*;
+
 import java.util.HashMap;
 
 public class CleverPlayer extends WhateverPlayer {
@@ -56,7 +61,7 @@ public class CleverPlayer extends WhateverPlayer {
         return move[0] * 10 + move[1];
     }
 
-    int minimax(eMark[][] board, int depth, boolean isMaximizing,Board boardClass, int currentI, int currentJ) {
+    int minimax(eMark[][] board, int depth, boolean isMaximizing, Board boardClass, int currentI, int currentJ) {
 
         //eGameStatus result = checkWinner(board);
         eGameStatus result = boardClass.GameStatus(currentI,currentJ);

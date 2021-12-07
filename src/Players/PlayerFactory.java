@@ -1,3 +1,8 @@
+package Players;
+
+import Enums.*;
+
+
 public class PlayerFactory {
 
     private String name;
@@ -15,7 +20,7 @@ public class PlayerFactory {
                 return new HumanPlayer(name, defaultSign);
             case "Whatever":
                 return new WhateverPlayer(name, defaultSign);
-            case "CleverPlayer":
+            case "Players.CleverPlayer":
                 return new CleverPlayer(name, defaultSign);
             default:
                 return null;
