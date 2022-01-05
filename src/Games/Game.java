@@ -14,14 +14,14 @@ public abstract class Game {
 
     /**
      * Initializes the player types and board type.
-     * @param i_PlayerX first player.
-     * @param i_PlayerO second player.
-     * @param i_Renderer board type (Console, Gui).
+     * @param playerX first player.
+     * @param playerO second player.
+     * @param renderer board type (Console, Gui).
      */
-    public Game(Player i_PlayerX, Player i_PlayerO, iRenderer i_Renderer) {
-        setPlayerO(i_PlayerO);
-        setPlayerX(i_PlayerX);
-        setRenderer(i_Renderer);
+    public Game(Player playerX, Player playerO, iRenderer renderer) {
+        setPlayerO(playerO);
+        setPlayerX(playerX);
+        setRenderer(renderer);
     }
 
     public void setPlayerX(Player playerX) {

@@ -92,7 +92,7 @@ public class CleverPlayer extends WhateverPlayer {
      */
     private int minimax(eMark[][] board, int depth, boolean isMaximizing, Board boardClass, int currentI, int currentJ) {
 
-        eGameStatus result = boardClass.GameStatus(currentI,currentJ);
+        eGameStatus result = boardClass.gameStatus(currentI,currentJ);
 
         if (result != eGameStatus.IN_PROGRESS) {
             return scores.get(result);

@@ -40,7 +40,7 @@ public class ViewModel {
                                    String message;
                                    model.putMark(mark, row, col);
                                    eMark[][] board = model.getBoard();
-                                   eGameStatus statusGame = model.GameStatus(row, col);
+                                   eGameStatus statusGame = model.gameStatus(row, col);
 
                                    if (statusGame != eGameStatus.IN_PROGRESS) {
                                        if(statusGame.equals(eGameStatus.DRAW)){

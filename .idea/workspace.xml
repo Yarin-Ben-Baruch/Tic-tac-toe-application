@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a529818-17f8-46bc-b482-510013902aab" name="Changes" comment="Fonts and Colors">
-      <change afterPath="$PROJECT_DIR$/src/images/GreenO.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/RedX.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Renderers/GuiRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Renderers/GuiRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boards/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boards/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Games/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Games/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Games/GameConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Games/GameConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Games/GameGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Games/GameGui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Games/Tournament.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Games/Tournament.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MVVM/ViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVVM/ViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Players/CleverPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/CleverPlayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -370,13 +373,7 @@
       <option name="presentableId" value="LOCAL‎00028" />
       <updated>1641402069126</updated>
     </task>
-    <task id="LOCAL‎00029" summary="Fonts and Colors">
-      <created>1641402628948</created>
-      <option name="number" value="LOCAL‎00029" />
-      <option name="presentableId" value="LOCAL‎00029" />
-      <updated>1641402628948</updated>
-    </task>
-    <option name="localTasksCounter" value="30" />
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

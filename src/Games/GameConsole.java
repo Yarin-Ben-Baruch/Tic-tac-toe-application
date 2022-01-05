@@ -13,12 +13,12 @@ public class GameConsole extends Game{
 
     /**
      * Initializes the data and transfers it to the base class
-     * @param i_PlayerX first player.
-     * @param i_PlayerO second player.
-     * @param i_Renderer board type console.
+     * @param playerX first player.
+     * @param playerO second player.
+     * @param renderer board type console.
      */
-    public GameConsole(Player i_PlayerX, Player i_PlayerO, iRenderer i_Renderer) {
-        super(i_PlayerX, i_PlayerO, i_Renderer);
+    public GameConsole(Player playerX, Player playerO, iRenderer renderer) {
+        super(playerX, playerO, renderer);
     }
 
     /**
@@ -49,7 +49,7 @@ public class GameConsole extends Game{
 
             getRenderer().renderBoard(board);
             //winner = board.GameStatus(row, col, myPlayers[turnToPlay % 2].getDefaultSign());
-            winner = board.GameStatus(row, col);
+            winner = board.gameStatus(row, col);
 
         }
 
