@@ -10,12 +10,12 @@ public abstract class Player {
 
     /**
      * A constructor that initializes the player data.
-     * @param i_name name player(PlayerX, PlayerO).
-     * @param i_DefaultSign what his sign(X, O).
+     * @param name name player(PlayerX, PlayerO).
+     * @param defaultSign what his sign(X, O).
      */
-    public Player(String i_name, eMark i_DefaultSign) {
-        setName(i_name);
-        setDefaultSign(i_DefaultSign);
+    public Player(String name, eMark defaultSign) {
+        setName(name);
+        setDefaultSign(defaultSign);
     }
 
     /**
