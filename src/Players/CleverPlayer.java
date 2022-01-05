@@ -9,7 +9,6 @@ import java.util.HashMap;
  * A class that represents a smart player
  */
 public class CleverPlayer extends WhateverPlayer {
-
     //fields.
     private HashMap<eGameStatus, Integer> scores;
 
@@ -36,7 +35,10 @@ public class CleverPlayer extends WhateverPlayer {
         }
     }
 
-
+    /**
+     * A method that returns the governor mark from the player.
+     * @return sign(X OR O).
+     */
     private eMark getOppositeSign() {
         if(getDefaultSign() == eMark.X)
             return eMark.O;
@@ -44,6 +46,11 @@ public class CleverPlayer extends WhateverPlayer {
             return eMark.X;
     }
 
+    /**
+     * A method that returns coordinates selected by the smart player.
+     * @param board On which board to mark.
+     * @return In what position to mark.
+     */
     @Override
     public int getCoordinates(Board board){
 
@@ -71,7 +78,19 @@ public class CleverPlayer extends WhateverPlayer {
         return move[0] * 10 + move[1];
     }
 
-    int minimax(eMark[][] board, int depth, boolean isMaximizing, Board boardClass, int currentI, int currentJ) {
+    /**
+     *An algorithm that selects which position to mark on the board, depending on the current state of the board.
+     * The algorithm tries to simulate the continuation of the game, in such a way that it plays as the 2 players,
+     * and chooses for both of them the optimal choice.
+     * @param board On which board to mark.
+     * @param depth What depth the algorithm has reached.
+     * @param isMaximizing Checks if it's a maximum choice.
+     * @param boardClass On which board to mark.
+     * @param currentI Current row position
+     * @param currentJ Current col position
+     * @return Returns the algorithm selection.
+     */
+    private int minimax(eMark[][] board, int depth, boolean isMaximizing, Board boardClass, int currentI, int currentJ) {
 
         //eGameStatus result = checkWinner(board);
         eGameStatus result = boardClass.GameStatus(currentI,currentJ);
@@ -114,8 +133,6 @@ public class CleverPlayer extends WhateverPlayer {
         }
         return bestScore;
     }
-
-
 }
 
 
