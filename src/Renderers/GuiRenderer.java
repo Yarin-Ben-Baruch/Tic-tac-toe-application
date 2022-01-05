@@ -28,20 +28,19 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
     private int turnToPlay;
     private Board myBoard;
     // statistics[0] = X | statistics[1] = O | statistics[2] = Draw
-    private int[] statistics;
+    private static int[] statistics = new int[3];;
 
     private boolean player1_turn = true;
     private static int locationInBoard;
 
     GuiRenderer() {
-        this.statistics = new int[3];
+
     }
 
-    public GuiRenderer(Player playerX, Player playerO, Board board, int[] statistics) {
+    public GuiRenderer(Player playerX, Player playerO, Board board) {
         this.playerX = playerX;
         this.playerO = playerO;
         this.myBoard = board;
-        this.statistics = statistics;
         turnToPlay = 0;
     }
 
@@ -277,7 +276,7 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
         }
 
         frame.dispose();
-        Game game = new GameGui(new HumanPlayer("X", eMark.X), new HumanPlayer("O", eMark.O), new VoidRenderer());
+        Game game = new GameGui(playerX, playerO, new VoidRenderer());
         game.run();
 
     }
