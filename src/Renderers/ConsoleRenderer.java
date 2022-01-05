@@ -17,7 +17,11 @@ class ConsoleRenderer implements iRenderer {
 	private static final int NUM_ROWS_BEFORE_BOARD = 4;
 	private static final int NUM_COLS_BEFORE_BOARD = 6;
 	
-	//                                            for the marks         for lines         for indices
+	/**
+	 *                                             for the marks          for lines         for indices
+	 *                                             | | | | | | |         | | | | | | |     | | | | | | |
+	 *                                            \/\/\/\/\/\/\/        \/\/\/\/\/\/\/    \/\/\/\/\/\/\/
+	 */
 	private static final int BUFFER_ROWS = Board.SIZE * ROWS_PER_MARK + (Board.SIZE-1) + NUM_ROWS_BEFORE_BOARD;
 	private static final int BUFFER_COLS = Board.SIZE * COLS_PER_MARK + (Board.SIZE-1) + NUM_COLS_BEFORE_BOARD;
 	
@@ -38,10 +42,11 @@ class ConsoleRenderer implements iRenderer {
 
 	private char[][] buffer = new char[BUFFER_ROWS][BUFFER_COLS];
 
-	/*
-	מטודה שבודקת את תקינות גודל הלוח
-	הלוח מתאפשר בגדלים של 2 עד 9
-	במידה והגדול הנבחר לא תקין זורקת אסקפשין בהתאם
+
+	/**
+	 * 'ConsoleRenderer' is method that checked the integrity of the board size.
+	 * The board is available in sizes from 2 to 9.
+	 * In case the selected size is incorrect throws Exception accordingly.
 	 */
 	public ConsoleRenderer() {
 		if(Board.SIZE > 9 || Board.SIZE < 2) {
@@ -79,10 +84,9 @@ class ConsoleRenderer implements iRenderer {
 		}
 	}
 
-	/*
-	2 מטודות המבצעות את ההדפסה
-	אחת אחראית על הדפסת הסימנים
-	והשניה אחראית על הדפסת תצורת הלוח בתצוגה יפה
+	/**
+	 * 'renderBoard' is method that print the signs (X,O).
+	 * @param board -> is argument of Board class.
 	 */
 	public void renderBoard(Board board) {
 		for(int i = 0; i < Board.SIZE ; i++) {
@@ -100,6 +104,12 @@ class ConsoleRenderer implements iRenderer {
 		System.out.println();
 	}
 
+	/**
+	 * 'drawMarkInBuffer' is method that print the board in a beautiful display.
+	 * @param rowStart -> location of row start.
+	 * @param colStart -> location of column start.
+	 * @param mark -> sign of X or O.
+	 */
 	private void drawMarkInBuffer(int rowStart, int colStart, eMark mark) {
 		String[] markLines = MARKS_DRAWINGS.get(mark);
 		for(int i = 0 ; i < markLines.length ; i++) {
