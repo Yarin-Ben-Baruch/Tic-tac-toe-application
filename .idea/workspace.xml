@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a529818-17f8-46bc-b482-510013902aab" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_5_2022_1_29_PM__Changes_.xml" beforeDir="false" />
+    <list default="true" id="8a529818-17f8-46bc-b482-510013902aab" name="Changes" comment="Update GameStatus">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boards/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boards/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MVVM/ViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVVM/ViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Players/CleverPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/CleverPlayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,18 +70,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BoardTest.getMark" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Tournament" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Games.Tournament" />
       <module name="TicTacToe" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Boards.*" />
+          <option name="PATTERN" value="Games.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Boards" />
-      <option name="MAIN_CLASS_NAME" value="Boards.BoardTest" />
-      <option name="METHOD_NAME" value="getMark" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -138,10 +133,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.FirstScreenGame" />
+        <item itemvalue="Application.Tournament" />
         <item itemvalue="JUnit.BoardTest.setHaveWinner" />
         <item itemvalue="JUnit.TournamentTest" />
         <item itemvalue="JUnit.TournamentTest.selectionCheck" />
-        <item itemvalue="JUnit.BoardTest.getMark" />
       </list>
     </recent_temporary>
   </component>
@@ -184,7 +179,7 @@
       <workItem from="1639584039105" duration="235000" />
       <workItem from="1641368861009" duration="2511000" />
       <workItem from="1641371727251" duration="1900000" />
-      <workItem from="1641391081172" duration="601000" />
+      <workItem from="1641391081172" duration="1252000" />
     </task>
     <task id="LOCAL-00001" summary="Remvoe instanceof">
       <created>1637596356558</created>
@@ -330,7 +325,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641382435734</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Update GameStatus">
+      <created>1641391812568</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1641391812568</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -368,7 +370,8 @@
     <MESSAGE value="TournamentTest is Done." />
     <MESSAGE value="TournamentTest is done" />
     <MESSAGE value="TournamentTest is done final" />
-    <option name="LAST_COMMIT_MESSAGE" value="TournamentTest is done final" />
+    <MESSAGE value="Update GameStatus" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update GameStatus" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
