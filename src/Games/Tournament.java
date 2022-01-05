@@ -6,17 +6,27 @@ import Players.Player;
 import Players.PlayerFactory;
 import Renderers.RendererFactory;
 import Renderers.iRenderer;
-
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * A class representing an operating tournament, for a console-type game.
+ */
 public class Tournament {
 
+    //fields
     private final Player player1;
     private final Player player2;
     private final int numberRounds;
     private final iRenderer renderer;
 
+    /**
+     * Constructor initializes the tournament data.
+     * @param player1 first player.
+     * @param player2 second player.
+     * @param numberRounds The length of the tournament.
+     * @param renderer board type (Console, none).
+     */
     public Tournament(Player player1, Player player2, int numberRounds, iRenderer renderer) {
         this.player1 = player1;
         this.player2 = player2;
@@ -24,6 +34,11 @@ public class Tournament {
         this.renderer = renderer;
     }
 
+    /**
+     * A method that runs the tournament.
+     * The method saves the tournament data in a size 3 array, which represents win x win y and also draw.
+     * @return Tournament results.
+     */
     public int[] playTournament() {
 
         int[] results = new int[3];
@@ -65,6 +80,9 @@ public class Tournament {
         return results;
 }
 
+    /**
+     * A method that displays the user menu, for a console-type game.
+     */
     public static void userMenu() {
         System.out.println("Welcome to TIC TAC TOE game!!!\n lets start play...");
         String playerType1, playerType2, selection, rendererType, numberOfRoundsStr = null;
@@ -125,10 +143,20 @@ public class Tournament {
 
     }
 
+    /**
+     * A method that checks the correctness of the input in the user selection.
+     * @param str A parameter that represents the selection.
+     * @return true or false.
+     */
     public static boolean selectionCheck(String str) {
         return str.equals("1") || str.equals("2") || str.equals("3");
     }
 
+    /**
+     * A method that receives a string and checks if it is a number.
+     * @param str Choice from the user.
+     * @return true or false.
+     */
     public static boolean isDigitsString(String str) {
 
         for (char currentChar : str.toCharArray() ) {
@@ -139,6 +167,11 @@ public class Tournament {
         return true;
     }
 
+    /**
+     * A method that examines the choice of player type.
+     * @param str Choice from the user.
+     * @return true or false.
+     */
     public static String playerTypeSelection (String str) {
         String playerType;
         if (str.equals("1")) {
@@ -151,6 +184,11 @@ public class Tournament {
         return playerType;
     }
 
+    /**
+     * A method that checks the board type selection.
+     * @param str Choice from the user.
+     * @return true or false.
+     */
     public static String rendererTypeSelection (String str) {
 
         String playerType;
@@ -165,7 +203,6 @@ public class Tournament {
     }
 
     public static void main(String[] args) {
-
         userMenu();
     }
 }

@@ -11,11 +11,20 @@ import javax.swing.*;
 
 public class GameGui extends Game{
 
-
+    /**
+     * Initializes the data and transfers it to the base class
+     * @param i_PlayerX first player.
+     * @param i_PlayerO second player.
+     * @param i_Renderer board type Gui.
+     */
     public GameGui(Player i_PlayerX, Player i_PlayerO, iRenderer i_Renderer) {
         super(i_PlayerX, i_PlayerO, i_Renderer);
     }
 
+    /**
+     * Runs the game, GUI-type.
+     * @return Returns the type of winner.
+     */
     @Override
     public eGameStatus run() {
 

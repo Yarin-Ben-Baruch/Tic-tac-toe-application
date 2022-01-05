@@ -3,13 +3,21 @@ package Players;
 import Boards.Board;
 import Enums.eGameStatus;
 import Enums.eMark;
-
 import java.util.HashMap;
 
+/**
+ * A class that represents a smart player
+ */
 public class CleverPlayer extends WhateverPlayer {
 
+    //fields.
     private HashMap<eGameStatus, Integer> scores;
 
+    /**
+     * A constructor that initializes the player data and passes it to the base class.
+     * @param name name player(PlayerX, PlayerO).
+     * @param defaultSign what his sign(X, O).
+     */
     public CleverPlayer(String name, eMark defaultSign) {
         super(name, defaultSign);
 
@@ -27,6 +35,7 @@ public class CleverPlayer extends WhateverPlayer {
             scores.put(eGameStatus.DRAW, 0);
         }
     }
+
 
     private eMark getOppositeSign() {
         if(getDefaultSign() == eMark.X)

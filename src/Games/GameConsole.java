@@ -6,12 +6,25 @@ import Enums.eGameStatus;
 import Players.Player;
 import Renderers.iRenderer;
 
+/**
+ * A class that implements the console board type.
+ */
 public class GameConsole extends Game{
 
+    /**
+     * Initializes the data and transfers it to the base class
+     * @param i_PlayerX first player.
+     * @param i_PlayerO second player.
+     * @param i_Renderer board type console.
+     */
     public GameConsole(Player i_PlayerX, Player i_PlayerO, iRenderer i_Renderer) {
         super(i_PlayerX, i_PlayerO, i_Renderer);
     }
 
+    /**
+     * Runs the game, console-type.
+     * @return Returns the type of winner.
+     */
     @Override
     public eGameStatus run() {
         Board board = new Board();
