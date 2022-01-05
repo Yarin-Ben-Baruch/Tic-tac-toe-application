@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a529818-17f8-46bc-b482-510013902aab" name="Changes" comment="Update photos">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Games/GameGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Games/GameGui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MVVM/ViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVVM/ViewModel.java" afterDir="false" />
+    <list default="true" id="8a529818-17f8-46bc-b482-510013902aab" name="Changes" comment="Set new icons">
       <change beforePath="$PROJECT_DIR$/src/Renderers/GuiRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Renderers/GuiRenderer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -349,7 +346,13 @@
       <option name="project" value="LOCAL" />
       <updated>1641392612591</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL‎00025" summary="Set new icons">
+      <created>1641399089544</created>
+      <option name="number" value="LOCAL‎00025" />
+      <option name="presentableId" value="LOCAL‎00025" />
+      <updated>1641399089544</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,6 +392,18 @@
     <MESSAGE value="TournamentTest is done final" />
     <MESSAGE value="Update GameStatus" />
     <MESSAGE value="Update CleverPlayer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update CleverPlayer" />
+    <MESSAGE value="Set new icons" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set new icons" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/MVVM/ViewGame.java</url>
+          <line>118</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

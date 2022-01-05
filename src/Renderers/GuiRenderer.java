@@ -3,6 +3,8 @@ package Renderers;
 import Boards.Board;
 import Enums.eGameStatus;
 import Enums.eMark;
+import Games.Game;
+import Games.GameGui;
 import MVVM.ViewModel;
 import Players.HumanPlayer;
 import Players.Player;
@@ -66,8 +68,8 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
 
         frame.setVisible(true);
 
-        textfield.setBackground(new Color(0x3137D3));
-        textfield.setForeground(new Color(0xCCFF00));
+        textfield.setBackground(new Color(0xF1C8C8));
+        textfield.setForeground(new Color(0x000000));
         textfield.setFont(new Font("Microsoft Himalaya", Font.BOLD, 85));
         textfield.setHorizontalAlignment(JLabel.CENTER);
         textfield.setText("Tic-Tac-Toe");
@@ -77,7 +79,7 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
         title_panel.setBounds(0, 0, 800, 100);
 
         button_panel.setLayout(new GridLayout(Board.SIZE, Board.SIZE, 20 , 20));
-        button_panel.setBackground(new Color(204,255,0));
+        button_panel.setBackground(new Color(1));
         //button_panel.setOpaque(false);
 
 
@@ -274,9 +276,10 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
                 break;
         }
 
-        //GuiRenderer myGame = new GuiRenderer(playerX,playerO,myBoard,statistics);
-        init();
-        start();
+        frame.dispose();
+        Game game = new GameGui(new HumanPlayer("X", eMark.X), new HumanPlayer("O", eMark.O), new VoidRenderer());
+        game.run();
+
     }
 }
 
