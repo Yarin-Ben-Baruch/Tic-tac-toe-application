@@ -8,21 +8,21 @@ import java.util.ArrayList;
 
 public class Board {
 
-    // fields
     public static final int SIZE = 3;
     public static final int WIN_STREAK = 3;
     private int emptyPlace;
-    // משתנה מסוג enum שממלא את הלוח בהתאם לסימן
     private eMark[][] board;
-    private eMark lastPlayer; //?
+    private eMark lastPlayer;
     private boolean isHaveWinner;
 
-    // מערך ששומר את המקומות הריקים בלוח
+    /**
+     * emptyLocations -> Arraylist The saves all empty places on the board.
+     */
     public static ArrayList<Integer> emptyLocations;
 
-    /*
-    יוצרים לוח בגודל שנבחר(size)
-    מעדכנים את רשימת המקומות הריקים + מאתחלים את הלוח
+    /**
+     * 'Board' Constructor build Board in size that chosen.
+     * Updates the list of empty places and initializes the board
      */
     public Board() {
         board = new eMark[SIZE][SIZE];
@@ -36,9 +36,9 @@ public class Board {
         return board;
     }
 
-    /*
-    מטודה שמאתחלת את כל הלוח למקומות ריקים
-    בנוסף מאתחל מערך השומר את כל המיקומים של המקומות הריקים
+    /**
+     * 'installBoard' is method that that initializes the entire board to empty spaces.
+     * In addition, it launches an array that saves all the locations of the empty spaces
      */
     private void installBoard(){
         int num = 0;
@@ -54,10 +54,14 @@ public class Board {
         }
     }
 
-    /*
-    מטודה שמקבלת מיקום בלוח וסימן.
-    המטודה בודקת את תיקונת הקלט, במידה והוא תקין מחזיר true
-    וממלא בלוח את הסימן + מורידה את המיקום שלו מהמערך השומר את המקומות
+    /**
+     * 'putMark' method is method that accepted direction on board and sign.
+     * The method checked the input integrity, if it's properly, he'll return true.
+     * The method fill the sign in the board and remove the location of the sign from the array.
+     * @param mark -> sign of X or O.
+     * @param row -> move to next row.
+     * @param col -> move to next col.
+     * @return
      */
     public boolean putMark(eMark mark, int row, int col) // סימון על הלוח
     {
@@ -79,12 +83,15 @@ public class Board {
         return result;
     }
 
-    /*
-    מטודה שבודקת האם יש הכרעה במשחק .
-    אחריי שהשחקן שתורו מבצע מהלך, הפונקציה נקראת ובודק האם המהלך שהשחקן עשה גרם לביצוע סטרייק בגודל שנבחר .
-    נבדק פה כל סוגי האפשרויות לסטרייק .
-    במידה ויש סטרייק מחזירים אמת
-    במידה ואין מחזירים שקר .
+    /**
+     * 'GameStatus' is method that check if there are game winner.
+     * After the player in turn makes a move, the method is called and checks whether the move the player made caused a strike of the selected size.
+     * This method check all types of strike options.
+     * If there is a strike, return the truth.
+     * If there is NO strike, return the truth.
+     * @param row -> row on board.
+     * @param col -> column on board.
+     * @return
      */
     public eGameStatus GameStatus(int row, int col) // במהלך המשחק / מי ניצח
     {
@@ -127,13 +134,18 @@ public class Board {
         return result;
     }
 
-    /*
-    פונקצית עזר לGameStatus
-    היא מקבלת את המיקום של המהלך שהוכנס .
-    בנוסף היא מקבלת כיוון של עמודה ושורה.
-    בעזרת הכיוון היא בודקת כמה מאותו מהלך שהוכנס נמצא ברצף עם הכיוון שהיא קיבלה .
-    נמצאים פה תנאי קצה כמו למשל שלא תבדוק אחריי גודל הלוח
-    המטודה מחזירה בסופה את גודל הרצף שהיא הלכה לכיוון שלו
+    /**
+     * 'checkingDirection' is help method to 'GameStatus', she accepted the direcation of the move that was inserted.
+     * Additionally, she accepted direction of column and row.
+     * Using the direction she checks how much of that inserted move is in sequence with the direction she was given.
+     * There are end conditions here, such as not checking the size of the board.
+     * The method returns at the end the size of the sequence it went in its direction
+     * @param row -> row on board.
+     * @param col -> column on board.
+     * @param mark -> sign of X or O.
+     * @param moveCol -> move to next col.
+     * @param moveRow -> move to next row.
+     * @return
      */
     private int checkingDirection(int row, int col, eMark mark,int moveCol, int moveRow) {
         int count = 0;
@@ -152,20 +164,40 @@ public class Board {
         return count;
     }
 
-    // מטודה שמחזירה סימן של מיקום בלוח
+
+    /**
+     * 'getMark' is method that return sign of direction on board.
+     * @param row -> row on board.
+     * @param col -> column on board.
+     * @return
+     */
     public eMark getMark(int row, int col)
     {
         return board[row][col];
     }
 
+
+    /**
+     * 'isHaveWinner' is method that save boolean , if there are winner in the game or not.
+     * @return
+     */
     public boolean isHaveWinner() {
         return isHaveWinner;
     }
 
+    /**
+     * 'setHaveWinner' is method that sets there are winner.
+     * @param isHaveWinner
+     */
     public void setHaveWinner(boolean isHaveWinner){
         this.isHaveWinner = isHaveWinner;
     }
 
+    /**
+     *  'getOppositeSign' method get the opposite sign. For example if X then O.
+     * @param mark -> sign of X or O.
+     * @return
+     */
     public eMark getOppositeSign(eMark mark) {
         if(mark == eMark.X)
             return eMark.O;
