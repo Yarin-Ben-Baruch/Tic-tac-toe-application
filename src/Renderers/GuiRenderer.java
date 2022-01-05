@@ -47,6 +47,9 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
         buttons = new JButton[Board.SIZE * Board.SIZE];
     }
 
+    /**
+     * 'start' method is method that set all SWING buttons/textfields and more..
+     */
     public void start() {
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -86,6 +89,10 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
         this.vm = vm;
     }
 
+    /**
+     * 'actionPerformed' is method that set action to the buttons.
+     * @param e
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
 
@@ -114,11 +121,19 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
         }
     }
 
-    //עידכנתי במקום 3 ל board.size
+    /**
+     * 'getLocationInBoard' is method that give the current location in the board.
+     *
+     * @return
+     */
     public int getLocationInBoard(int currentI) {
         return (currentI / Board.SIZE * 10 + 10) + (currentI % Board.SIZE + 1);
     }
 
+    /**
+     * 'renderBoard' is method that rendered the board.
+     * @param board
+     */
     @Override
     public void renderBoard(Board board) {
 
@@ -133,7 +148,11 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
         }
     }
 
-    // עובר על הלוח וממקם את הסימנים
+
+    /**
+     * 'showBoard' is method that goes across the board and places the marks.
+     * * @param board -> board is argument of Board class.
+     */
     public void showBoard(eMark[][] board) {
         int row;
         int col;
@@ -166,7 +185,10 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
         System.exit(0);
     }
 
-    // מציג למעלה את התור של מי שמשחק
+    /**
+     * 'showTurn is method that shows up the turn of the player.
+     * @param message -> message to text field.
+     */
     public void showTurn(String message) {
         textfield.setText(message);
     }
@@ -175,6 +197,12 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
         textfield.setText(message);
     }
 
+    /**
+     * 'onlyHuman' is method returned if there are human player or computer player.
+     * @param currentPlayerX -> Player 1
+     * @param secondPlayerO -> Player 2
+     * @return
+     */
     public boolean onlyHuman(Player currentPlayerX, Player secondPlayerO){
 
         int flag = 0;
