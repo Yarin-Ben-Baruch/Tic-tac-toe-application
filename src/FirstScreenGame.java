@@ -22,6 +22,8 @@ public class FirstScreenGame {
         startFrame.setLocationRelativeTo(null);
         startFrame.setResizable(false);
         startFrame.setLayout(null);
+        Image icon = Toolkit.getDefaultToolkit().getImage("src/images/tictactoeicon.png");
+        startFrame.setIconImage(icon);
 
         try {
             startFrame.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("src/images/T.png")))));

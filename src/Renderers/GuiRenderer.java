@@ -44,7 +44,7 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
     }
 
     public void init() {
-        frame = new JFrame();
+        frame = new JFrame("Tic Tac Toe");
         title_panel = new JPanel();
         button_panel = new JPanel();
         textfield = new JLabel();
@@ -61,6 +61,8 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
         frame.getContentPane().setBackground(new Color(50, 50, 50));
         frame.setLocationRelativeTo(null);
         frame.setLayout(new BorderLayout());
+        Image icon = Toolkit.getDefaultToolkit().getImage("src/images/tictactoeicon.png");
+        frame.setIconImage(icon);
 
         frame.setVisible(true);
 
