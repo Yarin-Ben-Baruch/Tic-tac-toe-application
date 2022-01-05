@@ -92,7 +92,6 @@ public class CleverPlayer extends WhateverPlayer {
      */
     private int minimax(eMark[][] board, int depth, boolean isMaximizing, Board boardClass, int currentI, int currentJ) {
 
-        //eGameStatus result = checkWinner(board);
         eGameStatus result = boardClass.GameStatus(currentI,currentJ);
 
         if (result != eGameStatus.IN_PROGRESS) {
@@ -105,7 +104,6 @@ public class CleverPlayer extends WhateverPlayer {
             bestScore = Integer.MIN_VALUE;
             for (int i = 0; i < Board.SIZE ; i++) {
                 for (int j = 0; j < Board.SIZE; j++) {
-                    // Is the spot available?
                     if (board[i][j] == eMark.BLANK) {
                         board[i][j] = getDefaultSign();
                         int score = minimax(board, depth + 1, false, boardClass, i+1, j+1);
@@ -125,7 +123,6 @@ public class CleverPlayer extends WhateverPlayer {
                         board[i][j] = getOppositeSign();
                         int score = minimax(board, depth + 1, true, boardClass, i+1, j+1);
                         board[i][j] = eMark.BLANK;
-//                        System.out.println(getOppositeSign());
                         bestScore = Math.min(score, bestScore);
                     }
                 }
