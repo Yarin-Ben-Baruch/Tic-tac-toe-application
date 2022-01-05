@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a529818-17f8-46bc-b482-510013902aab" name="Changes" comment="Set new icons">
+    <list default="true" id="8a529818-17f8-46bc-b482-510013902aab" name="Changes" comment="Tourmenment">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Games/GameGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Games/GameGui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MVVM/ViewGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVVM/ViewGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Renderers/GuiRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Renderers/GuiRenderer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,12 +73,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OptionScreenGameView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MVVM.OptionScreenGameView" />
+      <module name="TicTacToe" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="MVVM.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tournament" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Games.Tournament" />
       <module name="TicTacToe" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Games.*" />
+          <option name="PATTERN" value="Games.GameGui" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -103,7 +119,7 @@
       <module name="TicTacToe" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Games.*" />
+          <option name="PATTERN" value="Games.GameGui" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -114,29 +130,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TournamentTest.selectionCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TicTacToe" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Games.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Games" />
-      <option name="MAIN_CLASS_NAME" value="Games.TournamentTest" />
-      <option name="METHOD_NAME" value="selectionCheck" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.FirstScreenGame" />
+        <item itemvalue="Application.OptionScreenGameView" />
         <item itemvalue="Application.Tournament" />
         <item itemvalue="JUnit.BoardTest.setHaveWinner" />
         <item itemvalue="JUnit.TournamentTest" />
-        <item itemvalue="JUnit.TournamentTest.selectionCheck" />
       </list>
     </recent_temporary>
   </component>
@@ -352,7 +352,13 @@
       <option name="presentableId" value="LOCAL‎00025" />
       <updated>1641399089544</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL‎00026" summary="Tourmenment">
+      <created>1641400199597</created>
+      <option name="number" value="LOCAL‎00026" />
+      <option name="presentableId" value="LOCAL‎00026" />
+      <updated>1641400199597</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -393,17 +399,7 @@
     <MESSAGE value="Update GameStatus" />
     <MESSAGE value="Update CleverPlayer" />
     <MESSAGE value="Set new icons" />
-    <option name="LAST_COMMIT_MESSAGE" value="Set new icons" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/MVVM/ViewGame.java</url>
-          <line>118</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Tourmenment" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tourmenment" />
   </component>
 </project>

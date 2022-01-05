@@ -1,4 +1,4 @@
-import MVVM.ViewGame;
+import MVVM.OptionScreenGameView;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -48,6 +48,6 @@ public class FirstScreenGame {
     public void StartNewGame()
     {
         startFrame.dispose();
-        ViewGame viewGame = new ViewGame();
+        OptionScreenGameView viewGame = new OptionScreenGameView();
     }
 }

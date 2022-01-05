@@ -16,7 +16,7 @@ import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.IOException;
 
-public class ViewGame extends JFrame {
+public class OptionScreenGameView extends JFrame {
 
     private JFrame startFrame = new JFrame("Game options");
     private JPanel playersPanel = new JPanel();
@@ -28,7 +28,7 @@ public class ViewGame extends JFrame {
     private JPanel buttonPanel = new JPanel();
     private Tournament tournament;
 
-    public ViewGame() {
+    public OptionScreenGameView() {
         setStartFrame();
     }
 
@@ -54,34 +54,34 @@ public class ViewGame extends JFrame {
             participantsSelectionButtons[i] = new JButton();
             participantsSelectionButtons[i].setFocusable(false);
             participantsSelectionButtons[i].setText(titleForButtons[i]);
-            participantsSelectionButtons[i].setFont(new Font("Arial", Font.BOLD, 24));
+            participantsSelectionButtons[i].setFont(new Font("Bodoni MT", Font.BOLD, 30));
             participantsSelectionButtons[i].setForeground(Color.white);
-            participantsSelectionButtons[i].setBackground(new Color(0x707070));
+            participantsSelectionButtons[i].setBackground(new Color(45,45,50));
             participantsSelectionButtons[i].setBounds(x, 230, 135, 50);
             x += 145;
             startFrame.add(participantsSelectionButtons[i]);
         }
 
-        participantsSelectionButtons[0].setBounds(250, 180, 300, 60);
-        participantsSelectionButtons[1].setBounds(250, 300, 300, 60);
+        participantsSelectionButtons[0].setBounds(250, 520, 300, 60);
+        participantsSelectionButtons[1].setBounds(250, 410, 300, 60);
         participantsSelectionButtons[0].addActionListener(e -> StartPlayerVsPlayer());
         participantsSelectionButtons[1].addActionListener(e -> StartPlayerVsCPU());
 
         x = 300;
-        String[] levels = {"Easy", "Hard"};
+        String[] levels = {"             Easy", "             Hard"};
         levelComboBox = new JComboBox(levels);
-        levelComboBox.setBounds(250, 410, 300, 60);
-        levelComboBox.setBackground(new Color(0x707070));
-        levelComboBox.setFont(new Font("Arial", Font.BOLD, 24));
+        levelComboBox.setBounds(250, 180, 300, 60);
+        levelComboBox.setBackground(new Color(45,45,50));
+        levelComboBox.setFont(new Font("Bodoni MT", Font.BOLD, 30));
         levelComboBox.setForeground(Color.white);
         startFrame.add(levelComboBox);
 
-        String[] boardSize = {"3x3 Board", "4x4 Board", "5x5 Board"};
+        String[] boardSize = {"             3x3", "             4x4", "             5x5"};
         x += 145;
         boardComboBox = new JComboBox(boardSize);
-        boardComboBox.setBounds(250, 520, 300, 60);
-        boardComboBox.setBackground(new Color(0x707070));
-        boardComboBox.setFont(new Font("Arial", Font.BOLD, 24));
+        boardComboBox.setBounds(250, 300, 300, 60);
+        boardComboBox.setBackground(new Color(45,45,50));
+        boardComboBox.setFont(new Font("Bodoni MT", Font.BOLD, 30));
         boardComboBox.setForeground(Color.white);
 
         startFrame.add(boardComboBox);
@@ -123,7 +123,7 @@ public class ViewGame extends JFrame {
     }
 
     public static void main(String[] args) {
-        ViewGame viewGame = new ViewGame();
+        OptionScreenGameView viewGame = new OptionScreenGameView();
     }
 }
 

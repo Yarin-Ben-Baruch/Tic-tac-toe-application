@@ -67,9 +67,9 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
 
         frame.setVisible(true);
 
-        textfield.setBackground(new Color(0xF1C8C8));
-        textfield.setForeground(new Color(0x000000));
-        textfield.setFont(new Font("Microsoft Himalaya", Font.BOLD, 85));
+        textfield.setBackground(new Color(0x3137D3));
+        textfield.setForeground(new Color(0xFFFFFF));
+        textfield.setFont(new Font("Bodoni MT", Font.BOLD, 85));
         textfield.setHorizontalAlignment(JLabel.CENTER);
         textfield.setText("Tic-Tac-Toe");
         textfield.setOpaque(true);
@@ -78,14 +78,14 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
         title_panel.setBounds(0, 0, 800, 100);
 
         button_panel.setLayout(new GridLayout(Board.SIZE, Board.SIZE, 20 , 20));
-        button_panel.setBackground(new Color(1));
+        button_panel.setBackground(new Color(0xFFFFFF));
         //button_panel.setOpaque(false);
 
 
         for (int i = 0; i < Board.SIZE * Board.SIZE; i++) {
             buttons[i] = new JButton();
             button_panel.add(buttons[i]);
-            buttons[i].setFont(new Font("Microsoft Himalaya", Font.BOLD, 120));
+            buttons[i].setFont(new Font("Bodoni MT", Font.BOLD, 120));
             buttons[i].setFocusable(false);
             buttons[i].setBackground(new Color(0));
             buttons[i].addActionListener(this);
@@ -94,8 +94,11 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
 
         statisticsPanel = new JPanel();
         statisticsPanel.setPreferredSize(new Dimension(100, 50));
-        statisticsPanel.add(new JLabel("Statistics:"));
-
+        statisticsPanel.setBackground(new Color(0x3137D3));
+        JLabel label = new JLabel("X Wins: " + statistics[0] + "   O Wins: " + statistics[1] + "   Draws: " + statistics[2]);
+        label.setFont(new Font("Bodoni MT", Font.BOLD, 32));
+        label.setForeground(Color.WHITE);
+        statisticsPanel.add(label);
         title_panel.add(textfield);
         frame.add(statisticsPanel, BorderLayout.SOUTH);
         frame.add(title_panel, BorderLayout.NORTH);
