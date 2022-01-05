@@ -67,7 +67,7 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
 
         frame.setVisible(true);
 
-        textfield.setBackground(new Color(0x3137D3));
+        textfield.setBackground(new Color(45,45,50));
         textfield.setForeground(new Color(0xFFFFFF));
         textfield.setFont(new Font("Bodoni MT", Font.BOLD, 85));
         textfield.setHorizontalAlignment(JLabel.CENTER);
@@ -87,14 +87,14 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
             button_panel.add(buttons[i]);
             buttons[i].setFont(new Font("Bodoni MT", Font.BOLD, 120));
             buttons[i].setFocusable(false);
-            buttons[i].setBackground(new Color(0));
+            buttons[i].setBackground(new Color(45,45,50));
             buttons[i].addActionListener(this);
 
         }
 
         statisticsPanel = new JPanel();
         statisticsPanel.setPreferredSize(new Dimension(100, 50));
-        statisticsPanel.setBackground(new Color(0x3137D3));
+        statisticsPanel.setBackground(new Color(45,45,50));
         JLabel label = new JLabel("X Wins: " + statistics[0] + "   O Wins: " + statistics[1] + "   Draws: " + statistics[2]);
         label.setFont(new Font("Bodoni MT", Font.BOLD, 32));
         label.setForeground(Color.WHITE);
