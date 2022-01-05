@@ -4,28 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a529818-17f8-46bc-b482-510013902aab" name="Changes" comment="update clever!!">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_12_2021__13_38__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_12_2021__13_38__Changes_.xml" afterDir="false" />
+    <list default="true" id="8a529818-17f8-46bc-b482-510013902aab" name="Changes" comment="adding ViewGame menu">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2021_7_55_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2021_7_55_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_4_2021_7_02_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_4_2021_7_02_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_5_2021_3_39_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_5_2021_3_39_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_7_2021_5_26_PM_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_7_2021_5_26_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_7_2021_5_26_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_7_2021_5_26_PM__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boards/Board.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enums/eGameStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enums/eMark.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Games/Game.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Games/GameConsole.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Games/GameGui.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Games/Tournament.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MVVM/ViewGame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MVVM/ViewModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Players/CleverPlayer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Players/HumanPlayer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Players/Player.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Players/PlayerFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Players/WhateverPlayer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Renderers/ConsoleRenderer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Renderers/GuiRenderer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Renderers/RendererFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Renderers/VoidRenderer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Renderers/iRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FirstScreenGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FirstScreenGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MVVM/ViewGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVVM/ViewGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Renderers/GuiRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Renderers/GuiRenderer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,6 +150,9 @@
       <workItem from="1638789666827" duration="103000" />
       <workItem from="1638872306513" duration="156000" />
       <workItem from="1638889492560" duration="1144000" />
+      <workItem from="1638901391628" duration="67000" />
+      <workItem from="1639584039105" duration="235000" />
+      <workItem from="1641368861009" duration="351000" />
     </task>
     <task id="LOCAL-00001" summary="Remvoe instanceof">
       <created>1637596356558</created>

@@ -71,7 +71,7 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
         title_panel.setBounds(0, 0, 800, 100);
 
         button_panel.setLayout(new GridLayout(Board.SIZE, Board.SIZE));
-        button_panel.setBackground(new Color(150, 150, 150));
+        button_panel.setBackground(new Color(43, 206, 104));
 
         for (int i = 0; i < Board.SIZE * Board.SIZE; i++) {
             buttons[i] = new JButton();

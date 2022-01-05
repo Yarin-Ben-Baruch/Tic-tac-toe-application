@@ -91,7 +91,7 @@ public class ViewGame extends JFrame {
     }
 
     public void startPlayAgainstMyself() {
-        Game game = new GameGui(new HumanPlayer("X", eMark.X), new WhateverPlayer("O", eMark.O), new VoidRenderer());
+        Game game = new GameGui(new HumanPlayer("X", eMark.X), new HumanPlayer("O", eMark.O), new VoidRenderer());
         game.run();
 
         startFrame.setVisible(false);
