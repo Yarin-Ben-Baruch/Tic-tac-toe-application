@@ -92,7 +92,6 @@ public class CleverPlayer extends WhateverPlayer {
      */
     private int minimax(eMark[][] board, int depth, boolean isMaximizing, Board boardClass, int currentI, int currentJ) {
 
-        //eGameStatus result = checkWinner(board);
         eGameStatus result = boardClass.GameStatus(currentI,currentJ);
 
         if (result != eGameStatus.IN_PROGRESS) {
