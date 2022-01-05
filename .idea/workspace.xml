@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a529818-17f8-46bc-b482-510013902aab" name="Changes" comment="Final version of gui">
-      <change beforePath="$PROJECT_DIR$/src/MVVM/OptionScreenGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVVM/OptionScreenGameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Renderers/ApplicationGuiRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Renderers/ApplicationGuiRenderer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -367,7 +368,19 @@
       <option name="presentableId" value="LOCAL‎00028" />
       <updated>1641402069126</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL‎00029" summary="Final version of gui">
+      <created>1641403555642</created>
+      <option name="number" value="LOCAL‎00029" />
+      <option name="presentableId" value="LOCAL‎00029" />
+      <updated>1641403555642</updated>
+    </task>
+    <task id="LOCAL‎00030" summary="Final version of gui">
+      <created>1641403809927</created>
+      <option name="number" value="LOCAL‎00030" />
+      <option name="presentableId" value="LOCAL‎00030" />
+      <updated>1641403809927</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

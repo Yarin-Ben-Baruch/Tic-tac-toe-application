@@ -123,6 +123,7 @@ public class ApplicationGuiRenderer extends JFrame implements ActionListener, iR
 
                 eMark sign;
                 if(turnToPlay % 2 == 0) {
+                    boolean isX = false;
                     sign = playerX.getDefaultSign();
                 }
                 else {
@@ -131,11 +132,14 @@ public class ApplicationGuiRenderer extends JFrame implements ActionListener, iR
 
                 int col = locationInBoard % 10;
                 int row = locationInBoard / 10;
-                vm.getCoordinatesFromGui(row, col, sign);
-                turnToPlay++;
 
-                if(!onlyHuman(playerX, playerO)){
+                if (myBoard.getBoard()[row-1][col-1] == eMark.BLANK) {
+                    vm.getCoordinatesFromGui(row, col, sign);
                     turnToPlay++;
+
+                    if (!onlyHuman(playerX, playerO)) {
+                        turnToPlay++;
+                    }
                 }
             }
         }
