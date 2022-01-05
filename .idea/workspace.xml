@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a529818-17f8-46bc-b482-510013902aab" name="Changes" comment="Update Comments on GuiRender Class.">
-      <change beforePath="$PROJECT_DIR$/src/Players/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/HumanPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Boards/BoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Boards/BoardTest.java" afterDir="false" />
+    <list default="true" id="8a529818-17f8-46bc-b482-510013902aab" name="Changes" comment="Add commits on HumanPlayer">
+      <change beforePath="$PROJECT_DIR$/src/Players/PlayerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/PlayerFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -306,7 +305,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641380103906</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Add commits on HumanPlayer">
+      <created>1641380686083</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1641380686083</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,6 +345,7 @@
     <MESSAGE value="All Explain about Enum Folder." />
     <MESSAGE value="Update Comments on ConsoleRenderer Class." />
     <MESSAGE value="Update Comments on GuiRender Class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Comments on GuiRender Class." />
+    <MESSAGE value="Add commits on HumanPlayer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add commits on HumanPlayer" />
   </component>
 </project>
