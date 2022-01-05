@@ -16,6 +16,7 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
     private JFrame frame;
     private JPanel title_panel;
     private JPanel button_panel;
+    private JPanel statisticsPanel;
     private JLabel textfield;
     private JButton[] buttons;
     private ViewModel vm;
@@ -53,14 +54,15 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
     public void start() {
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(500, 500);
+        frame.setSize(650, 700);
         frame.getContentPane().setBackground(new Color(50, 50, 50));
+        frame.setLocationRelativeTo(null);
         frame.setLayout(new BorderLayout());
         frame.setVisible(true);
 
-        textfield.setBackground( Color.pink);
-        textfield.setForeground(Color.white);
-        textfield.setFont(new Font("Ink Free", Font.BOLD, 75));
+        textfield.setBackground(new Color(0xB0B0B0));
+        textfield.setForeground(new Color(0xF1C8C8));
+        textfield.setFont(new Font("Microsoft Himalaya", Font.BOLD, 85));
         textfield.setHorizontalAlignment(JLabel.CENTER);
         textfield.setText("Tic-Tac-Toe");
         textfield.setOpaque(true);
@@ -68,19 +70,26 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
         title_panel.setLayout(new BorderLayout());
         title_panel.setBounds(0, 0, 800, 100);
 
-        button_panel.setLayout(new GridLayout(Board.SIZE, Board.SIZE));
-        button_panel.setBackground(new Color(43, 206, 104));
+        button_panel.setLayout(new GridLayout(Board.SIZE, Board.SIZE, 20 , 20));
+        button_panel.setBackground(new Color(0, 0, 0));
+
+
 
         for (int i = 0; i < Board.SIZE * Board.SIZE; i++) {
             buttons[i] = new JButton();
             button_panel.add(buttons[i]);
-            buttons[i].setFont(new Font("MV Boli", Font.BOLD, 120));
+            buttons[i].setFont(new Font("Microsoft Himalaya", Font.BOLD, 120));
             buttons[i].setFocusable(false);
             buttons[i].addActionListener(this);
 
         }
 
+        statisticsPanel = new JPanel();
+        statisticsPanel.setPreferredSize(new Dimension(100, 50));
+        statisticsPanel.add(new JLabel("Statistics:"));
+
         title_panel.add(textfield);
+        frame.add(statisticsPanel, BorderLayout.SOUTH);
         frame.add(title_panel, BorderLayout.NORTH);
         frame.add(button_panel);
     }
@@ -165,13 +174,15 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
 
             if (board[row][col] == eMark.X) {
                 buttons[i].setForeground( Color.BLACK);
-                buttons[i].setText("X");
+                //buttons[i].setText("X");
+                buttons[i].setIcon(new ImageIcon("src/images/xIcon.png"));
                 buttons[i].setEnabled(false);
             }
             else if (board[row][col] == eMark.O){
                 buttons[i].setForeground(Color.pink);
-                buttons[i].setText("O");
-                buttons[i].setEnabled(false);
+                buttons[i].setIcon(new ImageIcon("src/images/oIcon.png"));
+                //buttons[i].setText("O");
+                buttons[i].setEnabled(true);
                 }
             }
 
