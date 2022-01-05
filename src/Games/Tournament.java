@@ -39,7 +39,7 @@ public class Tournament {
      * The method saves the tournament data in a size 3 array, which represents win x win y and also draw.
      * @return Tournament results.
      */
-    public int[] playTournament() {
+    private int[] playTournament() {
 
         int[] results = new int[3];
         Arrays.fill(results,0);
@@ -55,9 +55,6 @@ public class Tournament {
             randomPlayerOne = i % 2;
             randomPlayerTwo = (randomPlayerOne + 1) % 2;
 
-//            if(renderer instanceof TTT.Renderers.TicTacToeApp)
-//                TTT.Games.Game game = new TTT.Games.GameGui(players[randomPlayerOne],players[randomPlayerTwo], renderer);
-//            else
             Game game = new GameConsole(players[randomPlayerOne],players[randomPlayerTwo], renderer);
 
             eGameStatus winner = game.run();
@@ -83,7 +80,7 @@ public class Tournament {
     /**
      * A method that displays the user menu, for a console-type game.
      */
-    public static void userMenu() {
+    private static void userMenu() {
         System.out.println("Welcome to TIC TAC TOE game!!!\n lets start play...");
         String playerType1, playerType2, selection, rendererType, numberOfRoundsStr = null;
         int numberOfRounds;

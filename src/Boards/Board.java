@@ -93,7 +93,7 @@ public class Board {
      * @param col -> column on board.
      * @return status options eGameStatus (Draw,X,O,IN PROGRESS).
      */
-    public eGameStatus GameStatus(int row, int col) // במהלך המשחק / מי ניצח
+    public eGameStatus gameStatus(int row, int col) // במהלך המשחק / מי ניצח
     {
         eMark mark = board[row-1][col-1];
         eGameStatus result = eGameStatus.IN_PROGRESS;
