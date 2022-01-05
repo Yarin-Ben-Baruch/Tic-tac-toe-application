@@ -1,7 +1,7 @@
 package Enums;
 
-/*
-משתנה enum שמחזיק את ההאפשרויות הקיימות במהלך משחק
+/**
+ * 'eGameStatus' is enum class that holds the options available during a game.
  */
 public enum eGameStatus{
     DRAW,
