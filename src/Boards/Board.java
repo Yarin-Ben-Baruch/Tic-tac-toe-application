@@ -8,8 +8,7 @@ import java.util.ArrayList;
 
 public class Board {
 
-    //dsf
-    // משתנים של המחלקה
+    // fields
     public static final int SIZE = 3;
     public static final int WIN_STREAK = 3;
     private int emptyPlace;
@@ -18,10 +17,6 @@ public class Board {
     private eMark lastPlayer; //?
     private boolean isHaveWinner;
 
-    public eMark[][] getBoard() {
-        return board;
-    }
-
     // מערך ששומר את המקומות הריקים בלוח
     public static ArrayList<Integer> emptyLocations;
 
@@ -29,13 +24,16 @@ public class Board {
     יוצרים לוח בגודל שנבחר(size)
     מעדכנים את רשימת המקומות הריקים + מאתחלים את הלוח
      */
-    public Board()
-    {
+    public Board() {
         board = new eMark[SIZE][SIZE];
         emptyLocations = new ArrayList<>();
         installBoard();
         emptyPlace = SIZE*SIZE;
         isHaveWinner = false;
+    }
+
+    public eMark[][] getBoard() {
+        return board;
     }
 
     /*
@@ -137,8 +135,7 @@ public class Board {
     נמצאים פה תנאי קצה כמו למשל שלא תבדוק אחריי גודל הלוח
     המטודה מחזירה בסופה את גודל הרצף שהיא הלכה לכיוון שלו
      */
-    private int checkingDirection(int row, int col, eMark mark,int moveCol, int moveRow)
-    {
+    private int checkingDirection(int row, int col, eMark mark,int moveCol, int moveRow) {
         int count = 0;
 
         row += moveRow;

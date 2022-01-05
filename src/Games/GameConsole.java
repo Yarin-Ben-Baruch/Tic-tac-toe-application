@@ -13,8 +13,7 @@ public class GameConsole extends Game{
     }
 
     @Override
-    public eGameStatus run()
-    {
+    public eGameStatus run() {
         Board board = new Board();
         eGameStatus winner = eGameStatus.IN_PROGRESS;
         Player[] myPlayers = new Player[2];
