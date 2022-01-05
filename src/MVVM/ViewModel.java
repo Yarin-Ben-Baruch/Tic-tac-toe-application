@@ -40,9 +40,15 @@ public class ViewModel {
                                    String message;
                                    model.putMark(mark, row, col);
                                    eMark[][] board = model.getBoard();
+                                   eGameStatus statusGame = model.GameStatus(row, col);
 
-                                   if (model.GameStatus(row, col) != eGameStatus.IN_PROGRESS) {
-                                       message = mark + " is the winner !!";
+                                   if (statusGame != eGameStatus.IN_PROGRESS) {
+                                       if(statusGame.equals(eGameStatus.DRAW)){
+                                           message = "Draw !!";
+                                       }
+                                       else {
+                                           message = mark + " is the winner !!";
+                                       }
                                        model.setHaveWinner(true);
                                    } else {
                                        message = model.getOppositeSign(mark) + " turn";

@@ -91,7 +91,7 @@ public class Board {
      * If there is NO strike, return the truth.
      * @param row -> row on board.
      * @param col -> column on board.
-     * @return
+     * @return status options eGameStatus (Draw,X,O,IN PROGRESS).
      */
     public eGameStatus GameStatus(int row, int col) // במהלך המשחק / מי ניצח
     {
@@ -106,10 +106,6 @@ public class Board {
                 + checkingDirection(row-1, col-1, mark, 1 ,1);
         int SequenceOfSecondaryDiagonal = checkingDirection(row-1, col-1, mark, -1 ,1)
                 + checkingDirection(row-1, col-1, mark, 1 ,-1);
-
-        if (emptyPlace == 0) {
-            return eGameStatus.DRAW;
-        }
 
         if(SequenceOfLine == WIN_STREAK - 1)
             flag = true;
@@ -129,6 +125,10 @@ public class Board {
                 result = eGameStatus.X_WIN;
             if (mark == eMark.O)
                 result = eGameStatus.O_WIN;
+        }
+        if(flag == false && emptyPlace == 0)
+        {
+            result = eGameStatus.DRAW;
         }
 
         return result;
