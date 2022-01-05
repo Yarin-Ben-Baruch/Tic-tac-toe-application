@@ -58,10 +58,11 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
         frame.getContentPane().setBackground(new Color(50, 50, 50));
         frame.setLocationRelativeTo(null);
         frame.setLayout(new BorderLayout());
+
         frame.setVisible(true);
 
-        textfield.setBackground(new Color(0xB0B0B0));
-        textfield.setForeground(new Color(0xF1C8C8));
+        textfield.setBackground(new Color(0x3137D3));
+        textfield.setForeground(new Color(0xCCFF00));
         textfield.setFont(new Font("Microsoft Himalaya", Font.BOLD, 85));
         textfield.setHorizontalAlignment(JLabel.CENTER);
         textfield.setText("Tic-Tac-Toe");
@@ -71,8 +72,8 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
         title_panel.setBounds(0, 0, 800, 100);
 
         button_panel.setLayout(new GridLayout(Board.SIZE, Board.SIZE, 20 , 20));
-        button_panel.setBackground(new Color(0, 0, 0));
-
+        button_panel.setBackground(new Color(204,255,0));
+        //button_panel.setOpaque(false);
 
 
         for (int i = 0; i < Board.SIZE * Board.SIZE; i++) {
@@ -80,6 +81,7 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
             button_panel.add(buttons[i]);
             buttons[i].setFont(new Font("Microsoft Himalaya", Font.BOLD, 120));
             buttons[i].setFocusable(false);
+            buttons[i].setBackground(new Color(0));
             buttons[i].addActionListener(this);
 
         }
@@ -176,14 +178,13 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
                 buttons[i].setForeground( Color.BLACK);
                 //buttons[i].setText("X");
                 buttons[i].setIcon(new ImageIcon("src/images/xIcon.png"));
-                buttons[i].setEnabled(false);
+
             }
             else if (board[row][col] == eMark.O){
                 // photos
                 buttons[i].setForeground(Color.pink);
                 buttons[i].setIcon(new ImageIcon("src/images/oIcon.png"));
                 //buttons[i].setText("O");
-                buttons[i].setEnabled(true);
                 }
             }
 

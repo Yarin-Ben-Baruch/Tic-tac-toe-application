@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a529818-17f8-46bc-b482-510013902aab" name="Changes" comment="Update CleverPlayer">
+      <change afterPath="$PROJECT_DIR$/src/images/200165.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/neonYellowBackground.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Renderers/GuiRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Renderers/GuiRenderer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +55,7 @@
       <recent name="C:\Users\Danoy-SC\Desktop\TicTacToeConsoleApplication\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\matan\IdeaProjects\TicTacToeConsoleApplication\src\images" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
