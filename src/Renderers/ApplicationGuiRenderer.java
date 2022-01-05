@@ -17,8 +17,8 @@ import java.awt.event.ActionListener;
 public class ApplicationGuiRenderer extends JFrame implements ActionListener, iRenderer {
 
     private JFrame frame;
-    private JPanel title_panel;
-    private JPanel button_panel;
+    private JPanel titlePanel;
+    private JPanel buttonPanel;
     private JPanel statisticsPanel;
     private JLabel textfield;
     private JButton[] buttons;
@@ -27,10 +27,13 @@ public class ApplicationGuiRenderer extends JFrame implements ActionListener, iR
     private Player playerO;
     private int turnToPlay;
     private Board myBoard;
-    // statistics[0] = X | statistics[1] = O | statistics[2] = Draw
+
+    /**
+     * statistics[0] = X | statistics[1] = O | statistics[2] = Draw
+     */
     private static int[] statistics = new int[3];;
 
-    private boolean player1_turn = true;
+    private boolean player1Turn = true;
     private static int locationInBoard;
 
     ApplicationGuiRenderer() {
@@ -46,8 +49,8 @@ public class ApplicationGuiRenderer extends JFrame implements ActionListener, iR
 
     public void init() {
         frame = new JFrame("Tic Tac Toe");
-        title_panel = new JPanel();
-        button_panel = new JPanel();
+        titlePanel = new JPanel();
+        buttonPanel = new JPanel();
         textfield = new JLabel();
         buttons = new JButton[Board.SIZE * Board.SIZE];
     }
@@ -74,17 +77,16 @@ public class ApplicationGuiRenderer extends JFrame implements ActionListener, iR
         textfield.setText("Tic-Tac-Toe");
         textfield.setOpaque(true);
 
-        title_panel.setLayout(new BorderLayout());
-        title_panel.setBounds(0, 0, 800, 100);
+        titlePanel.setLayout(new BorderLayout());
+        titlePanel.setBounds(0, 0, 800, 100);
 
-        button_panel.setLayout(new GridLayout(Board.SIZE, Board.SIZE, 10 , 10));
-        button_panel.setBackground(new Color(0xFFFFFF));
-        //button_panel.setOpaque(false);
+        buttonPanel.setLayout(new GridLayout(Board.SIZE, Board.SIZE, 10 , 10));
+        buttonPanel.setBackground(new Color(0xFFFFFF));
 
 
         for (int i = 0; i < Board.SIZE * Board.SIZE; i++) {
             buttons[i] = new JButton();
-            button_panel.add(buttons[i]);
+            buttonPanel.add(buttons[i]);
             buttons[i].setFont(new Font("Bodoni MT", Font.BOLD, 120));
             buttons[i].setFocusable(false);
             buttons[i].setBackground(new Color(45,45,50));
@@ -99,10 +101,10 @@ public class ApplicationGuiRenderer extends JFrame implements ActionListener, iR
         label.setFont(new Font("Bodoni MT", Font.BOLD, 32));
         label.setForeground(Color.WHITE);
         statisticsPanel.add(label);
-        title_panel.add(textfield);
+        titlePanel.add(textfield);
         frame.add(statisticsPanel, BorderLayout.SOUTH);
-        frame.add(title_panel, BorderLayout.NORTH);
-        frame.add(button_panel);
+        frame.add(titlePanel, BorderLayout.NORTH);
+        frame.add(buttonPanel);
     }
 
     public void setViewModel(ViewModel vm) {
@@ -164,7 +166,7 @@ public class ApplicationGuiRenderer extends JFrame implements ActionListener, iR
         int row, col;
         row = locationInBoard / 10;
         col = locationInBoard % 10;
-        if (player1_turn) {
+        if (player1Turn) {
 
             board.putMark(eMark.X,row,col);
         }else {
@@ -265,7 +267,10 @@ public class ApplicationGuiRenderer extends JFrame implements ActionListener, iR
         return true;
     }
 
-    //    statistics[0] = X | statistics[1] = O | statistics[2] = Draw
+    /**
+     * statistics[0] = X | statistics[1] = O | statistics[2] = Draw
+     * @param mark -> sign of X or O.
+     */
     private void updateStatisticsGameAndStartNewGame(eGameStatus mark){
 
         switch(mark) {

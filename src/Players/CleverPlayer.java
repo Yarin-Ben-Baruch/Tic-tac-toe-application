@@ -9,7 +9,6 @@ import java.util.HashMap;
  * A class that represents a smart player
  */
 public class CleverPlayer extends WhateverPlayer {
-    //fields.
     private HashMap<eGameStatus, Integer> scores;
 
     /**
@@ -60,8 +59,6 @@ public class CleverPlayer extends WhateverPlayer {
 
         for (int i = 0; i < Board.SIZE; i++) {
             for (int j = 0; j < Board.SIZE; j++) {
-//                currentBoard = board.getBoard();
-                // Is the spot available?
                 if (currentBoard[i][j] == eMark.BLANK) {
                     currentBoard[i][j] = getDefaultSign();
                     int score = minimax(currentBoard, 0, false, board , i+1, j+1);
@@ -118,7 +115,6 @@ public class CleverPlayer extends WhateverPlayer {
             bestScore = Integer.MAX_VALUE;
             for (int i = 0; i < Board.SIZE; i++) {
                 for (int j = 0; j < Board.SIZE; j++) {
-                    // Is the spot available?
                     if (board[i][j] == eMark.BLANK) {
                         board[i][j] = getOppositeSign();
                         int score = minimax(board, depth + 1, true, boardClass, i+1, j+1);

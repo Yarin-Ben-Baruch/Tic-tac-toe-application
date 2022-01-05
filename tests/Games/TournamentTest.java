@@ -23,7 +23,7 @@ class TournamentTest {
         boolean isString = TournamentConsole.isDigitsString("TESTESTESTESTESTESTEST");
         assertEquals(false,isString);
     }
-
+ // 390 x 220
     @Test
     void playerTypeSelection() {
         String playerTypeSelectionHuman = TournamentConsole.playerTypeSelection("1");

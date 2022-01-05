@@ -13,10 +13,10 @@ public class FirstScreenGame {
     private JButton startButton = new JButton("Start New Game");
 
     public FirstScreenGame() {
-        SetTheFirstScreen();
+        setTheFirstScreen();
     }
 
-    public void SetTheFirstScreen() {
+    public void setTheFirstScreen() {
         startFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         startFrame.setSize(650, 620);
         startFrame.setLocationRelativeTo(null);
@@ -36,7 +36,7 @@ public class FirstScreenGame {
         startButton.setBackground(new Color(0xFFFFFF));
         startFrame.add(startButton);
 
-        startButton.addActionListener(e -> StartNewGame());
+        startButton.addActionListener(e -> startNewGame());
 
         startFrame.setVisible(true);
     }
@@ -45,7 +45,7 @@ public class FirstScreenGame {
         FirstScreenGame firstScreenGame = new FirstScreenGame();
     }
 
-    public void StartNewGame()
+    public void startNewGame()
     {
         startFrame.dispose();
         OptionScreenGameView viewGame = new OptionScreenGameView();

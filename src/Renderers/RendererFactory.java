@@ -5,12 +5,12 @@ public class RendererFactory {
 
     /**
      * 'buildRenderer' is method that accept the user type of UI.
-     * @param i_Type
+     * @param typeOfGame
      * @return
      */
-    public iRenderer buildRenderer(String i_Type) {
+    public iRenderer buildRenderer(String typeOfGame) {
 
-        switch(i_Type) {
+        switch(typeOfGame) {
             case "Console":
                 return new ConsoleRenderer();
             case "None":

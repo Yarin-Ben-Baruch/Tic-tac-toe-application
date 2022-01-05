@@ -48,7 +48,6 @@ public class GameConsole extends Game{
             myPlayers[turnToPlay % 2].playTurn(board, myPlayers[turnToPlay % 2].getDefaultSign(), row, col);
 
             getRenderer().renderBoard(board);
-            //winner = board.GameStatus(row, col, myPlayers[turnToPlay % 2].getDefaultSign());
             winner = board.gameStatus(row, col);
 
         }

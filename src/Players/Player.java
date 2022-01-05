@@ -4,7 +4,6 @@ import MVVM.Board;
 import Enums.eMark;
 public abstract class Player {
 
-    //fields.
     private String name;
     private eMark defaultSign;
 

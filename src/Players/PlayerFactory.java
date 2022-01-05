@@ -4,7 +4,6 @@ import Enums.eMark;
 
 public class PlayerFactory {
 
-    //fields.
     private String name;
     private eMark defaultSign;
 

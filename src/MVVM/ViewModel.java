@@ -11,8 +11,7 @@ import java.util.concurrent.Executors;
 
 public class ViewModel {
 
-    //fields.
-    private Board model; // ?
+    private Board model;
     private ApplicationGuiRenderer view;
     private ExecutorService service;
 

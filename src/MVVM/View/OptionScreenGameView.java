@@ -64,8 +64,8 @@ public class OptionScreenGameView extends JFrame {
 
         participantsSelectionButtons[0].setBounds(250, 520, 300, 60);
         participantsSelectionButtons[1].setBounds(250, 410, 300, 60);
-        participantsSelectionButtons[0].addActionListener(e -> StartPlayerVsPlayer());
-        participantsSelectionButtons[1].addActionListener(e -> StartPlayerVsCPU());
+        participantsSelectionButtons[0].addActionListener(e -> startPlayerVsPlayer());
+        participantsSelectionButtons[1].addActionListener(e -> startPlayerVsCPU());
 
         x = 300;
         String[] levels = {"             Easy", "             Hard"};
@@ -93,13 +93,12 @@ public class OptionScreenGameView extends JFrame {
     }
 
     public void startPlayLevelEasy() {
-        //Object eMark = null; ****************************************************************************
         Game game = new GameGui(new HumanPlayer("X", eMark.X), new WhateverPlayer("O", eMark.O), new VoidRenderer());
         game.run();
         startFrame.dispose();
     }
 
-    public void StartPlayerVsCPU() {
+    public void startPlayerVsCPU() {
 
         if (levelComboBox.getSelectedItem() == "Easy")
         {
@@ -115,7 +114,7 @@ public class OptionScreenGameView extends JFrame {
         }
     }
 
-    public void StartPlayerVsPlayer() {
+    public void startPlayerVsPlayer() {
         Game game = new GameGui(new HumanPlayer("X", eMark.X), new HumanPlayer("O", eMark.O), new VoidRenderer());
         game.run();
 
