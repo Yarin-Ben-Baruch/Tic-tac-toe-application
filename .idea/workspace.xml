@@ -64,26 +64,10 @@
       <recent name="Games" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.FirstScreenGame">
+  <component name="RunManager" selected="JUnit.TournamentTest">
     <configuration name="FirstScreenGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="FirstScreenGame" />
       <module name="TicTacToe" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BoardTest.gameStatus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TicTacToe" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Boards.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Boards" />
-      <option name="MAIN_CLASS_NAME" value="Boards.BoardTest" />
-      <option name="METHOD_NAME" value="gameStatus" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -99,22 +83,6 @@
       <option name="PACKAGE_NAME" value="Boards" />
       <option name="MAIN_CLASS_NAME" value="Boards.BoardTest" />
       <option name="METHOD_NAME" value="getMark" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BoardTest.putMark" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TicTacToe" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Boards.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Boards" />
-      <option name="MAIN_CLASS_NAME" value="Boards.BoardTest" />
-      <option name="METHOD_NAME" value="putMark" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -136,13 +104,44 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TournamentTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TicTacToe" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Games.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Games" />
+      <option name="MAIN_CLASS_NAME" value="Games.TournamentTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TournamentTest.selectionCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TicTacToe" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Games.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Games" />
+      <option name="MAIN_CLASS_NAME" value="Games.TournamentTest" />
+      <option name="METHOD_NAME" value="selectionCheck" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TournamentTest" />
+        <item itemvalue="JUnit.TournamentTest.selectionCheck" />
         <item itemvalue="Application.FirstScreenGame" />
         <item itemvalue="JUnit.BoardTest.getMark" />
         <item itemvalue="JUnit.BoardTest.setHaveWinner" />
-        <item itemvalue="JUnit.BoardTest.gameStatus" />
-        <item itemvalue="JUnit.BoardTest.putMark" />
       </list>
     </recent_temporary>
   </component>
