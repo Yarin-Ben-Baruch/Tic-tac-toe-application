@@ -27,10 +27,10 @@ public class GameGui extends Game{
      */
     @Override
     public eGameStatus run() {
-
+        int[] emptyArr = new int[3];
         Board model = new Board();
         ViewModel vm = new ViewModel();
-        GuiRenderer view = new GuiRenderer(getPlayerX(), getPlayerO(),model);
+        GuiRenderer view = new GuiRenderer(getPlayerX(), getPlayerO(),model, emptyArr);
 
         SwingUtilities.invokeLater(new Runnable() {
             @Override

@@ -1,6 +1,7 @@
 package Renderers;
 
 import Boards.Board;
+import Enums.eGameStatus;
 import Enums.eMark;
 import MVVM.ViewModel;
 import Players.HumanPlayer;
@@ -24,19 +25,21 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
     private Player playerO;
     private int turnToPlay;
     private Board myBoard;
+    // statistics[0] = X | statistics[1] = O | statistics[2] = Draw
+    private int[] statistics;
 
-    boolean player1_turn = true;
-    public static int locationInBoard;
-
+    private boolean player1_turn = true;
+    private static int locationInBoard;
 
     GuiRenderer() {
-
+        this.statistics = new int[3];
     }
 
-    public GuiRenderer(Player playerX, Player playerO, Board board) {
+    public GuiRenderer(Player playerX, Player playerO, Board board, int[] statistics) {
         this.playerX = playerX;
         this.playerO = playerO;
         this.myBoard = board;
+        this.statistics = statistics;
         turnToPlay = 0;
     }
 
@@ -190,12 +193,13 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
 
         }
 
-    public void disableAll(eMark mark) {
+    public void disableAll(eGameStatus status, String message) {
         JOptionPane.showMessageDialog(frame,
-                "The winner is "+ mark,
+                message,
                 "WINNER",
                 JOptionPane.CLOSED_OPTION);
-        System.exit(0);
+        updateStatisticsGameAndStartNewGame(status);
+        //System.exit(0);
     }
 
     /**
@@ -251,5 +255,26 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
         return true;
     }
 
+    //    statistics[0] = X | statistics[1] = O | statistics[2] = Draw
+    private void updateStatisticsGameAndStartNewGame(eGameStatus mark){
+
+        switch(mark) {
+            case DRAW:
+                statistics[2]++;
+                break;
+            case X_WIN:
+                statistics[0]++;
+                break;
+            case O_WIN:
+                statistics[1]++;
+                break;
+            default:
+                break;
+        }
+
+        //GuiRenderer myGame = new GuiRenderer(playerX,playerO,myBoard,statistics);
+        init();
+        start();
+    }
 }
 

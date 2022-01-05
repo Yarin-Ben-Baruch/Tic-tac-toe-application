@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a529818-17f8-46bc-b482-510013902aab" name="Changes" comment="Update CleverPlayer">
-      <change afterPath="$PROJECT_DIR$/src/images/200165.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/neonYellowBackground.jpg" afterDir="false" />
+    <list default="true" id="8a529818-17f8-46bc-b482-510013902aab" name="Changes" comment="Update photos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Games/GameGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Games/GameGui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MVVM/ViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVVM/ViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Renderers/GuiRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Renderers/GuiRenderer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -390,16 +390,5 @@
     <MESSAGE value="Update GameStatus" />
     <MESSAGE value="Update CleverPlayer" />
     <option name="LAST_COMMIT_MESSAGE" value="Update CleverPlayer" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/MVVM/ViewModel.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

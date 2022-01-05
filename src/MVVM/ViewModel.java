@@ -59,8 +59,8 @@ public class ViewModel {
                                        public void run() {
                                            view.showTurn(message);
                                            view.showBoard(board);
-                                           if (message.equals(mark + " is the winner !!")) {
-                                               view.disableAll(mark);
+                                           if (model.isHaveWinner()) {
+                                               view.disableAll(statusGame, message);
                                            }
 
                                        }
