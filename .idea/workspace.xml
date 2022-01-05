@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a529818-17f8-46bc-b482-510013902aab" name="Changes" comment="Fonts and Colors">
-      <change beforePath="$PROJECT_DIR$/src/Boards/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boards/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Games/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Games/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Games/GameConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Games/GameConsole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Games/GameGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Games/GameGui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Games/Tournament.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Games/Tournament.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MVVM/ViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVVM/ViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Players/CleverPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/CleverPlayer.java" afterDir="false" />
+    <list default="true" id="8a529818-17f8-46bc-b482-510013902aab" name="Changes" comment="Final version of gui">
+      <change beforePath="$PROJECT_DIR$/src/MVVM/OptionScreenGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVVM/OptionScreenGameView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -416,6 +410,7 @@
     <MESSAGE value="Set new icons" />
     <MESSAGE value="Tourmenment" />
     <MESSAGE value="Fonts and Colors" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fonts and Colors" />
+    <MESSAGE value="Final version of gui" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final version of gui" />
   </component>
 </project>

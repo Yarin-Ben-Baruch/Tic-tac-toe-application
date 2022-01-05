@@ -73,7 +73,7 @@ public class OptionScreenGameView extends JFrame {
         levelComboBox.setBounds(250, 180, 300, 60);
         levelComboBox.setBackground(new Color(255, 255, 255));
         levelComboBox.setFont(new Font("Bodoni MT", Font.BOLD, 30));
-        levelComboBox.setForeground(Color.white);
+        levelComboBox.setForeground(new Color(45,45,50));
         startFrame.add(levelComboBox);
 
         String[] boardSize = {"             3x3", "             4x4", "             5x5"};
