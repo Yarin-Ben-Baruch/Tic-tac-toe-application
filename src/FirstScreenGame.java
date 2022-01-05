@@ -16,7 +16,6 @@ public class FirstScreenGame {
         SetTheFirstScreen();
     }
 
-
     public void SetTheFirstScreen() {
         startFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         startFrame.setSize(650, 620);

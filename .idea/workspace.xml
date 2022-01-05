@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a529818-17f8-46bc-b482-510013902aab" name="Changes" comment="Add commits on PlayerFactory">
-      <change beforePath="$PROJECT_DIR$/src/Players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Players/WhateverPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/WhateverPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/Title.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FirstScreenGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FirstScreenGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MVVM/ViewGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVVM/ViewGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,16 +64,10 @@
       <recent name="Games" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BoardTest.getMark">
-    <configuration name="ViewGame (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MVVM.ViewGame" />
+  <component name="RunManager" selected="Application.FirstScreenGame">
+    <configuration name="FirstScreenGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FirstScreenGame" />
       <module name="TicTacToe" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="MVVM.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -142,11 +138,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FirstScreenGame" />
         <item itemvalue="JUnit.BoardTest.getMark" />
         <item itemvalue="JUnit.BoardTest.setHaveWinner" />
         <item itemvalue="JUnit.BoardTest.gameStatus" />
         <item itemvalue="JUnit.BoardTest.putMark" />
-        <item itemvalue="Application.ViewGame (1)" />
       </list>
     </recent_temporary>
   </component>
