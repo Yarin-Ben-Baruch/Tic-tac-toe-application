@@ -4,15 +4,24 @@ import Boards.Board;
 import Enums.eMark;
 public abstract class Player {
 
+    //fields.
     private String name;
     private eMark defaultSign;
 
-    //                      name            X || O
+    /**
+     * A constructor that initializes the player data.
+     * @param i_name name player(PlayerX, PlayerO).
+     * @param i_DefaultSign what his sign(X, O).
+     */
     public Player(String i_name, eMark i_DefaultSign) {
         setName(i_name);
         setDefaultSign(i_DefaultSign);
     }
 
+    /**
+     * return the player name.
+     * @return name player.
+     */
     public String getName() {
         return name;
     }
@@ -21,6 +30,10 @@ public abstract class Player {
         this.name = name;
     }
 
+    /**
+     * A method that returns the player's mark.
+     * @return player mark.
+     */
     public eMark getDefaultSign() {
         return defaultSign;
     }
@@ -29,8 +42,19 @@ public abstract class Player {
         this.defaultSign = defaultSign;
     }
 
+    /**
+     * A method that represents a player's move.
+     * @param board On which board to mark.
+     * @param defaultSign What a sign to put in.
+     * @param row row number.
+     * @param col col number.
+     */
     public abstract void playTurn(Board board, eMark defaultSign, int row, int col);
 
+    /**
+     * A method that accepts coordinates that the player selects.
+     * @param board On which board to mark.
+     * @return Array location.
+     */
     public abstract int getCoordinates(Board board);
-
 }
