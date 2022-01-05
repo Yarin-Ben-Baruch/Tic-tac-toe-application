@@ -55,8 +55,8 @@ public class OptionScreenGameView extends JFrame {
             participantsSelectionButtons[i].setFocusable(false);
             participantsSelectionButtons[i].setText(titleForButtons[i]);
             participantsSelectionButtons[i].setFont(new Font("Bodoni MT", Font.BOLD, 30));
-            participantsSelectionButtons[i].setForeground(Color.white);
-            participantsSelectionButtons[i].setBackground(new Color(45,45,50));
+            participantsSelectionButtons[i].setForeground(new Color(45,45,50));
+            participantsSelectionButtons[i].setBackground(new Color(0xEAE4E4));
             participantsSelectionButtons[i].setBounds(x, 230, 135, 50);
             x += 145;
             startFrame.add(participantsSelectionButtons[i]);
@@ -71,7 +71,7 @@ public class OptionScreenGameView extends JFrame {
         String[] levels = {"             Easy", "             Hard"};
         levelComboBox = new JComboBox(levels);
         levelComboBox.setBounds(250, 180, 300, 60);
-        levelComboBox.setBackground(new Color(45,45,50));
+        levelComboBox.setBackground(new Color(255, 255, 255));
         levelComboBox.setFont(new Font("Bodoni MT", Font.BOLD, 30));
         levelComboBox.setForeground(Color.white);
         startFrame.add(levelComboBox);
@@ -80,9 +80,9 @@ public class OptionScreenGameView extends JFrame {
         x += 145;
         boardComboBox = new JComboBox(boardSize);
         boardComboBox.setBounds(250, 300, 300, 60);
-        boardComboBox.setBackground(new Color(45,45,50));
+        boardComboBox.setBackground(new Color(255, 255, 255));
         boardComboBox.setFont(new Font("Bodoni MT", Font.BOLD, 30));
-        boardComboBox.setForeground(Color.white);
+        boardComboBox.setForeground(new Color(45,45,50));
 
         startFrame.add(boardComboBox);
         startFrame.setVisible(true);

@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a529818-17f8-46bc-b482-510013902aab" name="Changes" comment="Tourmenment">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Games/GameGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Games/GameGui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MVVM/ViewGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVVM/ViewGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Renderers/GuiRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Renderers/GuiRenderer.java" afterDir="false" />
-    </list>
+    <list default="true" id="8a529818-17f8-46bc-b482-510013902aab" name="Changes" comment="Fonts and Colors" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -358,7 +353,19 @@
       <option name="presentableId" value="LOCAL‎00026" />
       <updated>1641400199597</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL‎00027" summary="Fonts and Colors">
+      <created>1641401990830</created>
+      <option name="number" value="LOCAL‎00027" />
+      <option name="presentableId" value="LOCAL‎00027" />
+      <updated>1641401990830</updated>
+    </task>
+    <task id="LOCAL‎00028" summary="Fonts and Colors">
+      <created>1641402069126</created>
+      <option name="number" value="LOCAL‎00028" />
+      <option name="presentableId" value="LOCAL‎00028" />
+      <updated>1641402069126</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -400,6 +407,7 @@
     <MESSAGE value="Update CleverPlayer" />
     <MESSAGE value="Set new icons" />
     <MESSAGE value="Tourmenment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tourmenment" />
+    <MESSAGE value="Fonts and Colors" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fonts and Colors" />
   </component>
 </project>
