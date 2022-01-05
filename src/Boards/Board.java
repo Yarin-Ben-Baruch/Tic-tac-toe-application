@@ -16,6 +16,7 @@ public class Board {
     // משתנה מסוג enum שממלא את הלוח בהתאם לסימן
     private eMark[][] board;
     private eMark lastPlayer; //?
+    private boolean isHaveWinner;
 
     public eMark[][] getBoard() {
         return board;
@@ -34,6 +35,7 @@ public class Board {
         emptyLocations = new ArrayList<>();
         installBoard();
         emptyPlace = SIZE*SIZE;
+        isHaveWinner = false;
     }
 
     /*
@@ -159,5 +161,19 @@ public class Board {
         return board[row][col];
     }
 
+    public boolean isHaveWinner() {
+        return isHaveWinner;
+    }
+
+    public void setHaveWinner(boolean isHaveWinner){
+        this.isHaveWinner = isHaveWinner;
+    }
+
+    public eMark getOppositeSign(eMark mark) {
+        if(mark == eMark.X)
+            return eMark.O;
+        else
+            return eMark.X;
+    }
 
 }

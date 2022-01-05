@@ -28,11 +28,6 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
     public static int locationInBoard;
 
 
-
-//    public static void main(String[] args) {
-//        TTT.Renderers.TicTacToeApp t = new TTT.Renderers.TicTacToeApp();
-//    }
-
     GuiRenderer() {
 
     }
@@ -173,17 +168,15 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
 
     // מציג למעלה את התור של מי שמשחק
     public void showTurn(String message) {
-
         textfield.setText(message);
     }
 
     public void showMessage(String message) {
-
         textfield.setText(message);
-
     }
 
     public boolean onlyHuman(Player currentPlayerX, Player secondPlayerO){
+
         int flag = 0;
         eMark sign = eMark.BLANK;
 
@@ -191,9 +184,8 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
             try {
                 Thread.sleep(50);
             }catch (Exception e)
-            {
+            {}
 
-            }
             locationInBoard = currentPlayerX.getCoordinates(myBoard);
             flag = 1;
             sign = currentPlayerX.getDefaultSign();
@@ -202,11 +194,9 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
             try {
                 Thread.sleep(50);
             }catch (Exception e)
-            {
+            {}
 
-            }
             locationInBoard = secondPlayerO.getCoordinates(myBoard);
-            System.out.println(locationInBoard);
             flag = 1;
             sign = secondPlayerO.getDefaultSign();
         }

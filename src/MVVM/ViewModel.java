@@ -16,52 +16,43 @@ public class ViewModel {
     private GuiRenderer view;
     private ExecutorService service;
 
-    //view
-
-    private int turn;
-
     public ViewModel() {
         this.service = Executors.newFixedThreadPool(3);
     }
 
     public void getCoordinatesFromGui(int row, int col, eMark mark) {
 
-        service.submit(new Runnable() {
-            @Override
-            public void run() {
-                String message;
-                model.putMark(mark, row, col);
-                eMark[][]board = model.getBoard();
+        if(!model.isHaveWinner()) {
+            service.submit(new Runnable() {
+                               @Override
+                               public void run() {
+                                   String message;
+                                   model.putMark(mark, row, col);
+                                   eMark[][] board = model.getBoard();
 
-                if(checkWinner(row, col) != eGameStatus.IN_PROGRESS) {
-                    message = mark + " is the winner !!";
-                }
-                else {
-                    message = getOppositeSign(mark) + " turn";
-                }
+                                   if (model.GameStatus(row, col) != eGameStatus.IN_PROGRESS) {
+                                       message = mark + " is the winner !!";
+                                       model.setHaveWinner(true);
+                                   } else {
+                                       message = model.getOppositeSign(mark) + " turn";
+                                   }
 
-                SwingUtilities.invokeLater(new Runnable() {
-                        @Override
-                        public void run() {
-                            view.showTurn(message);
-                            view.showBoard(board);
-                            if (message.equals(mark + " is the winner !!")){
-                                view.disableAll(mark);
-                            }
+                                   SwingUtilities.invokeLater(new Runnable() {
+                                       @Override
+                                       public void run() {
+                                           view.showTurn(message);
+                                           view.showBoard(board);
+                                           if (message.equals(mark + " is the winner !!")) {
+                                               view.disableAll(mark);
+                                           }
 
-                        }
-                    });
-                }
-            }
-        );
+                                       }
+                                   });
+                               }
+                           }
+            );
+        }
     }
-
-
-    public eGameStatus checkWinner(int row, int col)
-    {
-        return model.GameStatus(row, col);
-    }
-
 
     public void setModel(Board model) {
         this.model = model;
@@ -71,11 +62,4 @@ public class ViewModel {
         this.view = view;
     }
 
-    private eMark getOppositeSign(eMark mark)
-    {
-        if(mark == eMark.X)
-            return eMark.O;
-        else
-            return eMark.X;
-    }
 }
