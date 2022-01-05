@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class Board {
 
+    //dsf
     // משתנים של המחלקה
     public static final int SIZE = 3;
     public static final int WIN_STREAK = 3;

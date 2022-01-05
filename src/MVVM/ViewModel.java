@@ -16,6 +16,8 @@ public class ViewModel {
     private GuiRenderer view;
     private ExecutorService service;
 
+    //view
+
     private int turn;
 
     public ViewModel() {
