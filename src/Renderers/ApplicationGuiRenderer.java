@@ -1,6 +1,6 @@
 package Renderers;
 
-import Boards.Board;
+import MVVM.Board;
 import Enums.eGameStatus;
 import Enums.eMark;
 import Games.Game;
@@ -14,7 +14,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
+public class ApplicationGuiRenderer extends JFrame implements ActionListener, iRenderer {
 
     private JFrame frame;
     private JPanel title_panel;
@@ -33,11 +33,11 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
     private boolean player1_turn = true;
     private static int locationInBoard;
 
-    GuiRenderer() {
+    ApplicationGuiRenderer() {
 
     }
 
-    public GuiRenderer(Player playerX, Player playerO, Board board) {
+    public ApplicationGuiRenderer(Player playerX, Player playerO, Board board) {
         this.playerX = playerX;
         this.playerO = playerO;
         this.myBoard = board;

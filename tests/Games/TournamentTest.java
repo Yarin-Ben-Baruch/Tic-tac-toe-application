@@ -8,37 +8,37 @@ class TournamentTest {
 
     @Test
     void selectionCheck() {
-        boolean selectionChose1 = Tournament.selectionCheck("1");
+        boolean selectionChose1 = TournamentConsole.selectionCheck("1");
         assertEquals(true,selectionChose1);
-        boolean selectionChose2 = Tournament.selectionCheck("2");
+        boolean selectionChose2 = TournamentConsole.selectionCheck("2");
         assertEquals(true,selectionChose2);
-        boolean selectionChose3 = Tournament.selectionCheck("3");
+        boolean selectionChose3 = TournamentConsole.selectionCheck("3");
         assertEquals(true,selectionChose3);
     }
 
     @Test
     void isDigitsString() {
-        boolean isDigit = Tournament.isDigitsString("5");
+        boolean isDigit = TournamentConsole.isDigitsString("5");
         assertEquals(true,isDigit);
-        boolean isString = Tournament.isDigitsString("TESTESTESTESTESTESTEST");
+        boolean isString = TournamentConsole.isDigitsString("TESTESTESTESTESTESTEST");
         assertEquals(false,isString);
     }
 
     @Test
     void playerTypeSelection() {
-        String playerTypeSelectionHuman = Tournament.playerTypeSelection("1");
+        String playerTypeSelectionHuman = TournamentConsole.playerTypeSelection("1");
         assertEquals("Human",playerTypeSelectionHuman);
-        String playerTypeSelectionWhatever = Tournament.playerTypeSelection("2");
+        String playerTypeSelectionWhatever = TournamentConsole.playerTypeSelection("2");
         assertEquals("Whatever",playerTypeSelectionWhatever);
-        String playerTypeSelectionCleverPlayer = Tournament.playerTypeSelection("asd");
+        String playerTypeSelectionCleverPlayer = TournamentConsole.playerTypeSelection("asd");
         assertEquals("TTT.Players.CleverPlayer",playerTypeSelectionCleverPlayer);
     }
 
     @Test
     void rendererTypeSelection() {
-        String rendererTypeSelectionNone = Tournament.rendererTypeSelection("1");
-        String rendererTypeSelectionConsole = Tournament.rendererTypeSelection("2");
-        String rendererTypeSelectionGui = Tournament.rendererTypeSelection("3");
+        String rendererTypeSelectionNone = TournamentConsole.rendererTypeSelection("1");
+        String rendererTypeSelectionConsole = TournamentConsole.rendererTypeSelection("2");
+        String rendererTypeSelectionGui = TournamentConsole.rendererTypeSelection("3");
         assertEquals("None",rendererTypeSelectionNone);
         assertEquals("Console",rendererTypeSelectionConsole);
         assertEquals("Gui",rendererTypeSelectionGui);

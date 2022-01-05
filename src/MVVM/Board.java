@@ -1,4 +1,4 @@
-package Boards;
+package MVVM;
 
 
 import Enums.eGameStatus;

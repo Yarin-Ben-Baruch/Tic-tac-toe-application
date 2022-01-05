@@ -1,9 +1,9 @@
-package MVVM;
+package MVVM.View;
 
 import Enums.eMark;
 import Games.Game;
 import Games.GameGui;
-import Games.Tournament;
+import Games.TournamentConsole;
 import Players.CleverPlayer;
 import Players.HumanPlayer;
 import Players.WhateverPlayer;
@@ -26,7 +26,7 @@ public class OptionScreenGameView extends JFrame {
     private JComboBox boardComboBox;
 
     private JPanel buttonPanel = new JPanel();
-    private Tournament tournament;
+    private TournamentConsole tournament;
 
     public OptionScreenGameView() {
         setStartFrame();

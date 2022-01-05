@@ -16,7 +16,7 @@ public class RendererFactory {
             case "None":
                 return new VoidRenderer();
             case "Gui":
-                return new GuiRenderer();
+                return new ApplicationGuiRenderer();
             default:
                 return null;
         }

@@ -1,6 +1,6 @@
 package Renderers;
 
-import Boards.Board;
+import MVVM.Board;
 
 public interface iRenderer {
 

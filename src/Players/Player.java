@@ -1,6 +1,6 @@
 package Players;
 
-import Boards.Board;
+import MVVM.Board;
 import Enums.eMark;
 public abstract class Player {
 

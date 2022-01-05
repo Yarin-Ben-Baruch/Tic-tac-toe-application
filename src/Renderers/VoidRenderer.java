@@ -1,7 +1,7 @@
 package Renderers;
 
 
-import Boards.Board;
+import MVVM.Board;
 
 public class VoidRenderer implements iRenderer{
 

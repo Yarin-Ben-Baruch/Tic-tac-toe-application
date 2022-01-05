@@ -1,10 +1,10 @@
 package Games;
 
-import Boards.Board;
+import MVVM.Board;
 import Enums.eGameStatus;
 import MVVM.ViewModel;
 import Players.Player;
-import Renderers.GuiRenderer;
+import Renderers.ApplicationGuiRenderer;
 import Renderers.iRenderer;
 import javax.swing.*;
 
@@ -28,7 +28,7 @@ public class GameGui extends Game{
     public eGameStatus run() {
         Board model = new Board();
         ViewModel vm = new ViewModel();
-        GuiRenderer view = new GuiRenderer(getPlayerX(), getPlayerO(),model);
+        ApplicationGuiRenderer view = new ApplicationGuiRenderer(getPlayerX(), getPlayerO(),model);
         eGameStatus winner = eGameStatus.IN_PROGRESS;
 
         SwingUtilities.invokeLater(new Runnable() {

@@ -64,18 +64,18 @@
   </component>
   <component name="RunManager" selected="Application.FirstScreenGame">
     <configuration name="FirstScreenGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="FirstScreenGame" />
+      <option name="MAIN_CLASS_NAME" value="MVVM.View.FirstScreenGame" />
       <module name="TicTacToe" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="OptionScreenGameView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MVVM.OptionScreenGameView" />
+      <option name="MAIN_CLASS_NAME" value="MVVM.View.OptionScreenGameView" />
       <module name="TicTacToe" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="MVVM.*" />
+          <option name="PATTERN" value="MVVM.View.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -83,8 +83,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tournament" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Games.Tournament" />
+    <configuration name="TournamentConsole" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Games.TournamentConsole" />
       <module name="TicTacToe" />
       <extension name="coverage">
         <pattern>
@@ -100,7 +100,7 @@
       <module name="TicTacToe" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Boards.*" />
+          <option name="PATTERN" value="MVVM.View.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -131,7 +131,7 @@
       <list>
         <item itemvalue="Application.FirstScreenGame" />
         <item itemvalue="Application.OptionScreenGameView" />
-        <item itemvalue="Application.Tournament" />
+        <item itemvalue="Application.TournamentConsole" />
         <item itemvalue="JUnit.BoardTest.setHaveWinner" />
         <item itemvalue="JUnit.TournamentTest" />
       </list>

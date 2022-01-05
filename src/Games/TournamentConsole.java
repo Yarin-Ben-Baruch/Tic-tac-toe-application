@@ -12,7 +12,7 @@ import java.util.Scanner;
 /**
  * A class representing an operating tournament, for a console-type game.
  */
-public class Tournament {
+public class TournamentConsole {
 
     //fields
     private final Player player1;
@@ -27,7 +27,7 @@ public class Tournament {
      * @param numberRounds The length of the tournament.
      * @param renderer board type (Console, none).
      */
-    public Tournament(Player player1, Player player2, int numberRounds, iRenderer renderer) {
+    public TournamentConsole(Player player1, Player player2, int numberRounds, iRenderer renderer) {
         this.player1 = player1;
         this.player2 = player2;
         this.numberRounds = numberRounds;
@@ -131,7 +131,7 @@ public class Tournament {
         iRenderer renderer = new RendererFactory().buildRenderer(rendererType);
         Player playerX = new PlayerFactory("X", eMark.X).buildPlayer(playerType1);
         Player playerO = new PlayerFactory("O",eMark.O).buildPlayer(playerType2);
-        Tournament tournament = new Tournament(playerX,playerO,numberOfRounds, renderer);
+        TournamentConsole tournament = new TournamentConsole(playerX,playerO,numberOfRounds, renderer);
         result = tournament.playTournament();
 
         System.out.println("TTT.Players.Player X win : " + result[0]);

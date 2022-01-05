@@ -1,10 +1,9 @@
 package MVVM;
 
 
-import Boards.Board;
 import Enums.eGameStatus;
 import Enums.eMark;
-import Renderers.GuiRenderer;
+import Renderers.ApplicationGuiRenderer;
 import javax.swing.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -14,7 +13,7 @@ public class ViewModel {
 
     //fields.
     private Board model; // ?
-    private GuiRenderer view;
+    private ApplicationGuiRenderer view;
     private ExecutorService service;
 
     /**
@@ -75,7 +74,7 @@ public class ViewModel {
         this.model = model;
     }
 
-    public void setView(GuiRenderer view) {
+    public void setView(ApplicationGuiRenderer view) {
         this.view = view;
     }
 

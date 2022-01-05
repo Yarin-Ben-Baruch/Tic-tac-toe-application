@@ -1,4 +1,4 @@
-import MVVM.OptionScreenGameView;
+package MVVM.View;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -26,7 +26,7 @@ public class FirstScreenGame {
         startFrame.setIconImage(icon);
 
         try {
-            startFrame.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("src/images/T.png")))));
+            startFrame.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("src/images/FirstScreenImage.png")))));
         } catch (IOException e) {
             e.printStackTrace();
         }

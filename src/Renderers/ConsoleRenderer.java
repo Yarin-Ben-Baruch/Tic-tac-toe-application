@@ -1,7 +1,7 @@
 package Renderers;
 
 
-import Boards.Board;
+import MVVM.Board;
 import Enums.eMark;
 
 import java.util.Map;
@@ -50,7 +50,7 @@ class ConsoleRenderer implements iRenderer {
 	 */
 	public ConsoleRenderer() {
 		if(Board.SIZE > 9 || Board.SIZE < 2) {
-			String errorMsg = "TTT.Boards.Board size must be in the range [2, 9]";
+			String errorMsg = "TTT.MVVM.Board size must be in the range [2, 9]";
 			Logger.getGlobal().severe(errorMsg);
 			throw new Error(errorMsg);
 		}

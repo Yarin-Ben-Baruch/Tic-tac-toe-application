@@ -2,6 +2,8 @@ package Boards;
 
 import Enums.eGameStatus;
 import Enums.eMark;
+import MVVM.Board;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class BoardTest {

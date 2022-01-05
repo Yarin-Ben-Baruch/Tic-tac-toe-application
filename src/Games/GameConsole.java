@@ -1,7 +1,7 @@
 package Games;
 
 
-import Boards.Board;
+import MVVM.Board;
 import Enums.eGameStatus;
 import Players.Player;
 import Renderers.iRenderer;
