@@ -77,7 +77,7 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
         title_panel.setLayout(new BorderLayout());
         title_panel.setBounds(0, 0, 800, 100);
 
-        button_panel.setLayout(new GridLayout(Board.SIZE, Board.SIZE, 20 , 20));
+        button_panel.setLayout(new GridLayout(Board.SIZE, Board.SIZE, 10 , 10));
         button_panel.setBackground(new Color(0xFFFFFF));
         //button_panel.setOpaque(false);
 
@@ -186,13 +186,13 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
             if (board[row][col] == eMark.X) {
                 buttons[i].setForeground( Color.BLACK);
                 //buttons[i].setText("X");
-                buttons[i].setIcon(new ImageIcon("src/images/xIcon.png"));
+                buttons[i].setIcon(new ImageIcon("src/images/RedX.png"));
 
             }
             else if (board[row][col] == eMark.O){
                 // photos
                 buttons[i].setForeground(Color.pink);
-                buttons[i].setIcon(new ImageIcon("src/images/oIcon.png"));
+                buttons[i].setIcon(new ImageIcon("src/images/GreenO.png"));
                 //buttons[i].setText("O");
                 }
             }
