@@ -2,7 +2,7 @@ package Boards;
 
 import Enums.eGameStatus;
 import Enums.eMark;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class BoardTest {
 

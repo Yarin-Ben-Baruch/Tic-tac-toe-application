@@ -7,10 +7,21 @@ import java.util.Scanner;
 
 public class HumanPlayer extends Player {
 
-    public HumanPlayer(String i_name, eMark i_defaultSign) {
-        super(i_name, i_defaultSign);
+    /**
+     * A constructor that initializes the player data and passes it to the base class.
+     * @param name name player(PlayerX, PlayerO).
+     * @param defaultSign what his sign(X, O).
+     */
+    public HumanPlayer(String name, eMark defaultSign) {
+        super(name, defaultSign);
     }
 
+    /**
+     * A method that represents a player's move.
+     * @param board On which board to mark.
+     * @param row row number.
+     * @param col col number.
+     */
     @Override
     public void playTurn(Board board, eMark mark , int row, int col) {
 
@@ -29,6 +40,11 @@ public class HumanPlayer extends Player {
         }
     }
 
+    /**
+     * A method that accepts coordinates that the player selects.
+     * @param board On which board to mark.
+     * @return Array location.
+     */
     @Override
     public int getCoordinates(Board board){
         int inputRowAndCol;
