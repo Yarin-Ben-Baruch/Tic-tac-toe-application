@@ -48,5 +48,7 @@ class BoardTest {
     void setHaveWinner() {
         boolean haveWinner = board.isHaveWinner();
         assertEquals(haveWinner,false);
+        boolean haveNoWinner = board.isHaveWinner();
+        assertEquals(!haveNoWinner,true);
     }
 }
