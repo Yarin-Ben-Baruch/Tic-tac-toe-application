@@ -179,6 +179,7 @@ public class GuiRenderer extends JFrame implements ActionListener, iRenderer {
                 buttons[i].setEnabled(false);
             }
             else if (board[row][col] == eMark.O){
+                // photos
                 buttons[i].setForeground(Color.pink);
                 buttons[i].setIcon(new ImageIcon("src/images/oIcon.png"));
                 //buttons[i].setText("O");
