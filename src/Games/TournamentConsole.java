@@ -57,7 +57,7 @@ public class TournamentConsole {
 
             Game game = new GameConsole(players[randomPlayerOne],players[randomPlayerTwo], renderer);
 
-            eGameStatus winner = game.run();
+            eGameStatus winner = game.runGame();
 
             if(winner == eGameStatus.DRAW){
                 results[2]++;
