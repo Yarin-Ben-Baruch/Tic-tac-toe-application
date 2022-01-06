@@ -155,13 +155,18 @@ public class TournamentConsole {
      * @return true or false.
      */
     public static boolean isDigitsString(String str) {
+        boolean result = false;
 
-        for (char currentChar : str.toCharArray() ) {
-            if (!Character.isDigit(currentChar)) {
-                return false;
-            }
+        if((Character.isDigit(str.charAt(0)) || str.charAt(0) == '-'))
+            result = true;
+
+
+        for(int i = 1 ; i < str.length() ; i++){
+            if(!Character.isDigit(str.charAt(i)))
+                result = false;
         }
-        return true;
+
+        return result;
     }
 
     /**
