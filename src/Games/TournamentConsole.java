@@ -127,11 +127,10 @@ public class TournamentConsole {
         }
         numberOfRounds = Integer.parseInt(numberOfRoundsStr);
 
+        iRenderer renderer = RendererFactory.rendererFactory.buildRenderer(rendererType);
 
-        iRenderer renderer = new RendererFactory().buildRenderer(rendererType);
-        Player playerX = new PlayerFactory("X", eMark.X).buildPlayer(playerType1);
-        Player playerO = new PlayerFactory("O",eMark.O).buildPlayer(playerType2);
-        TournamentConsole tournament = new TournamentConsole(playerX,playerO,numberOfRounds, renderer);
+        TournamentConsole tournament = new TournamentConsole(PlayerFactory.playerFactory.buildPlayer(playerType1, "X", eMark.X),
+                PlayerFactory.playerFactory.buildPlayer(playerType2, "O", eMark.O),numberOfRounds, renderer);
         result = tournament.playTournament();
 
         System.out.println("TTT.Players.Player X win : " + result[0]);

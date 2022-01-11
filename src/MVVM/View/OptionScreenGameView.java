@@ -99,14 +99,14 @@ public class OptionScreenGameView extends JFrame {
         GameGui game;
 
         if (levelComboBox.getSelectedItem().toString().trim().equals("Easy")) {
-            game = new GameGui(new PlayerFactory("X", eMark.X).buildPlayer("Human"),
-                                new PlayerFactory("O", eMark.O).buildPlayer("Whatever"),
-                                new VoidRenderer());
+            game = new GameGui(PlayerFactory.playerFactory.buildPlayer("Human", "X", eMark.X)
+                    ,PlayerFactory.playerFactory.buildPlayer("Whatever", "O", eMark.O),
+                    new VoidRenderer());
         }
         else {
-            game = new GameGui(new PlayerFactory("X", eMark.X).buildPlayer("Human"),
-                                new PlayerFactory("O", eMark.O).buildPlayer("TTT.Players.CleverPlayer"),
-                                new VoidRenderer());
+            game = new GameGui(PlayerFactory.playerFactory.buildPlayer("Human", "X", eMark.X)
+                    ,PlayerFactory.playerFactory.buildPlayer("TTT.Players.CleverPlayer", "O", eMark.O),
+                    new VoidRenderer());
         }
 
         game.setBoardSize(sizeBoard());
