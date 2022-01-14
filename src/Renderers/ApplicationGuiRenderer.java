@@ -98,7 +98,7 @@ public class ApplicationGuiRenderer extends JFrame implements ActionListener, iR
         statisticsPanel = new JPanel();
         statisticsPanel.setPreferredSize(new Dimension(100, 50));
         statisticsPanel.setBackground(new Color(45,45,50));
-        JLabel label = new JLabel("X Wins: " + statistics[0] + "   O Wins: " + statistics[1] + "   Draws: " + statistics[2]);
+        JLabel label = new JLabel("X Wins: " + statistics[0] + "|  O Wins: " + statistics[1] + "|  Draws: " + statistics[2]);
         label.setFont(new Font("Bodoni MT", Font.BOLD, 32));
         label.setForeground(Color.WHITE);
         statisticsPanel.add(label);
@@ -232,7 +232,6 @@ public class ApplicationGuiRenderer extends JFrame implements ActionListener, iR
      * @return
      */
     public boolean onlyHuman(Player currentPlayerX, Player secondPlayerO){
-
         int flag = 0;
         eMark sign = eMark.BLANK;
 

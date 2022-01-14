@@ -5,6 +5,7 @@ import Enums.eMark;
 import MVVM.Board;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 class BoardTest {
 
@@ -33,9 +34,9 @@ class BoardTest {
         boolean putMarkXAgain = board.putMark(eMark.X,3,3);
 
         assertEquals(putMarkX,putMarkO);
-        assertEquals(putMarkOAgain,false);
-        assertEquals(putMarkXAgain,false);
-
+        assertFalse(putMarkOAgain);
+        assertFalse(putMarkXAgain);
+        
     }
 
     @org.junit.jupiter.api.Test
