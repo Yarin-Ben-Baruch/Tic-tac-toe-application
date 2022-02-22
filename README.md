@@ -36,10 +36,5 @@ Every board state has a value associated with it. In a given state if the maximi
 - [@Yarin-Ben-Baruch](https://github.com/Yarin-Ben-Baruch)
 - [@matanbare](https://github.com/matanbare)
 
-## Clone 
-
-```bash
-  git clone https://github.com/Daniel-Gelfand/TicTacToeDesktopApplication.git
-```
 
 ## 2021
